@@ -6,7 +6,7 @@ import WalletPage from './containers/WalletPage';
 import LoggedInPage from './containers/LoggedInPage';
 
 export default (
-  <Switch>
+  <Switch >
     <Route exact path="/" component={LoginPage} />
     <Route exact path="/loggedin" component={LoggedInPage} />
     <Route exact path="/wallet" component={WalletPage} />

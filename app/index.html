@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My App</title>
+    <title>Buff client</title>
   </head>
-  <body>
+  <body background="C:\Users\Nikita\WebstormProjects\BuffClient\buff-client-electron\assets\home_jet_map.png">
     <div id="app"></div>
+
+
     <script src="./app.js" data-container="#app"></script>
     <script>
-      if (process.env.BROWSER_SYNC_CLIENT_URL) {
-        const current = document.currentScript;
-        const script = document.createElement('script');
-        script.src = process.env.BROWSER_SYNC_CLIENT_URL;
-        script.async = true;
-        current.parentNode.insertBefore(script, current);
-      }
+
+        if (process.env.BROWSER_SYNC_CLIENT_URL) {
+            const current = document.currentScript;
+            const script = document.createElement('script');
+            script.src = process.env.BROWSER_SYNC_CLIENT_URL;
+            script.async = true;
+            current.parentNode.insertBefore(script, current);
+        }
+
     </script>
+
   </body>
+
 </html>

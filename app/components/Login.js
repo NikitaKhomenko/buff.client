@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import routes from "../routes";
 
 export default class Login extends Component {
   static propTypes = {
@@ -8,19 +9,23 @@ export default class Login extends Component {
   };
 
   state = {
-    username: ''
+      username: '',
+      password: ''
   };
 
   handleLogin = () => {
     this.props.onLogin({
-      username: this.state.username,
-      loggedIn: true
+        username: this.state.username,
+        username: this.state.password,
+
+        loggedIn: true
     });
   }
   handleWallet = () => {
     this.props.onLogin({
-      username: this.state.username,
-      loggedIn: true
+        username: this.state.username,
+        username: this.state.password,
+        loggedIn: true
     });
   }
 
@@ -31,13 +36,17 @@ export default class Login extends Component {
   }
 
   render() {
-    return (
-      <div>
-        <h2>Login</h2>
-        <input onChange={this.handleChange} type="text" value={this.state.username} />
-        <button onClick={this.handleLogin}>Log In</button>
-        <button onClick={this.handleWallet}>Wallet</button>
-      </div>
-    );
+      return <div>
+          <center><h1>Login to BUFF</h1></center>
+          <center><h3>Username:</h3></center>
+          <center><input onChange={this.handleChange} type="text" value={this.state.username}/></center>
+          <center><h3>Password:</h3></center>
+          <center><input onChange={this.handleChange} type="text" value={this.state.password}/></center>
+          <h3></h3>
+          <center><button onClick={this.handleLogin}>Log In</button></center>
+          <center><button onClick={this.handleWallet}>Wallet</button></center>
+      </div>;
   }
+
 }
+
