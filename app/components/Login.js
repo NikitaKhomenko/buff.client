@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Grid from 'material-ui/Grid';
-
+import CardMedia from "material-ui/Card/CardMedia";
 
 
 
@@ -14,6 +14,13 @@ const classes = theme => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
+});
+
+const backgroundFilePath = 'assets/Materials/login_background.jpg';
+const loginContainerStyle = ({
+    backgroundImage:`url(${backgroundFilePath}`,
+    width: '100%',
+    height:'100%'
 });
 
 export default class Login extends Component {
@@ -51,8 +58,8 @@ export default class Login extends Component {
 
 
   render() {
-      return <div>
-              <Grid>
+      return <CardMedia image={backgroundFilePath}>
+          <Grid>
               <center><h1>Login to BUFF</h1></center>
               <center><h3>Username:</h3></center>
               <center><input onChange={this.handleChange} type="text" value={this.state.username}/></center>
@@ -61,7 +68,7 @@ export default class Login extends Component {
               <h3></h3>
               <center><button onClick={this.handleLogin}>Log In</button></center>
               </Grid>
-      </div>
+      </CardMedia>
   };
 
 }
