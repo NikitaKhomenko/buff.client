@@ -4,5 +4,8 @@ import actions from '../actions/user';
 export default handleActions({
   [actions.login]: (state, action) => {
     return { ...state, ...action.payload };
+  },
+  [actions.wallet]: (state, action) => {
+      return { ...state, ...action.payload };
   }
 }, {});

@@ -3,18 +3,22 @@
   "version": "0.0.0",
   "description": "buff client for desktop",
   "main": "init.js",
-  "author": [{
-    "name": "ilya shusterman",
-    "email": "ilya@buff.game"
-  },{
-    "name": "ilya radu",
-    "email": "raduilya@buff.game"
-  }],
+  "author": [
+    {
+      "name": "ilya shusterman",
+      "email": "ilya@buff.game"
+    },
+    {
+      "name": "ilya radu",
+      "email": "raduilya@buff.game"
+    }
+  ],
   "repository": "https://github.com/buffgame/buff-client-electron.git",
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.22.0",
     "history": "^4.6.3",
+    "material-ui": "^1.0.0-beta.38",
     "prop-types": "^15.5.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

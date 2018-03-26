@@ -16,6 +16,10 @@ const mapDispatchToProps = (dispatch) => {
     onLogin: (data) => {
       user.login(data);
       dispatch(push('/loggedin'));
+    },
+    onWallet: (data) => {
+        user.login(data);
+        dispatch(push('/wallet'));
     }
   };
 };
