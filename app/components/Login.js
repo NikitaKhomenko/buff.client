@@ -5,39 +5,57 @@ import CardMedia from "material-ui/Card/CardMedia";
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Popover from "material-ui/Popover";
+import { FormControl } from 'material-ui/Form';
+import Input, { InputLabel } from 'material-ui/Input';
+import green from 'material-ui/colors/green';
+import { withStyles } from 'material-ui/styles';
 
-
-const classes = theme => ({
+const styles  = theme => ({
     root: {
         flexGrow: 1,
     },
     paper: {
         padding: theme.spacing.unit * 2,
         textAlign: 'center',
-        color: theme.palette.text.secondary,
+        // color: theme.palette.text.secondary,
     },
-
     button: {
         marginBottom: theme.spacing.unit * 4,
     },
     typography: {
         margin: theme.spacing.unit * 2,
     },
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    formControl: {
+        margin: theme.spacing.unit,
+    },
+    inputLabelFocused: {
+        color: green[100],
+    },
+    inputUnderline: {
+        '&:after': {
+            backgroundColor: green[100],
+        },
+        '&:before': {
+            backgroundColor: green[400],
+        },
+    },
+
 });
+
 
 const backgroundFilePath = 'assets/Materials/login_background.jpg';
 const loginContainerStyle = ({
     width: '100%',
     height:'100%',
+    align: 'center'
 });
 
 
-export default class Login extends Component {
-
-    static propTypes = {
-        onLogin: PropTypes.func.isRequired,
-        onWallet: PropTypes.func.isRequired
-    };
+class Login extends Component {
 
     state = {
         username: '',
@@ -80,42 +98,68 @@ export default class Login extends Component {
 
 
 
+
     render(){
-        return(
-             <CardMedia style={loginContainerStyle} image={backgroundFilePath}>
-                 <Grid>
-                     <font color="white">
+
+    return(
+             <CardMedia style={loginContainerStyle} image={backgroundFilePath} className={this.props.classes.container} >
+                 <Grid style={loginContainerStyle}>
+                     <font color="#d3d3d3">
                       <center><h1>Login to BUFF</h1></center>
                      </font>
-                <center><TextField
-                    required
-                    id="username"
-                    label="password"
-                    defaultValue={this.state.username}
-                    type="text"
-                    margin="normal"/>
-                </center>
-                   <h3></h3>
-                   <center><TextField
-                       required
-                       id="password"
-                       label="password"
-                       defaultValue={this.state.password}
-                       type="text"
-                       margin="normal"
-                /></center>
+
+                     <center>
+                     <FormControl className={this.props.classes.formControl}>
+                         <InputLabel
+                             FormControlClasses={{
+                                 focused: this.props.classes.inputLabelFocused,
+                             }}
+                             htmlFor="username"
+                         >
+                             Username
+                         </InputLabel>
+                         <Input
+                             classes={{
+                                 underline: this.props.classes.inputUnderline,
+                             }}
+                             id="username"
+                         />
+                     </FormControl>
+                     </center>
+
+                     <center>
+                         <FormControl className={this.props.classes.formControl}>
+                             <InputLabel
+                                 FormControlClasses={{
+                                     focused: this.props.classes.inputLabelFocused,
+                                 }}
+                                 htmlFor="password"
+                             >
+                                 Password
+                             </InputLabel>
+                             <Input
+                                 classes={{
+                                     underline: this.props.classes.inputUnderline,
+                                 }}
+                                 id="password"
+                             />
+                         </FormControl>
+                     </center>
+
+
                 <h3></h3>
-                <center><Button variant="raised" className={classes.button} onClick={this.handleLogin}>Log In</Button></center>
-                   <h3></h3>
+
+                <center><Button variant="raised" className={this.props.classes.button} onClick={this.handleLogin}>Log In</Button></center>
 
                <center>
                <Button
                     variant="raised"
-                    className={classes.button}
+                    className={this.props.classes.button}
                     onClick={this.handleClickButton}>
                     Forgot password? click here!
                 </Button>
                </center>
+
                 <Popover
                     open={this.state.open}
                     anchorPosition={{ top: 200, left: 400 }}
@@ -129,7 +173,7 @@ export default class Login extends Component {
                         horizontal: 'center',
                     }}>
 
-                    <div className={classes.typography}>
+                    <div className={this.props.classes.typography}>
                         <p>
                         If you've forgotten your password,
                         you can use this form to reset it. After resetting,
@@ -137,13 +181,22 @@ export default class Login extends Component {
                         If you do not find the message in your inbox,
                         please check if the message did not reach your spam.
                     </p>
-                        <TextField
+                        <center><TextField
                             required
                             id="email"
                             label="Your email:"
                             defaultValue={this.state.username}
                             type="text"
-                            margin="normal"/>
+                            margin="normal"/></center>
+
+                        <h3> </h3>
+
+                        <center><Button
+                            variant="raised"
+                            className={this.props.classes.button}
+                            onClick={this.handleClickButton}>
+                            Send me
+                        </Button></center>
                     </div>
                 </Popover>
 
@@ -156,3 +209,12 @@ export default class Login extends Component {
     }
 
 }
+
+Login.propTypes = {
+    children: PropTypes.node,
+    classes: PropTypes.object.isRequired,
+    onLogin: PropTypes.func.isRequired,
+    onWallet: PropTypes.func.isRequired
+};
+
+export default withStyles(styles)(Login);
