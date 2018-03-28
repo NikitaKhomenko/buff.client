@@ -24,9 +24,9 @@ const installExtensions = async () => {
 };
 
 crashReporter.start({
-  productName: 'YourName',
-  companyName: 'YourCompany',
-  submitURL: 'https://your-domain.com/url-to-submit',
+  productName: 'BuffClient',
+  companyName: 'Buff',
+  submitURL: 'http://buff.gamet',
   uploadToServer: false
 });
 
@@ -43,12 +43,12 @@ app.on('ready', async () => {
     await installExtensions();
   }
 
-  mainWindow = new BrowserWindow({ 
-    width: 1000, 
-    height: 800,
-    minWidth: 640,
-    minHeight: 480,
-    show: false 
+  mainWindow = new BrowserWindow({
+    width: 1000,
+    height: 630.4463840399002,
+    show: true,
+    frame: false,
+    titleBarStyle: 'hidden',
   });
 
   mainWindow.loadURL(url.format({

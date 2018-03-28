@@ -200,8 +200,7 @@ class Login extends Component {
                     </div>
                 </Popover>
 
-                <h3></h3>
-                <h3></h3>
+
 
                </Grid>
         </CardMedia>
