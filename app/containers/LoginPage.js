@@ -3,7 +3,6 @@ import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import Login from '../components/Login';
 import userActions from '../actions/user';
-import routes from "../routes";
 
 
 const mapStateToProps = (state) => {
@@ -17,6 +16,11 @@ const mapDispatchToProps = (dispatch) => {
       user.login(data);
       dispatch(push('/loggedin'));
     },
+     onRegister: (data) => {
+       user.login(data);
+       dispatch(push('/Registration'));
+     },
+
     onWallet: (data) => {
         user.login(data);
         dispatch(push('/wallet'));

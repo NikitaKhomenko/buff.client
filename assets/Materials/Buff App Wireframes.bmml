@@ -1,0 +1,796 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1819" measuredH="2770" mockupW="1794" mockupH="2685">
+  <controls>
+    <control controlID="326" controlTypeID="com.balsamiq.mockups::FieldSet" x="146" y="85" w="810" h="528" measuredW="200" measuredH="170" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20App</text>
+      </controlProperties>
+    </control>
+    <control controlID="327" controlTypeID="com.balsamiq.mockups::Icon" x="289" y="210" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DataBaseIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="328" controlTypeID="com.balsamiq.mockups::Label" x="195" y="216" w="-1" h="-1" measuredW="76" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20Balance</text>
+      </controlProperties>
+    </control>
+    <control controlID="329" controlTypeID="com.balsamiq.mockups::Label" x="328" y="218" w="-1" h="-1" measuredW="51" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>20%20coins</text>
+      </controlProperties>
+    </control>
+    <control controlID="330" controlTypeID="com.balsamiq.mockups::Label" x="180" y="319" w="-1" h="-1" measuredW="118" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Your%20favorite%20games</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="342" controlTypeID="com.balsamiq.mockups::ButtonBar" x="378" y="114" w="-1" h="-1" measuredW="520" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dashboard%2C%20History%2C%20Leaderboard%2C%20Market%20place%2C%20News%20and%20Tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="343" controlTypeID="com.balsamiq.mockups::Label" x="195" y="174" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%20back%20James%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="344" controlTypeID="com.balsamiq.mockups::Icon" x="163" y="172" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="345" controlTypeID="com.balsamiq.mockups::Label" x="195" y="257" w="-1" h="-1" measuredW="73" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Gold%20Status</text>
+      </controlProperties>
+    </control>
+    <control controlID="359" controlTypeID="com.balsamiq.mockups::Icon" x="902" y="115" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GearIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="361" controlTypeID="com.balsamiq.mockups::Icon" x="180" y="352" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>BloggerIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="362" controlTypeID="com.balsamiq.mockups::Icon" x="180" y="398" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>BloggerIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="363" controlTypeID="com.balsamiq.mockups::Label" x="218" y="355" w="-1" h="-1" measuredW="45" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Game%201</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="364" controlTypeID="com.balsamiq.mockups::Label" x="218" y="400" w="-1" h="-1" measuredW="48" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Game%202</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="365" controlTypeID="com.balsamiq.mockups::Button" x="446" y="470" w="131" h="93" measuredW="103" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20Earning</text>
+      </controlProperties>
+    </control>
+    <control controlID="369" controlTypeID="com.balsamiq.mockups::Image" x="796" y="307" w="102" h="97" measuredW="225" measuredH="225" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/download.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="370" controlTypeID="com.balsamiq.mockups::FieldSet" x="761" y="242" w="173" h="226" measuredW="200" measuredH="170" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat</text>
+      </controlProperties>
+    </control>
+    <control controlID="371" controlTypeID="com.balsamiq.mockups::Button" x="834" y="428" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hook%20me%20up</text>
+      </controlProperties>
+    </control>
+    <control controlID="372" controlTypeID="com.balsamiq.mockups::Image" x="163" y="97" w="173" h="60" measuredW="213" measuredH="88" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/Logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="373" controlTypeID="com.balsamiq.mockups::Label" x="779" y="166" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oonline%20Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="374" controlTypeID="com.balsamiq.mockups::Label" x="894" y="166" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>15%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="375" controlTypeID="com.balsamiq.mockups::Label" x="371" y="319" w="-1" h="-1" measuredW="75" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Latest%20News</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="376" controlTypeID="com.balsamiq.mockups::Label" x="364" y="354" w="-1" h="-1" measuredW="205" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Weekly%20Dota2%20Challange-%20Join%20now</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="377" controlTypeID="com.balsamiq.mockups::Label" x="364" y="392" w="-1" h="-1" measuredW="275" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Latest%20Version-%20now%20include%20Clans%21-%20learn%20more</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="378" controlTypeID="com.balsamiq.mockups::Label" x="328" y="257" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20Zealand%20Clan</text>
+      </controlProperties>
+    </control>
+    <control controlID="379" controlTypeID="com.balsamiq.mockups::Icon" x="289" y="251" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GtCircledIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="380" controlTypeID="com.balsamiq.mockups::Icon" x="926" y="115" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Help2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="381" controlTypeID="com.balsamiq.mockups::StickyNote" x="27" y="268" w="111" h="160" measuredW="109" measuredH="123" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dashboard%0AShowing%20the%20%22home%20page%22%20of%20the%20app%2C%20defauly%20window%20when%20opening</text>
+      </controlProperties>
+    </control>
+    <control controlID="382" controlTypeID="com.balsamiq.mockups::FieldSet" x="144" y="634" w="810" h="528" measuredW="200" measuredH="170" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20App</text>
+      </controlProperties>
+    </control>
+    <control controlID="387" controlTypeID="com.balsamiq.mockups::ButtonBar" x="376" y="663" w="-1" h="-1" measuredW="520" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>1</selectedIndex>
+        <text>Dashboard%2C%20History%2C%20Leaderboard%2C%20Market%20place%2C%20News%20and%20Tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="388" controlTypeID="com.balsamiq.mockups::Label" x="193" y="723" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%20back%20James%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="389" controlTypeID="com.balsamiq.mockups::Icon" x="161" y="721" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="391" controlTypeID="com.balsamiq.mockups::Icon" x="900" y="664" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GearIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="396" controlTypeID="com.balsamiq.mockups::Button" x="453" y="1062" w="131" h="93" measuredW="103" measuredH="27" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20Earning</text>
+      </controlProperties>
+    </control>
+    <control controlID="397" controlTypeID="com.balsamiq.mockups::FieldSet" x="759" y="791" w="173" h="226" measuredW="200" measuredH="170" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat</text>
+      </controlProperties>
+    </control>
+    <control controlID="398" controlTypeID="com.balsamiq.mockups::Image" x="794" y="856" w="102" h="97" measuredW="225" measuredH="225" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/download.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="399" controlTypeID="com.balsamiq.mockups::Button" x="832" y="977" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hook%20me%20up</text>
+      </controlProperties>
+    </control>
+    <control controlID="400" controlTypeID="com.balsamiq.mockups::Image" x="161" y="646" w="173" h="60" measuredW="213" measuredH="88" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/Logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="401" controlTypeID="com.balsamiq.mockups::Label" x="777" y="715" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oonline%20Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="402" controlTypeID="com.balsamiq.mockups::Label" x="892" y="715" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>15%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="403" controlTypeID="com.balsamiq.mockups::Label" x="194" y="791" w="-1" h="-1" measuredW="394" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Type%20%20%20-%20%20%20%20Game%20%20%20-%20%20%20%20Achivements%20%20%20-%20%20%20Buff%20Coins%20%20%20%20-%20%20%20%20Conversion</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="404" controlTypeID="com.balsamiq.mockups::Label" x="204" y="827" w="-1" h="-1" measuredW="246" measuredH="21" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Play%20%20%20%20%20%20%20%20Dota2%20%20%20%20%20%20%20%203%20Kills%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%202%20</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="408" controlTypeID="com.balsamiq.mockups::Icon" x="924" y="664" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Help2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="409" controlTypeID="com.balsamiq.mockups::StickyNote" x="25" y="817" w="111" h="160" measuredW="109" measuredH="123" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>History-%20showing%20the%20player%20history</text>
+      </controlProperties>
+    </control>
+    <control controlID="410" controlTypeID="com.balsamiq.mockups::TabBar" x="174" y="752" w="553" h="295" measuredW="311" measuredH="100" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>Today%2C%20Yestrday%2C%20Last%20week%2C%20Last%20Month</text>
+      </controlProperties>
+    </control>
+    <control controlID="411" controlTypeID="com.balsamiq.mockups::Label" x="204" y="856" w="-1" h="-1" measuredW="358" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Conversion%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2050%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%245</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="412" controlTypeID="com.balsamiq.mockups::FieldSet" x="146" y="1170" w="810" h="528" measuredW="200" measuredH="170" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20App</text>
+      </controlProperties>
+    </control>
+    <control controlID="413" controlTypeID="com.balsamiq.mockups::ButtonBar" x="378" y="1199" w="-1" h="-1" measuredW="520" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>2</selectedIndex>
+        <text>Dashboard%2C%20History%2C%20Leaderboard%2C%20Market%20place%2C%20News%20and%20Tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="414" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1259" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%20back%20James%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="415" controlTypeID="com.balsamiq.mockups::Icon" x="163" y="1257" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="416" controlTypeID="com.balsamiq.mockups::Icon" x="902" y="1200" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GearIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="417" controlTypeID="com.balsamiq.mockups::TabBar" x="176" y="1288" w="553" h="295" measuredW="261" measuredH="100" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>By%20Game%2C%20By%20Date%2C%20By%20Country</text>
+      </controlProperties>
+    </control>
+    <control controlID="418" controlTypeID="com.balsamiq.mockups::Button" x="455" y="1598" w="131" h="93" measuredW="103" measuredH="27" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20Earning</text>
+      </controlProperties>
+    </control>
+    <control controlID="419" controlTypeID="com.balsamiq.mockups::FieldSet" x="761" y="1327" w="173" h="226" measuredW="200" measuredH="170" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat</text>
+      </controlProperties>
+    </control>
+    <control controlID="420" controlTypeID="com.balsamiq.mockups::Image" x="796" y="1392" w="102" h="97" measuredW="225" measuredH="225" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/download.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="421" controlTypeID="com.balsamiq.mockups::Button" x="834" y="1513" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hook%20me%20up</text>
+      </controlProperties>
+    </control>
+    <control controlID="422" controlTypeID="com.balsamiq.mockups::Image" x="163" y="1182" w="173" h="60" measuredW="213" measuredH="88" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/Logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="423" controlTypeID="com.balsamiq.mockups::Label" x="779" y="1251" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oonline%20Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="424" controlTypeID="com.balsamiq.mockups::Label" x="894" y="1251" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>15%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="425" controlTypeID="com.balsamiq.mockups::Label" x="196" y="1327" w="-1" h="-1" measuredW="409" measuredH="21" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%20%20%20-%20%20%20%20Period%20%20%20-%20%20%20%20Player%20Name%20%20%20-%20%20%20Achivments%20%20%20-%20%20%20%20Buff%20Earned</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="426" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1363" w="-1" h="-1" measuredW="379" measuredH="21" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dota2%20%20%20%20%20%20%20%20past%20week%20%20%20%20%20%20%20%20%20%20Ran%20B.%20%20%20%20%20%2010%20kills%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201250%20</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="427" controlTypeID="com.balsamiq.mockups::Icon" x="926" y="1200" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Help2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="428" controlTypeID="com.balsamiq.mockups::StickyNote" x="27" y="1353" w="111" h="160" measuredW="109" measuredH="123" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Leaderboard-%20fully%20transparnet%20full%20details%20fo%20the%20communtiy%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="430" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1384" w="-1" h="-1" measuredW="372" measuredH="21" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dota%202%20%20%20%20%20%20%20past%20week%20%20%20%20%20%20%20%20%20%20John%20K.%20%20%20%20%20%200%20kills%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201100</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="448" controlTypeID="com.balsamiq.mockups::FieldSet" x="146" y="1708" w="810" h="528" measuredW="200" measuredH="170" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20App</text>
+      </controlProperties>
+    </control>
+    <control controlID="449" controlTypeID="com.balsamiq.mockups::ButtonBar" x="378" y="1735" w="-1" h="-1" measuredW="520" measuredH="27" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Dashboard%2C%20History%2C%20Leaderboard%2C%20Market%20place%2C%20News%20and%20Tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="450" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1795" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%20back%20James%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="451" controlTypeID="com.balsamiq.mockups::Icon" x="163" y="1793" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="452" controlTypeID="com.balsamiq.mockups::Icon" x="902" y="1736" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GearIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="454" controlTypeID="com.balsamiq.mockups::Button" x="455" y="2134" w="131" h="93" measuredW="103" measuredH="27" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20Earning</text>
+      </controlProperties>
+    </control>
+    <control controlID="455" controlTypeID="com.balsamiq.mockups::FieldSet" x="761" y="1863" w="173" h="226" measuredW="200" measuredH="170" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat</text>
+      </controlProperties>
+    </control>
+    <control controlID="456" controlTypeID="com.balsamiq.mockups::Image" x="796" y="1928" w="102" h="97" measuredW="225" measuredH="225" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/download.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="457" controlTypeID="com.balsamiq.mockups::Button" x="834" y="2049" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="72" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hook%20me%20up</text>
+      </controlProperties>
+    </control>
+    <control controlID="458" controlTypeID="com.balsamiq.mockups::Image" x="163" y="1718" w="173" h="60" measuredW="213" measuredH="88" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/Logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="459" controlTypeID="com.balsamiq.mockups::Label" x="779" y="1787" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oonline%20Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="460" controlTypeID="com.balsamiq.mockups::Label" x="894" y="1787" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>15%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="463" controlTypeID="com.balsamiq.mockups::Icon" x="926" y="1736" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Help2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="464" controlTypeID="com.balsamiq.mockups::StickyNote" x="27" y="1889" w="111" h="171" measuredW="109" measuredH="123" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>Market%20Place-%20this%20is%20the%20place%20for%20players%20to%20convert%20Buff.%20also%20allows%20to%20buy%20additional%20Buffs</text>
+      </controlProperties>
+    </control>
+    <control controlID="466" controlTypeID="com.balsamiq.mockups::Icon" x="289" y="1855" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DataBaseIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="467" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1861" w="-1" h="-1" measuredW="76" measuredH="21" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20Balance</text>
+      </controlProperties>
+    </control>
+    <control controlID="468" controlTypeID="com.balsamiq.mockups::Label" x="328" y="1863" w="-1" h="-1" measuredW="51" measuredH="21" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>20%20coins</text>
+      </controlProperties>
+    </control>
+    <control controlID="469" controlTypeID="com.balsamiq.mockups::Label" x="195" y="1902" w="-1" h="-1" measuredW="73" measuredH="21" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Gold%20Status</text>
+      </controlProperties>
+    </control>
+    <control controlID="470" controlTypeID="com.balsamiq.mockups::Label" x="328" y="1902" w="-1" h="-1" measuredW="110" measuredH="21" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20Zealand%20Clan</text>
+      </controlProperties>
+    </control>
+    <control controlID="471" controlTypeID="com.balsamiq.mockups::Icon" x="289" y="1896" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="83" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GtCircledIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="473" controlTypeID="com.balsamiq.mockups::Icon" x="345" y="1386" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EyeIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="474" controlTypeID="com.balsamiq.mockups::Icon" x="345" y="1368" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="85" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>EyeIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="475" controlTypeID="com.balsamiq.mockups::TabBar" x="204" y="1952" w="303" h="150" measuredW="303" measuredH="100" zOrder="86" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>0</selectedIndex>
+        <text>CS%20GO%2C%20LoL%2C%20WarGaming%2C%20RummyKube</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="476" controlTypeID="com.balsamiq.mockups::Label" x="226" y="2000" w="-1" h="-1" measuredW="41" measuredH="21" zOrder="87" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>10%20Buff</text>
+      </controlProperties>
+    </control>
+    <control controlID="477" controlTypeID="com.balsamiq.mockups::Icon" x="228" y="2021" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="88" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ClubIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="478" controlTypeID="com.balsamiq.mockups::Label" x="224" y="2071" w="-1" h="-1" measuredW="58" measuredH="21" zOrder="89" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>100%20Stars</text>
+      </controlProperties>
+    </control>
+    <control controlID="479" controlTypeID="com.balsamiq.mockups::Label" x="306" y="2000" w="-1" h="-1" measuredW="44" measuredH="21" zOrder="90" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>50%20Buff</text>
+      </controlProperties>
+    </control>
+    <control controlID="480" controlTypeID="com.balsamiq.mockups::Icon" x="308" y="2021" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="91" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ClubIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="481" controlTypeID="com.balsamiq.mockups::Label" x="304" y="2071" w="-1" h="-1" measuredW="60" measuredH="21" zOrder="92" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>500%20Stars</text>
+      </controlProperties>
+    </control>
+    <control controlID="482" controlTypeID="com.balsamiq.mockups::Label" x="398" y="2000" w="-1" h="-1" measuredW="49" measuredH="21" zOrder="93" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>100%20Buff</text>
+      </controlProperties>
+    </control>
+    <control controlID="483" controlTypeID="com.balsamiq.mockups::Icon" x="400" y="2021" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="94" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ClubIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="484" controlTypeID="com.balsamiq.mockups::Label" x="396" y="2071" w="-1" h="-1" measuredW="66" measuredH="21" zOrder="95" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1000%20Stars</text>
+      </controlProperties>
+    </control>
+    <control controlID="485" controlTypeID="com.balsamiq.mockups::Label" x="523" y="1946" w="-1" h="-1" measuredW="50" measuredH="21" zOrder="96" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cashout</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="486" controlTypeID="com.balsamiq.mockups::Label" x="523" y="1973" w="-1" h="-1" measuredW="31" measuredH="21" zOrder="97" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cash</text>
+      </controlProperties>
+    </control>
+    <control controlID="487" controlTypeID="com.balsamiq.mockups::Label" x="523" y="1998" w="-1" h="-1" measuredW="93" measuredH="21" zOrder="98" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Amazon%20Giftard</text>
+      </controlProperties>
+    </control>
+    <control controlID="488" controlTypeID="com.balsamiq.mockups::Label" x="521" y="2024" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="99" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apple%20Giftcard</text>
+      </controlProperties>
+    </control>
+    <control controlID="489" controlTypeID="com.balsamiq.mockups::Label" x="631" y="1973" w="-1" h="-1" measuredW="16" measuredH="21" zOrder="100" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%247</text>
+      </controlProperties>
+    </control>
+    <control controlID="490" controlTypeID="com.balsamiq.mockups::Label" x="631" y="2000" w="-1" h="-1" measuredW="17" measuredH="21" zOrder="101" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%249</text>
+      </controlProperties>
+    </control>
+    <control controlID="491" controlTypeID="com.balsamiq.mockups::Label" x="631" y="2024" w="-1" h="-1" measuredW="22" measuredH="21" zOrder="102" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%2410</text>
+      </controlProperties>
+    </control>
+    <control controlID="492" controlTypeID="com.balsamiq.mockups::Button" x="653" y="1970" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="103" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="493" controlTypeID="com.balsamiq.mockups::Button" x="653" y="1997" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="104" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="494" controlTypeID="com.balsamiq.mockups::Button" x="653" y="2023" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="105" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="495" controlTypeID="com.balsamiq.mockups::Button" x="275" y="2045" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="106" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="496" controlTypeID="com.balsamiq.mockups::Button" x="357" y="2045" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="107" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="497" controlTypeID="com.balsamiq.mockups::Button" x="449" y="2045" w="-1" h="-1" measuredW="34" measuredH="27" zOrder="108" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Go</text>
+      </controlProperties>
+    </control>
+    <control controlID="498" controlTypeID="com.balsamiq.mockups::Button" x="391" y="1863" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="109" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Buy%20more%20Buff</text>
+      </controlProperties>
+    </control>
+    <control controlID="499" controlTypeID="com.balsamiq.mockups::FieldSet" x="146" y="2242" w="810" h="528" measuredW="200" measuredH="170" zOrder="110" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buff%20App</text>
+      </controlProperties>
+    </control>
+    <control controlID="500" controlTypeID="com.balsamiq.mockups::ButtonBar" x="378" y="2269" w="-1" h="-1" measuredW="520" measuredH="27" zOrder="111" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>Dashboard%2C%20History%2C%20Leaderboard%2C%20Market%20place%2C%20News%20and%20Tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="501" controlTypeID="com.balsamiq.mockups::Label" x="195" y="2329" w="-1" h="-1" measuredW="132" measuredH="21" zOrder="112" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Welcome%20back%20James%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="502" controlTypeID="com.balsamiq.mockups::Icon" x="163" y="2327" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="113" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>ContactIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="503" controlTypeID="com.balsamiq.mockups::Icon" x="902" y="2270" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="114" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GearIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="504" controlTypeID="com.balsamiq.mockups::Button" x="455" y="2668" w="131" h="93" measuredW="103" measuredH="27" zOrder="115" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Start%20Earning</text>
+      </controlProperties>
+    </control>
+    <control controlID="505" controlTypeID="com.balsamiq.mockups::FieldSet" x="761" y="2397" w="173" h="226" measuredW="200" measuredH="170" zOrder="116" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat</text>
+      </controlProperties>
+    </control>
+    <control controlID="506" controlTypeID="com.balsamiq.mockups::Image" x="796" y="2462" w="102" h="97" measuredW="225" measuredH="225" zOrder="117" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/download.png</src>
+      </controlProperties>
+    </control>
+    <control controlID="507" controlTypeID="com.balsamiq.mockups::Button" x="834" y="2583" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="118" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hook%20me%20up</text>
+      </controlProperties>
+    </control>
+    <control controlID="508" controlTypeID="com.balsamiq.mockups::Image" x="163" y="2252" w="173" h="60" measuredW="213" measuredH="88" zOrder="119" locked="false" isInGroup="-1">
+      <controlProperties>
+        <filter>true</filter>
+        <src>../../assets/Logo.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="509" controlTypeID="com.balsamiq.mockups::Label" x="779" y="2321" w="-1" h="-1" measuredW="84" measuredH="21" zOrder="120" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Oonline%20Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="510" controlTypeID="com.balsamiq.mockups::Label" x="894" y="2321" w="-1" h="-1" measuredW="40" measuredH="21" zOrder="121" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>15%2C000</text>
+      </controlProperties>
+    </control>
+    <control controlID="511" controlTypeID="com.balsamiq.mockups::Icon" x="926" y="2270" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="122" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>Help2Icon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="512" controlTypeID="com.balsamiq.mockups::StickyNote" x="27" y="2423" w="111" h="171" measuredW="109" measuredH="123" zOrder="123" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>11</size>
+        <text>News%20and%20Tournaments-%20showing%20latest%20personal%20and%20community%20news.%20arena%20for%20all%20challanges%20and%20tournaments</text>
+      </controlProperties>
+    </control>
+    <control controlID="529" controlTypeID="com.balsamiq.mockups::Label" x="209" y="2455" w="-1" h="-1" measuredW="78" measuredH="21" zOrder="124" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tournaments</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="530" controlTypeID="com.balsamiq.mockups::Label" x="209" y="2498" w="-1" h="-1" measuredW="349" measuredH="21" zOrder="125" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Dota2%20face%20off-%20Weekly-%20Open%20for%20all-%2010%2C000%20Buff%20Prize%20poll</text>
+      </controlProperties>
+    </control>
+    <control controlID="543" controlTypeID="com.balsamiq.mockups::Icon" x="165" y="2371" w="-1" h="-1" measuredW="32" measuredH="32" zOrder="126" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>RSSIcon%7Cmedium</icon>
+      </controlProperties>
+    </control>
+    <control controlID="544" controlTypeID="com.balsamiq.mockups::Label" x="209" y="2377" w="-1" h="-1" measuredW="75" measuredH="21" zOrder="127" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Latest%20News</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="545" controlTypeID="com.balsamiq.mockups::Label" x="174" y="2412" w="-1" h="-1" measuredW="237" measuredH="21" zOrder="128" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20version-%20build%20your%20clan-%20learn%20more</text>
+      </controlProperties>
+    </control>
+    <control controlID="546" controlTypeID="com.balsamiq.mockups::Label" x="446" y="2412" w="-1" h="-1" measuredW="260" measuredH="21" zOrder="129" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Amazon%20Gift%20Card-%20new%20on%20the%20market%20place</text>
+      </controlProperties>
+    </control>
+    <control controlID="547" controlTypeID="com.balsamiq.mockups::Label" x="421" y="2412" w="-1" h="-1" measuredW="16" measuredH="21" zOrder="130" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>......</text>
+      </controlProperties>
+    </control>
+    <control controlID="548" controlTypeID="com.balsamiq.mockups::Label" x="711" y="2412" w="-1" h="-1" measuredW="16" measuredH="21" zOrder="131" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>......</text>
+      </controlProperties>
+    </control>
+    <control controlID="549" controlTypeID="com.balsamiq.mockups::Label" x="155" y="2412" w="-1" h="-1" measuredW="16" measuredH="21" zOrder="132" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>......</text>
+      </controlProperties>
+    </control>
+    <control controlID="550" controlTypeID="com.balsamiq.mockups::Label" x="209" y="2526" w="-1" h="-1" measuredW="382" measuredH="21" zOrder="133" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Australian%20Open-%20LoL%20daily-%20Open%20for%20AU%20players%20only-%201000%20Prize</text>
+      </controlProperties>
+    </control>
+    <control controlID="551" controlTypeID="com.balsamiq.mockups::Label" x="209" y="2559" w="-1" h="-1" measuredW="371" measuredH="21" zOrder="134" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Clan%20war%20-%20New%20Zealnd%20clan-%20your%20clan%20only-%20100%20Buff%20challange</text>
+      </controlProperties>
+    </control>
+    <control controlID="552" controlTypeID="com.balsamiq.mockups::Icon" x="605" y="2496" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="135" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GtCircledIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="553" controlTypeID="com.balsamiq.mockups::Icon" x="605" y="2526" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="136" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>XIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="554" controlTypeID="com.balsamiq.mockups::Icon" x="605" y="2557" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="137" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>GtCircledIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="555" controlTypeID="com.balsamiq.mockups::Canvas" x="1155" y="104" w="664" h="488" measuredW="100" measuredH="70" zOrder="138" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>roundedSolid</borderStyle>
+      </controlProperties>
+    </control>
+    <control controlID="556" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="130" w="-1" h="-1" measuredW="35" measuredH="21" zOrder="139" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Notes</text>
+        <underline>true</underline>
+      </controlProperties>
+    </control>
+    <control controlID="557" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="174" w="-1" h="-1" measuredW="301" measuredH="21" zOrder="140" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Desktop%20app%20%28in%20the%20future%20will%20have%20mobiel%20version%29</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="558" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="210" w="-1" h="-1" measuredW="371" measuredH="21" zOrder="141" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Settings-%20will%20have%20option%20to%20update%20app%20notofication%2C%20alerts%20etc</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="559" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="251" w="-1" h="-1" measuredW="575" measuredH="21" zOrder="142" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Profile-%20by%20pressing%20on%20the%20user%20name%2C%20user%20will%20be%20able%20to%20update%20%28and%20verify%29%20his%20personal%20details</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="560" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="286" w="-1" h="-1" measuredW="549" measuredH="21" zOrder="143" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>FTUE-%20will%20have%20a%20video/tutorial.%20by%20pressing%20the%20%3F%20button%2C%20users%20will%20be%20able%20to%20review%20it%20again</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="561" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="331" w="-1" h="-1" measuredW="523" measuredH="21" zOrder="144" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chat-%20will%20be%20connected%20to%20Discord%2C%20by%20pressing%20it%20will%20open%20a%20new%20integrated%20chat%20section</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="562" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="371" w="-1" h="-1" measuredW="624" measuredH="21" zOrder="145" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Call%20for%20action-%20need%20to%20think%20about%20it%2C%20ideally%20it%20will%20take%20the%20user%20to%20start%20playing%20one%20of%20his%20vaforite%20games</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="563" controlTypeID="com.balsamiq.mockups::Label" x="1180" y="413" w="-1" h="-1" measuredW="489" measuredH="21" zOrder="146" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Rough%20draft-%20need%20to%20dive%20into%20more%20details%20on%20the%20UX+Design%20%28icons%2C%20features%2C%20etc%29</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -10,43 +10,45 @@ import Input, { InputLabel } from 'material-ui/Input';
 import green from 'material-ui/colors/green';
 import { withStyles } from 'material-ui/styles';
 
-const styles  = theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing.unit * 2,
-        textAlign: 'center',
-        // color: theme.palette.text.secondary,
-    },
-    button: {
-        marginBottom: theme.spacing.unit * 4,
-    },
-    typography: {
-        margin: theme.spacing.unit * 2,
-    },
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-    },
-    formControl: {
-        margin: theme.spacing.unit,
-    },
-    inputLabelFocused: {
-        color: green[100],
-    },
-    inputUnderline: {
-        '&:after': {
-            backgroundColor: green[100],
+const styles  = theme => {
+    return ({
+        root: {
+            flexGrow: 1,
         },
-        '&:before': {
-            backgroundColor: green[400],
+        button: {
+            marginBottom: theme.spacing.unit * 4,
+            backgroundColor: green[300],
         },
-    },
-
-});
-
-
+        buttonExit: {
+            marginBottom: theme.spacing.unit * 4,
+            backgroundColor: green[800],
+        },
+        flatbutton: {
+            marginBottom: theme.spacing.unit * 4,
+        },
+        typography: {
+            margin: theme.spacing.unit * 2,
+        },
+        container: {
+            display: 'flex',
+            flexWrap: 'wrap',
+        },
+        formControl: {
+            margin: theme.spacing.unit,
+        },
+        inputLabelFocused: {
+            color: green[100],
+        },
+        inputUnderline: {
+            '&:after': {
+                backgroundColor: green[100],
+            },
+            '&:before': {
+                backgroundColor: green[400],
+            },
+        },
+    });
+};
 const backgroundFilePath = 'assets/Materials/login_background.jpg';
 const loginContainerStyle = ({
     width: '100%',
@@ -69,6 +71,13 @@ class Login extends Component {
             loggedIn: true
         });
     }
+
+    handleRegistration = () => {
+        this.props.onRegister({
+            loggedIn: false
+        });
+    }
+
     handleWallet = () => {
         this.props.onWallet({
             username: this.state.username,
@@ -83,128 +92,168 @@ class Login extends Component {
     }
 
 
-    handleClickButton = () => {
+    handleForgotPassword = () => {
         this.setState({
             open: true
         });
     }
 
 
-    handleClose = () => {
-         this.setState({
-             open: false,
-         });
+    handleCloseForgotPassword = () => {
+        this.setState({
+            open: false,
+        });
+    }
+
+    handleCloseApp = () => {
+        const remote = require('electron').remote
+        let w = remote.getCurrentWindow()
+        w.close()
     }
 
 
+    render() {
+
+        return (
+            <CardMedia style={loginContainerStyle} image={backgroundFilePath} className={this.props.classes.container}>
+                <Grid style={loginContainerStyle}>
+                    <Button
+                        variant="raised"
+                        className={this.props.classes.buttonExit}
+                        onClick={this.handleCloseApp}>
+                        Exit
+                    </Button>
+
+                    <font face="verdana" color="#C8E6C9">
+                        <center><h1>Login to BUFF</h1></center>
+                    </font>
+
+                    <center>
+                        <FormControl className={this.props.classes.formControl}>
+                            <InputLabel
+                                FormControlClasses={{
+                                    focused: this.props.classes.inputLabelFocused,
+
+                                }}
+                                htmlFor="username"
+                            >
+
+                                <font color="#C8E6C9">Username</font>
+                            </InputLabel>
+                            <Input
+                                classes={{
+                                    underline: this.props.classes.inputUnderline,
+                                    focused: this.props.classes.inputLabelFocused,
+                                }}
+                                id="username"
+                            />
+                        </FormControl>
+                    </center>
+
+                    <center>
+                        <FormControl className={this.props.classes.formControl}>
+                            <InputLabel
+                                FormControlClasses={{
+                                    focused: this.props.classes.inputLabelFocused,
+                                }}
+                                htmlFor="password"
+                            >
+                                <font color="#C8E6C9">Password</font>
+                            </InputLabel>
+                            <Input
+                                classes={{
+                                    underline: this.props.classes.inputUnderline,
+                                    focused: this.props.classes.inputLabelFocused,
+                                }}
+                                id="password"
+                            />
+                        </FormControl>
+                    </center>
 
 
-    render(){
+                    <h3></h3>
 
-    return(
-             <CardMedia style={loginContainerStyle} image={backgroundFilePath} className={this.props.classes.container} >
-                 <Grid style={loginContainerStyle}>
-                     <font color="#d3d3d3">
-                      <center><h1>Login to BUFF</h1></center>
-                     </font>
-
-                     <center>
-                     <FormControl className={this.props.classes.formControl}>
-                         <InputLabel
-                             FormControlClasses={{
-                                 focused: this.props.classes.inputLabelFocused,
-                             }}
-                             htmlFor="username"
-                         >
-                             Username
-                         </InputLabel>
-                         <Input
-                             classes={{
-                                 underline: this.props.classes.inputUnderline,
-                             }}
-                             id="username"
-                         />
-                     </FormControl>
-                     </center>
-
-                     <center>
-                         <FormControl className={this.props.classes.formControl}>
-                             <InputLabel
-                                 FormControlClasses={{
-                                     focused: this.props.classes.inputLabelFocused,
-                                 }}
-                                 htmlFor="password"
-                             >
-                                 Password
-                             </InputLabel>
-                             <Input
-                                 classes={{
-                                     underline: this.props.classes.inputUnderline,
-                                 }}
-                                 id="password"
-                             />
-                         </FormControl>
-                     </center>
-
-
-                <h3></h3>
-
-                <center><Button variant="raised" className={this.props.classes.button} onClick={this.handleLogin}>Log In</Button></center>
-
-               <center>
-               <Button
-                    variant="raised"
-                    className={this.props.classes.button}
-                    onClick={this.handleClickButton}>
-                    Forgot password? click here!
-                </Button>
-               </center>
-
-                <Popover
-                    open={this.state.open}
-                    anchorPosition={{ top: 200, left: 400 }}
-                    onClose={this.handleClose}
-                    anchorOrigin={{
-                        vertical: 'center',
-                        horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                        vertical: 'center',
-                        horizontal: 'center',
-                    }}>
-
-                    <div className={this.props.classes.typography}>
-                        <p>
-                        If you've forgotten your password,
-                        you can use this form to reset it. After resetting,
-                        a message will be sent to your email address.
-                        If you do not find the message in your inbox,
-                        please check if the message did not reach your spam.
-                    </p>
-                        <center><TextField
-                            required
-                            id="email"
-                            label="Your email:"
-                            defaultValue={this.state.username}
-                            type="text"
-                            margin="normal"/></center>
-
-                        <h3> </h3>
-
-                        <center><Button
+                    <center>
+                        <Button
                             variant="raised"
                             className={this.props.classes.button}
-                            onClick={this.handleClickButton}>
-                            Send me
-                        </Button></center>
-                    </div>
-                </Popover>
+                            onClick={this.handleLogin}>
+                            Log In
+                        </Button>
+                    </center>
 
-               </Grid>
-        </CardMedia>
+                    <center>
+                        <Button
+                            variant="raised"
+                            className={this.props.classes.button}
+                            onClick={this.handleRegistration}>
+                            Not registered yet? Click here!
+                        </Button>
+                    </center>
+
+                    <center>
+                        <flatbutton
+                            className={this.props.classes.flatbutton}
+                            onClick={this.handleForgotPassword}>
+                            <font face="verdana" color="#C8E6C9">
+                            Forgot password? click here!
+                            </font>
+                        </flatbutton>
+                    </center>
+
+                    <h1> </h1>
+                    <Popover
+                        open={this.state.open}
+                        anchorPosition={{top: 200, left: 400}}
+                        onClose={this.handleCloseForgotPassword}
+                        anchorOrigin={{
+                            vertical: 'center',
+                            horizontal: 'center',
+                        }}
+                        transformOrigin={{
+                            vertical: 'center',
+                            horizontal: 'center',
+                        }}>
+
+                        <div className={this.props.classes.typography} color="#212121">
+                            <p><font face="verdana" >
+                                If you've forgotten your password,
+                                you can use this form to reset it. After resetting,
+                                a message will be sent to your email address.
+                                If you do not find the message in your inbox,
+                                please check if the message did not reach your spam.
+                            </font> </p>
+                            <center><TextField
+                                required
+                                id="email"
+                                label="Your email:"
+                                defaultValue={this.state.username}
+                                type="text"
+                                margin="normal"/></center>
+
+                            <h3></h3>
+
+                            <center><Button
+                                variant="raised"
+                                className={this.props.classes.button}>
+                                Send me
+                            </Button></center>
+                        </div>
+                    <center>
+                        <button
+                        className={this.props.classes.flatbutton}
+                            onClick={this.handleCloseForgotPassword}>
+                            <font face="verdana">
+                                CLOSE
+                            </font>
+                        </button>
+                    </center>
+                    </Popover>
+
+                </Grid>
+            </CardMedia>
         );
     }
-
 }
 
 Login.propTypes = {
