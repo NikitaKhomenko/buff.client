@@ -1,36 +1,45 @@
 {
   "extends": [
-    "eslint:recommended", 
-    "plugin:react/recommended"
+    "eslint:recommended"
+    /* "plugin:import/errors",
+    "plugin:import/warnings" */
   ],
   "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
   "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
       "modules": true
     }
   },
-  "plugins": [ "react" ], 
+  "plugins": [
+    "react"
+    /* "import" */
+  ],
   "rules": {
-    "indent": [ 2, 2 ],
-    "quotes": [ 2, "single" ],
-    "linebreak-style": [ 2, "unix" ],
-    "semi": [ 2, "always" ],
-    "no-console": [ 0 ],
-    "no-loop-func": [ 0 ],
-    "new-cap": [ 0 ],
-    "no-trailing-spaces": [ 0 ],
-    "no-param-reassign": [ 0 ],
-    "func-names": [ 0 ],
-    "comma-dangle": [ 0 ],
-    "no-unused-expressions" : [ 0 ], // until fixed https://github.com/babel/babel-eslint/issues/158
-    "block-scoped-var": [ 0 ], // until fixed https://github.com/eslint/eslint/issues/2253
-    "react/prop-types": [ 0 ]
-  },
-  "env": {
-    "es6": true,
-    "node": true,
-    "browser": true,
-    "mocha": true
+    "no-debugger": 0,
+    "no-console": 0,
+    "strict": 0,
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 1,
+    "no-undef": 1,
+    "eol-last": 0,
+    "no-case-declarations": 0,
+    "indent": [0, "tab", {"SwitchCase": 1}],
+    "quotes": [1, "single", {"allowTemplateLiterals": true}],
+    "no-unused-vars": 1,
+    "comma-dangle": 0,
+    "no-class-assign": 0,
+    "arrow-spacing": 2,
+    "no-mixed-spaces-and-tabs": 1,
+    "jsx-quotes": [2, "prefer-double"],
+    "react/jsx-no-undef": 2,
+    "react/jsx-uses-react": 1,
+    "react/jsx-uses-vars": 1
   }
 }

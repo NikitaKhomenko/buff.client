@@ -18,7 +18,10 @@ const routerHistory = createMemoryHistory();
 const store = configureStore(initialState, routerHistory);
 // syncHistoryWithStore(store, routerHistory);
 
-const rootElement = document.querySelector(document.currentScript.getAttribute('data-container'));
+let rootElement = document.createElement('div');
+rootElement.id = 'root';
+document.body.appendChild( rootElement );
+const rootE = document.getElementById('root');
 
 ReactDOM.render(
   <Provider store={store}>
@@ -26,5 +29,5 @@ ReactDOM.render(
       {routes}
     </ConnectedRouter>
   </Provider>,
-  rootElement
+  rootE
 );
