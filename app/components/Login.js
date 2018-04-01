@@ -53,7 +53,7 @@ const backgroundFilePath = 'assets/Materials/login_background.jpg';
 const loginContainerStyle = ({
     width: '100%',
     height:'100%',
-    align: 'center'
+    align: 'center',
 });
 
 
@@ -121,7 +121,7 @@ class Login extends Component {
                         variant="raised"
                         className={this.props.classes.buttonExit}
                         onClick={this.handleCloseApp}>
-                        Exit
+                        <font face="verdana" color="#fffff">Exit</font>
                     </Button>
 
                     <font face="verdana" color="#C8E6C9">
@@ -131,7 +131,7 @@ class Login extends Component {
                     <center>
                         <FormControl className={this.props.classes.formControl}>
                             <InputLabel
-                                FormControlClasses={{
+                                formcontrolclasses={{
                                     focused: this.props.classes.inputLabelFocused,
 
                                 }}
@@ -153,7 +153,7 @@ class Login extends Component {
                     <center>
                         <FormControl className={this.props.classes.formControl}>
                             <InputLabel
-                                FormControlClasses={{
+                                formcontrolclasses={{
                                     focused: this.props.classes.inputLabelFocused,
                                 }}
                                 htmlFor="password"
@@ -192,13 +192,13 @@ class Login extends Component {
                     </center>
 
                     <center>
-                        <flatbutton
+                        <Button
                             className={this.props.classes.flatbutton}
                             onClick={this.handleForgotPassword}>
                             <font face="verdana" color="#C8E6C9">
                             Forgot password? click here!
                             </font>
-                        </flatbutton>
+                        </Button>
                     </center>
 
                     <h1> </h1>
