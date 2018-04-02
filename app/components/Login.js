@@ -17,7 +17,7 @@ const styles  = theme => {
         },
         button: {
             marginBottom: theme.spacing.unit * 4,
-            backgroundColor: green[300],
+            backgroundColor: green[400],
         },
         buttonExit: {
             marginBottom: theme.spacing.unit * 4,
@@ -47,6 +47,7 @@ const styles  = theme => {
                 backgroundColor: green[400],
             },
         },
+
     });
 };
 const backgroundFilePath = 'assets/Materials/login_background.jpg';
@@ -201,7 +202,6 @@ class Login extends Component {
                         </Button>
                     </center>
 
-                    <h1> </h1>
                     <Popover
                         open={this.state.open}
                         anchorPosition={{top: 200, left: 400}}
@@ -215,7 +215,7 @@ class Login extends Component {
                             horizontal: 'center',
                         }}>
 
-                        <div className={this.props.classes.typography} color="#212121">
+                        <div>
                             <p><font face="verdana" >
                                 If you've forgotten your password,
                                 you can use this form to reset it. After resetting,
