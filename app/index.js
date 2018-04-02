@@ -5,6 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { createMemoryHistory } from 'history';
 import routes from './routes';
 import configureStore from './store';
+import './main-style.scss'
 
 const syncHistoryWithStore = (store, history) => {
   const { routing } = store.getState();
@@ -18,13 +19,16 @@ const routerHistory = createMemoryHistory();
 const store = configureStore(initialState, routerHistory);
 // syncHistoryWithStore(store, routerHistory);
 
-const rootElement = document.querySelector(document.currentScript.getAttribute('data-container'));
+let rootElement = document.createElement('div');
+rootElement.id = 'root';
+document.body.appendChild( rootElement );
+const rootE = document.getElementById('root');
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store} >
     <ConnectedRouter history={routerHistory}>
       {routes}
     </ConnectedRouter>
   </Provider>,
-  rootElement
+  rootE
 );

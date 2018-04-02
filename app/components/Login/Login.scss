@@ -1,0 +1,11 @@
+.mainLogin {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 25%;
+  .btn_login ,.btn_forgot{
+  margin: 10px 0;
+  }
+}
