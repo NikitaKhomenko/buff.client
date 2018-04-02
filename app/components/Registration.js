@@ -18,7 +18,7 @@ const classes = theme => ({
     },
 });
 
-const backgroundFilePath = 'assets/Materials/login_background.jpg';
+const backgroundFilePath = 'assets/Materials/loginBG.jpg';
 const loginContainerStyle = ({
     width: '100%',
     height:'100%',
