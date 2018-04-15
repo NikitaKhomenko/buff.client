@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import Registration from '../components/Registration';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
+import Registration from '../components/Registration';
 import userActions from '../actions/user';
 
 

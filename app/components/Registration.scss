@@ -1,4 +1,4 @@
-.LoginMain {
+.RegistrationMain {
   height: 100%;
   text-align: center;
   display: flex;
@@ -12,27 +12,18 @@
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 35px;
-    background: #66BB6A;
+    background: #2E7D32;
   }
   .root {
-    flexGrow: 1
-  }
-  .buttonExit {
-    margin-bottom: 10px;
-    background: #2E7D32;
-    alignment: right;
+    width: '100%';
+    maxWidth: 360;
   }
   .typography {
-    margin: 100px;
+    margin: 100px
   }
   .container {
     display: 'flex';
-    flexWrap: 'wrap';
-  }
-  .popover {
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
+    flexWrap: 'wrap'
   }
 
 }

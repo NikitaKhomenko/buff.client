@@ -9,31 +9,14 @@ import { FormControl } from 'material-ui/Form';
 import Input, { InputLabel } from 'material-ui/Input';
 import green from 'material-ui/colors/green';
 import { withStyles } from 'material-ui/styles';
+import './Login.scss'
+import grey from "material-ui/es/colors/grey";
 
 const styles  = theme => {
     return ({
-        root: {
-            flexGrow: 1,
-        },
-        button: {
-            marginBottom: theme.spacing.unit * 4,
-            backgroundColor: green[400],
-        },
-        buttonExit: {
-            marginBottom: theme.spacing.unit * 4,
-            backgroundColor: green[800],
-        },
-        flatbutton: {
-            marginBottom: theme.spacing.unit * 4,
-        },
-        typography: {
-            margin: theme.spacing.unit * 2,
-        },
-        container: {
-            display: 'flex',
-            flexWrap: 'wrap',
-        },
         formControl: {
+            marginRight: theme.spacing.unit * 15,
+            marginLeft: theme.spacing.unit * 15,
             margin: theme.spacing.unit,
         },
         inputLabelFocused: {
@@ -47,10 +30,12 @@ const styles  = theme => {
                 backgroundColor: green[400],
             },
         },
-
+        flatbutton: {
+            marginBottom: theme.spacing.unit * 4,
+        },
     });
 };
-const backgroundFilePath = 'assets/Materials/login_background.jpg';
+
 const loginContainerStyle = ({
     width: '100%',
     height:'100%',
@@ -116,20 +101,21 @@ class Login extends Component {
     render() {
 
         return (
-            <CardMedia style={loginContainerStyle} image={backgroundFilePath} className={this.props.classes.container}>
-                <Grid style={loginContainerStyle}>
-                    <Button
-                        variant="raised"
-                        className={this.props.classes.buttonExit}
-                        onClick={this.handleCloseApp}>
-                        <font face="verdana" color="#fffff">Exit</font>
-                    </Button>
+            <div className="LoginMain">
+                <CardMedia style={loginContainerStyle}  className="container">
+                    <Grid style={loginContainerStyle}>
+                        <Button
+                            style={{position: 'absolute', top: 0, right: 0}}
+                            variant="raised"
+                            className="buttonExit"
+                            onClick={this.handleCloseApp}>
+                            <font face="verdana" color="#fffff">Exit</font>
+                        </Button>
 
-                    <font face="verdana" color="#C8E6C9">
-                        <center><h1>Login to BUFF</h1></center>
-                    </font>
+                        <font face="verdana" color="#C8E6C9">
+                            <h1>Login to BUFF</h1>
+                        </font>
 
-                    <center>
                         <FormControl className={this.props.classes.formControl}>
                             <InputLabel
                                 formcontrolclasses={{
@@ -149,9 +135,7 @@ class Login extends Component {
                                 id="username"
                             />
                         </FormControl>
-                    </center>
 
-                    <center>
                         <FormControl className={this.props.classes.formControl}>
                             <InputLabel
                                 formcontrolclasses={{
@@ -169,89 +153,81 @@ class Login extends Component {
                                 id="password"
                             />
                         </FormControl>
-                    </center>
 
+                        <h3></h3>
 
-                    <h3></h3>
-
-                    <center>
                         <Button
                             variant="raised"
-                            className={this.props.classes.button}
+                            className="buttonMain"
                             onClick={this.handleLogin}>
                             Log In
                         </Button>
-                    </center>
 
-                    <center>
                         <Button
                             variant="raised"
-                            className={this.props.classes.button}
+                            className="buttonMain"
                             onClick={this.handleRegistration}>
                             Not registered yet? Click here!
                         </Button>
-                    </center>
 
-                    <center>
                         <Button
                             className={this.props.classes.flatbutton}
                             onClick={this.handleForgotPassword}>
                             <font face="verdana" color="#C8E6C9">
-                            Forgot password? click here!
+                                Forgot password? click here!
                             </font>
                         </Button>
-                    </center>
 
-                    <Popover
-                        open={this.state.open}
-                        anchorPosition={{top: 200, left: 400}}
-                        onClose={this.handleCloseForgotPassword}
-                        anchorOrigin={{
-                            vertical: 'center',
-                            horizontal: 'center',
-                        }}
-                        transformOrigin={{
-                            vertical: 'center',
-                            horizontal: 'center',
-                        }}>
+                        <Popover
+                            open={this.state.open}
+                            anchorPosition={{top: 500, left: 400}}
+                            onClose={this.handleCloseForgotPassword}
+                            anchorOrigin={{
+                                vertical: 'center',
+                                horizontal: 'center',
+                            }}
+                            transformOrigin={{
+                                vertical: 'center',
+                                horizontal: 'center',
+                            }}>
 
-                        <div>
-                            <p><font face="verdana" >
-                                If you've forgotten your password,
-                                you can use this form to reset it. After resetting,
-                                a message will be sent to your email address.
-                                If you do not find the message in your inbox,
-                                please check if the message did not reach your spam.
-                            </font> </p>
-                            <center><TextField
-                                required
-                                id="email"
-                                label="Your email:"
-                                defaultValue={this.state.username}
-                                type="text"
-                                margin="normal"/></center>
+                            <div className="LoginMain">
+                                <p><font face="verdana" color="black" >
+                                    If you've forgotten your password,
+                                    you can use this form to reset it. After resetting,
+                                    a message will be sent to your email address.
+                                    If you do not find the message in your inbox,
+                                    please check if the message did not reach your spam.
+                                </font> </p>
+                                <TextField
+                                    required
+                                    id="email"
+                                    label="Your email:"
+                                    defaultValue={this.state.username}
+                                    type="text"
+                                    margin="normal"/>
 
-                            <h3></h3>
+                                <h3></h3>
 
-                            <center><Button
+                                <Button
                                 variant="raised"
-                                className={this.props.classes.button}>
+                                className="buttonMain">
                                 Send me
-                            </Button></center>
-                        </div>
-                    <center>
-                        <button
-                        className={this.props.classes.flatbutton}
-                            onClick={this.handleCloseForgotPassword}>
-                            <font face="verdana">
-                                CLOSE
-                            </font>
-                        </button>
-                    </center>
-                    </Popover>
+                            </Button>
+                            <button
+                                className={this.props.classes.flatbutton}
+                                onClick={this.handleCloseForgotPassword}>
+                                <font face="verdana">
+                                    CLOSE
+                                </font>
+                            </button>
+                            </div>
+                        </Popover>
 
-                </Grid>
-            </CardMedia>
+                    </Grid>
+                </CardMedia>
+            </div>
+
         );
     }
 }

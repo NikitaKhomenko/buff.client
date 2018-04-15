@@ -9,37 +9,14 @@ import { withStyles } from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import Menu, { MenuItem } from 'material-ui/Menu';
 import List, { ListItem, ListItemText } from 'material-ui/List';
+import Typography from "material-ui/es/Typography/Typography";
+import './Registration.scss'
+
 
 const styles  = theme => {
     return ({
-        root: {
-            width: '100%',
-            maxWidth: 360,
-            backgroundColor: theme.palette.background.paper,
-        },
-        button: {
-            marginBottom: theme.spacing.unit * 4,
-            backgroundColor: green[700],
-        },
-        ListItem: {
-            backgroundColor: green[500],
-        },
-        buttonExit: {
-            marginBottom: theme.spacing.unit * 4,
-            backgroundColor: green[800],
-        },
-        FlatButton: {
-            marginBottom: theme.spacing.unit * 4,
-        },
-        typography: {
-            margin: theme.spacing.unit * 2,
-        },
-        container: {
-            display: 'flex',
-            flexWrap: 'wrap',
-        },
         formControl: {
-            margin: theme.spacing.unit,
+            margin: theme.spacing.unit*2,
         },
         inputLabelFocused: {
             color: green[100],
@@ -55,8 +32,7 @@ const styles  = theme => {
     });
 };
 
-const backgroundFilePath = 'assets/Materials/Registration_background.jpg';
-const backgroundContainerStyle = ({
+const RegistrationContainerStyle = ({
     width: '100%',
     height:'100%',
     align: 'center'
@@ -115,255 +91,239 @@ class Registration extends Component {
         });
     }
 
-
     render() {
         const { anchorEl } = this.state;
         return (
-            <CardMedia style={backgroundContainerStyle} image={backgroundFilePath} className={this.props.classes.container}>
-                <Grid style={backgroundContainerStyle}>
+            <div className="RegistrationMain">
+                <CardMedia style={RegistrationContainerStyle}  className="container">
                     <Button
+                        style={{position: 'absolute', bottom: 0, right: 0}}
                         variant='raised'
-                        className={this.props.classes.buttonExit}
+                        className="buttonMain"
                         onClick={this.handleBackToLogin}>
                         <font face='verdana' color='#fffff'>Back to login</font>
                     </Button>
 
-                    <font face='verdana' color='#C8E6C9'>
-                        <center><h1>Registration</h1></center>
-                    </font>
+                    <Grid style={RegistrationContainerStyle}>
+                        <font face='verdana' color='#C8E6C9'>
+                            <center><h1>Registration</h1></center>
+                        </font>
 
-                    <Grid container spacing={24}>
-                        <Grid item xs={12} container>
-                            <Grid item xs={12}></Grid>
-                            <Grid item xs={6}>
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
+                        <Grid container spacing={24}>
+                            <Grid item xs={12} container>
+                                <Grid item xs={4}>
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
 
-                                            }}
-                                            htmlFor='username'
+                                                }}
+                                                htmlFor='username'
+                                            >
+
+                                                <font color='#C8E6C9'>First Name</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='username'
+                                            />
+                                        </FormControl>
+
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='password'
+                                            >
+                                                <font color='#C8E6C9'>Last Name</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='password'
+                                            />
+                                        </FormControl>
+
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='Email address'
+                                            >
+                                                <font color='#C8E6C9'>Username</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='Email address'
+                                            />
+                                        </FormControl>
+
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='Email address'
+                                            >
+                                                <font color='#C8E6C9'>Password</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='Email address'
+                                            />
+                                        </FormControl>
+
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='Zip code'
+                                            >
+                                                <font color='#C8E6C9'>Repeat Password</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='Zip code'
+                                            />
+                                        </FormControl>
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+
+                                                }}
+                                                htmlFor='username'
+                                            >
+
+                                                <font color='#C8E6C9'>Email address</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='username'
+                                            />
+                                        </FormControl>
+
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='password'
+                                            >
+                                                <font color='#C8E6C9'>Repeat Email address</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='password'
+                                            />
+                                        </FormControl>
+
+                                </Grid>
+
+                                <Grid item xs={4}>
+                                     <font face='verdana' color='#fffff'><h3>Residence:</h3></font>
+                                    <List component="nav">
+                                        <ListItem
+                                            button
+                                            aria-haspopup="true"
+                                            aria-controls="lock-menu"
+                                            aria-label="Country"
+                                            onClick={this.handleClickListItem}
                                         >
+                                            <ListItemText
+                                                disableTypography
+                                                primary={<Typography style={{ color: '#FFFFFF' }}>Country:</Typography>}
+                                                // primary="Country"
+                                                secondary={options[this.state.selectedIndex]}
+                                            />
+                                        </ListItem>
+                                    </List>
 
-                                            <font color='#C8E6C9'>First Name</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='username'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='password'
-                                        >
-                                            <font color='#C8E6C9'>Last Name</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='password'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='Email address'
-                                        >
-                                            <font color='#C8E6C9'>Username</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='Email address'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='Email address'
-                                        >
-                                            <font color='#C8E6C9'>Password</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='Email address'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='Zip code'
-                                        >
-                                            <font color='#C8E6C9'>Repeat Password</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='Zip code'
-                                        />
-                                    </FormControl>
-                                </center>
-
-
-                            </Grid>
-                            <Grid item xs={6}>
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-
-                                            }}
-                                            htmlFor='username'
-                                        >
-
-                                            <font color='#C8E6C9'>Email address</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='username'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='password'
-                                        >
-                                            <font color='#C8E6C9'>Repeat Email address</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='password'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <h6> </h6>
-                               <center> <font face='verdana' color='#fffff'><h3>Residence:</h3></font></center>
-                                <List component="nav">
-                                    <ListItem
-                                        button
-                                        aria-haspopup="true"
-                                        aria-controls="lock-menu"
-                                        aria-label="Country"
-                                        onClick={this.handleClickListItem}
+                                    <Menu
+                                        id="Country-menu"
+                                        anchorEl={anchorEl}
+                                        open={Boolean(anchorEl)}
+                                        onClose={this.handleClose}
                                     >
-                                        <ListItemText
-                                            className={this.props.classes.ListItem}
-                                            primary="Country"
-                                            secondary={options[this.state.selectedIndex]}
-                                        />
-                                    </ListItem>
-                                </List>
+                                        {options.map((option, index) => (
+                                            <MenuItem
+                                                key={option}
+                                                disabled={index === 0}
+                                                selected={index === this.state.selectedIndex}
+                                                onClick={event => this.handleMenuItemClick(event, index)}
+                                            >
+                                                {option}
+                                            </MenuItem>
+                                        ))}
+                                    </Menu>
 
-                                <Menu
-                                    id="Country-menu"
-                                    anchorEl={anchorEl}
-                                    open={Boolean(anchorEl)}
-                                    onClose={this.handleClose}
-                                >
-                                    {options.map((option, index) => (
-                                        <MenuItem
-                                            key={option}
-                                            disabled={index === 0}
-                                            selected={index === this.state.selectedIndex}
-                                            onClick={event => this.handleMenuItemClick(event, index)}
-                                        >
-                                            {option}
-                                        </MenuItem>
-                                    ))}
-                                </Menu>
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='Email address'
+                                            >
+                                                <font color='#C8E6C9'>City</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='Email address'
+                                            />
+                                        </FormControl>
 
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='Email address'
-                                        >
-                                            <font color='#C8E6C9'>City</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='Email address'
-                                        />
-                                    </FormControl>
-                                </center>
-
-                                <center>
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor='Zip code'
-                                        >
-                                            <font color='#C8E6C9'>Street</font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id='Zip code'
-                                        />
-                                    </FormControl>
-                                </center>
+                                        <FormControl className={this.props.classes.formControl}>
+                                            <InputLabel
+                                                formcontrolclasses={{
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                htmlFor='Zip code'
+                                            >
+                                                <font color='#C8E6C9'>Street</font>
+                                            </InputLabel>
+                                            <Input
+                                                classes={{
+                                                    underline: this.props.classes.inputUnderline,
+                                                    focused: this.props.classes.inputLabelFocused,
+                                                }}
+                                                id='Zip code'
+                                            />
+                                        </FormControl>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
-
-                </Grid>
-            </CardMedia>
+                </CardMedia>
+            </div>
         );
     }
 }
