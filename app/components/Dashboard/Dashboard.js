@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {AppBar, Button, IconButton, Toolbar, Typography} from 'material-ui';
-import MenuIcon from 'material-ui-icons/Menu';
 import AccountCircle from 'material-ui-icons/AccountCircle';
-import Switch from 'material-ui/Switch';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import './Dashboard.scss';
 import {Link} from 'react-router-dom';
@@ -49,17 +47,15 @@ export default class Dashboard extends Component {
         <div key="main" className="dashboardMain">
           <AppBar position="static" style={{background: 'none'}}>
             <Toolbar>
-              <IconButton color="inherit" aria-label="Menu">
-                <MenuIcon/>
-              </IconButton>
-              <Typography variant="title" color="#fff">
-                BUFF
+              <Typography variant="title">
+                <div className="logo"></div>
               </Typography>
-              <Link to={`/dashboard`}> <Button>Dashboard</Button></Link>
-              <Link to={`/history`}> <Button>History</Button></Link>
-              <Link to={`/leaderboared`}> <Button>Leaderboared</Button></Link>
-              <Link to={`/market_place`}> <Button>Market place</Button></Link>
-              <Link to={`/news_tournaments`}> <Button>News and Tournaments</Button></Link>
+               <Button className="buttonAppBar" >Dashboard</Button>
+             <Button  className="buttonAppBar">History</Button>
+              <Button  className="buttonAppBar">Leaderboared</Button>
+            <Button  className="buttonAppBar">Market place</Button>
+           <Button  className="buttonAppBar">News and Tournaments</Button>
+              {/*<Link to={`/news_tournaments`}> <Button  className="buttonAppBar">News and Tournaments</Button></Link>*/}
               {auth && (
                 <div>
                   <IconButton

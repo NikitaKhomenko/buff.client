@@ -11,9 +11,20 @@
   background-size: cover;
   filter: brightness(25%);
 }
+.logo{
+  width: 100px;
+  height: 30px;
+  background-image: url("./../../../assets/_Links/Logo.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .dashboardMain{
   position: fixed;
   left: 0;
   right: 0;
   z-index: 9999;
+  .buttonAppBar{
+    color: #fff;
+  }
 }
