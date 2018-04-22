@@ -5,7 +5,7 @@ import { ConnectedRouter } from 'react-router-redux';
 import { createMemoryHistory } from 'history';
 import routes from './routes';
 import configureStore from './store';
-import './main-style.scss'
+import './main-style.scss';
 
 const syncHistoryWithStore = (store, history) => {
   const { routing } = store.getState();

@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import Registration from '../components/Registration/Registration';
 import userActions from '../actions/user';
 
-
 const mapStateToProps = (state) => {
     return state;
 };

@@ -3,10 +3,24 @@ import {AppBar, Button, IconButton, Toolbar, Typography} from 'material-ui';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import './ApBarDashboard.scss';
-import {Link} from 'react-router-dom';
-import Dashboard from '../Dashboard/Dashboard';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Dashboard from "../Dashboard/Dashboard";
+import History from "../History/History";
+import Leaderboard from "../Leaderboard/Leaderboard";
+import MarketPlace from "../MarketPlace/MarketPlace";
+import NewsTournaments from "../NewsTournaments/NewsTournaments";
+
+
+
 
 export default class ApBarDashboard extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            match : props.match
+        };
+    }
   state = {
     auth: true,
     anchorEl: null,
@@ -29,21 +43,21 @@ export default class ApBarDashboard extends Component {
     const open = Boolean(anchorEl);
 
     return (
-      [
+        <Router>
+        <div>
         <div key="background" className="appBarDashboardBG">
-        </div>,
+        </div>
         <div key="main" className="appBarDashboardMain">
           <AppBar position="static" style={{background: 'none'}}>
             <Toolbar>
               <Typography variant="title">
                 <div className="logo"></div>
               </Typography>
-               <Button className="buttonAppBar" >Dashboard</Button>
-             <Button  className="buttonAppBar">History</Button>
-              <Button  className="buttonAppBar">Leaderboared</Button>
-            <Button  className="buttonAppBar">Market place</Button>
-           <Button  className="buttonAppBar">News and Tournaments</Button>
-              {/*<Link to={`/news_tournaments`}> <Button  className="buttonAppBar">News and Tournaments</Button></Link>*/}
+                <Link to={`${this.state.match.url}/dashboard`}><Button className="buttonAppBar">Dashboard</Button></Link>
+                <Link to={`${this.state.match.url}/history`}><Button className="buttonAppBar">History</Button></Link>
+                <Link to={`${this.state.match.url}/leaderboard`}><Button className="buttonAppBar">Leaderboared</Button></Link>
+                <Link to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar">Market place</Button></Link>
+                <Link to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar">News and Tournaments</Button></Link>
               {auth && (
                 <div>
                   <IconButton
@@ -75,12 +89,19 @@ export default class ApBarDashboard extends Component {
               )}
             </Toolbar>
           </AppBar>
-          <Dashboard/>
+
+            <Route path={`${this.state.match.url}/dashboard`} component={Dashboard} />
+            <Route path={`${this.state.match.url}/history`} component={History} />
+            <Route path={`${this.state.match.url}/leaderboard`} component={Leaderboard} />
+            <Route path={`${this.state.match.url}/marketPlace`} component={MarketPlace} />
+            <Route path={`${this.state.match.url}/newsTournaments`} component={NewsTournaments} />
+
+        </div>
         </div>
 
-      ]
-
+        </Router>
     );
   }
 }
+
 
