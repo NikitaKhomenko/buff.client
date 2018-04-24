@@ -9,8 +9,28 @@
     filter: brightness(70%);
   }
   .dashboardMain{
-    margin-top: 50px;
     height: 800px;
     background: #131416;
+    .papersMain{
+      font-size: 0.9em;
+      margin: 50px;
+      .myAcc{
+        width: 25%;
+        margin: 45px;
+        background: #2E2F30;
+        .titleMyAcc{
+          margin: 0;
+          padding: 5px 25px;
+          color: #00EE7A;
+        }
+        .balanceMyAcc{
+          background: #1E1F21;
+          display: flex;
+          flex-direction:row;
+          padding: 10px 0px 10px 25px;
+        }
+      }
+    }
+
   }
 }
