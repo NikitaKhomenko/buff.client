@@ -3,7 +3,7 @@ import {AppBar, Button, IconButton, Toolbar, Typography} from 'material-ui';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import './ApBarDashboard.scss';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
 import Dashboard from '../Dashboard/Dashboard';
 import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
@@ -20,6 +20,7 @@ export default class ApBarDashboard extends Component {
       auth: true,
       anchorEl: null,
     };
+    console.log('constructor this.match',this.state.match);
   }
 
 
@@ -36,6 +37,7 @@ export default class ApBarDashboard extends Component {
   };
 
   render() {
+    console.log('render this.match',this.state.match);
     const {auth, anchorEl} = this.state;
     const open = Boolean(anchorEl);
 
@@ -92,6 +94,7 @@ export default class ApBarDashboard extends Component {
             </AppBar>
             {console.log('this.state.match.url.',this.state.match.url)  }
             <Route path={`${this.state.match.url}/dashboard`} component={Dashboard}/>
+            <Redirect from={this.state.match.url} to={`${this.state.match.url}/dashboard`} />
             <Route path={`${this.state.match.url}/history`} component={History}/>
             <Route path={`${this.state.match.url}/leaderboard`} component={Leaderboard}/>
             <Route path={`${this.state.match.url}/marketPlace`} component={MarketPlace}/>
