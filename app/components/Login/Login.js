@@ -10,6 +10,8 @@ import Input, { InputLabel } from 'material-ui/Input';
 import green from 'material-ui/colors/green';
 import { withStyles } from 'material-ui/styles';
 import './Login.scss'
+import {fakeAuth} from '../../routes';
+import {Redirect} from 'react-router-dom';
 
 const styles  = theme => {
     return ({
@@ -47,7 +49,8 @@ class Login extends Component {
     state = {
         username: '',
         open: false,
-        anchorEl: null
+        anchorEl: null,
+        redirectToReferrer: false
     };
 
     handleLogin = () => {
@@ -55,6 +58,9 @@ class Login extends Component {
             username: this.state.username,
             loggedIn: true
         });
+      fakeAuth.authenticate(() => {
+        this.setState({ redirectToReferrer: true });
+      });
     }
 
     handleRegistration = () => {
@@ -98,8 +104,13 @@ class Login extends Component {
 
 
     render() {
+      const { from } = this.props.location.state || { from: { pathname: "/" } };
+      const { redirectToReferrer } = this.state;
+      if (redirectToReferrer) {
+        return <Redirect to={from} />;
+      }
 
-        return (
+      return (
             <div className="LoginMain">
                 <CardMedia style={loginContainerStyle}  className="container">
                     <Grid style={loginContainerStyle}>
