@@ -23,7 +23,7 @@ Currently it works with [Dota 2](http://www.dota2.com/play/) and [League of Lege
 * View your game history, leaderboad and achievements
 * Interact with others in chat
 * By and sell game goods on the marketplace
-[](https://ibb.co/fk0Obx)
+<img src="https://preview.ibb.co/cZq0Oc/Home_v2.png" alt="Home_v2" border="0">
 
 You will be able to install and try it after version 1.0 release.
 
