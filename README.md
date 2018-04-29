@@ -7,18 +7,18 @@
   <br>
 </h1>
 
-BUFF application is a wallet and main user application. It listens to a blockchain node and sends transactions, creates p2p connection with others.
-Buff application is neccessary in order to earn miney for gaming. For this stage of development it provisioned with OverWolf client and OverWolf based logger. Built on top of electron framework. 
+BUFF application is a wallet and main user application. It listens comunicates with blockchain node and sends transactions. Creates p2p connection with others.
+Buff application is neccessary in order to earn money for gaming. For this stage of development it provisioned with OverWolf client and OverWolf based application [buff-tracker](https://github.com/buffgame/buff-tracker/tree/description). Built on top of electron framework. 
 
 Buff application provides all neccessary functionallity as a wallet, marketplace and it is responsible for game tracking.
-Currently it works with Dota 2 and Legue of Legends.
+Currently it works with [Dota 2](http://www.dota2.com/play/) and [League of Legends](https://play.na.leagueoflegends.com/en_US).
 
-You will be able to install and try it after Release of 1.0. version.
+You will be able to install and try it after version 1.0 release.
 
 
 ## Run
 
-Currently you can check what is done by clnning this repo from GitHub and run:
+Currently you can check what is done by clonning this repo from GitHub and run:
 
 ```
 $ npm install
