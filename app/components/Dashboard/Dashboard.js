@@ -4,16 +4,16 @@ import './Dashboard.scss';
 import {Grid} from "material-ui";
 import Button from "material-ui/es/Button/Button";
 
-const title = 'start planing and earn coins!';
+const title = 'start playing and earn coins!';
 
 export default class Dashboard extends Component {
   render() {
     return (
       <div className="dashboardComponent">
-        <div className="dashboardTitle" style={{width: 300, height: 100}}>
+        <div className="dashboardTitle" style={{width: 300, height: 80}}>
           {title.toLocaleUpperCase()}
         </div>
-        <div className="contentTitle" style={{width: 550, height: 80}}>
+        <div className="contentTitle" style={{width: 550, height: 60}}>
           You will earn more coins by marking achievement in active game
         </div>
         <div className="dashboardMain">
@@ -22,7 +22,7 @@ export default class Dashboard extends Component {
                     <Grid item xs={4}>
                       <div className="papersMain">
 
-                        <Paper className="myAcc" elevation={8} style={{width: 300, height: 100}}>
+                        <Paper className="myAcc" elevation={8} style={{width: 370, height: 100}}>
                           <div className="titleMyAcc">
                             My Account
                           </div>
@@ -49,7 +49,7 @@ export default class Dashboard extends Component {
 
                       </div>
                       <div className="papersMain">
-                        <Paper className="myAcc" elevation={8} style={{width: 300, height: 130}}>
+                        <Paper className="myAcc" elevation={8} style={{width: 370, height: 130}}>
                           <div className="titleMyAcc">
                             Active Games
                           </div>
@@ -78,7 +78,7 @@ export default class Dashboard extends Component {
                     <Grid item xs={4}>
                         <div className="papersMain">
 
-                            <Paper className="myAcc" elevation={8} style={{width: 300, height: 310}}>
+                            <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
                                 <div className="titleMyAcc">
                                     News
                                 </div>
@@ -139,7 +139,7 @@ export default class Dashboard extends Component {
                     <Grid item xs={4}>
                         <div className="papersMain">
 
-                            <Paper className="myAcc" elevation={8} style={{width: 300, height: 310}}>
+                            <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
                                 <div className="titleMyAcc">
                                     Chat Box
                                 </div>

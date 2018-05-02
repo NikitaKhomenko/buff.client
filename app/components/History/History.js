@@ -4,12 +4,12 @@ import {Grid} from "material-ui";
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table';
 import './History.scss';
 
-const title = 'start planing and earn coins!';
+const title = 'start playing and earn coins!';
 let id = 0;
 
-function createData(name, calories, fat, carbs, protein) {
+function createData(date, game, achievement, buffCoins, conversion) {
   id += 1;
-  return {id, name, calories, fat, carbs, protein};
+  return {date, game, achievement, buffCoins, conversion};
 }
 
 const data = [
@@ -23,10 +23,10 @@ export default class History extends Component {
   render() {
     return (
       <div className="HistoryComponent">
-        <div className="HistoryTitle" style={{width: 300, height: 100}}>
+        <div className="HistoryTitle" style={{width: 300, height: 80}}>
           {title.toLocaleUpperCase()}
         </div>
-        <div className="contentTitle" style={{width: 550, height: 80}}>
+        <div className="contentTitle" style={{width: 550, height: 60}}>
           You will earn more coins by marking achievement in active game
         </div>
         <div className="HistoryMain">
@@ -51,11 +51,11 @@ export default class History extends Component {
                       {data.map(n => {
                         return (
                           <TableRow key={n.id}>
-                            <TableCell className="tableColumn">{n.name}</TableCell>
-                            <TableCell className="tableColumn">{n.calories}</TableCell>
-                            <TableCell className="tableColumn">{n.fat}</TableCell>
-                            <TableCell className="tableColumn">{n.carbs}</TableCell>
-                            <TableCell className="tableColumn">{n.protein}</TableCell>
+                            <TableCell className="tableColumn">{n.date}</TableCell>
+                            <TableCell className="tableColumn">{n.game}</TableCell>
+                            <TableCell className="tableColumn">{n.achievement}</TableCell>
+                            <TableCell className="tableColumn">{n.buffCoins}</TableCell>
+                            <TableCell className="tableColumn">{n.conversion}</TableCell>
                           </TableRow>
                         );
                       })}

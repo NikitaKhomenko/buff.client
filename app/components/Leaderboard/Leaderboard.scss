@@ -9,8 +9,32 @@
     filter: brightness(70%);
   }
   .LeaderboardMain{
-    margin-top: 50px;
     height: 800px;
     background: #131416;
+    .papersMain{
+      font-size: 0.9em;
+      margin: 50px;
+      .myAcc{
+        background: #2E2F30;
+        .titleLeaderboard{
+          margin: 0;
+          font-size: 1.1em;
+          padding: 10px 5px 10px 25px;
+          color: #00EE7A;
+        }
+        .tableLeaderboard{
+          background: #1E1F21;
+          .tableColumn,.tableColumnHead{
+            color: #919191;
+            border-bottom:1px solid #000;
+            padding: 5px 5px 5px 25px;
+          }
+          .tableColumnHead{
+            color: #B5B5B5;
+            font-weight: bold;
+          }
+        }
+      }
+    }
   }
 }
