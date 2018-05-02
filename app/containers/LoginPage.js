@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import { bindActionCreators } from 'redux';
 import Login from '../components/Login/Login';
-import userActions from '../actions/user';
 
 
 const mapStateToProps = (state) => {
@@ -10,19 +9,15 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  const user = bindActionCreators(userActions, dispatch);
   return {
-    onLogin: (data) => {
-      user.login(data);
+    onLogin: () => {
       dispatch(push('/loggedin'));
     },
-     onRegister: (data) => {
-       user.login(data);
+     onRegister: () => {
        dispatch(push('/Registration'));
      },
 
-    onWallet: (data) => {
-        user.login(data);
+    onWallet: () => {
         dispatch(push('/wallet'));
     }
   };

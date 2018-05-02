@@ -9,9 +9,11 @@ import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import MarketPlace from '../MarketPlace/MarketPlace';
 import NewsTournaments from '../NewsTournaments/NewsTournaments';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as mainActions from './../../actions/mainActions';
 
-
-export default class ApBarDashboard extends Component {
+class ApBarDashboard extends Component {
 
   constructor(props) {
     super(props);
@@ -20,6 +22,7 @@ export default class ApBarDashboard extends Component {
       auth: true,
       anchorEl: null,
     };
+    this.props.addAgenda()
     console.log('constructor this.match',this.state.match);
   }
 
@@ -107,4 +110,13 @@ export default class ApBarDashboard extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  allHistory:state.allHistory
+});
 
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ApBarDashboard);

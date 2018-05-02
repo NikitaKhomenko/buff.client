@@ -12,6 +12,9 @@ import { withStyles } from 'material-ui/styles';
 import './Login.scss'
 import {fakeAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as mainActions from './../../actions/mainActions';
 
 const styles  = theme => {
     return ({
@@ -106,8 +109,9 @@ class Login extends Component {
     render() {
       const { from } = this.props.location.state || { from: { pathname: "/" } };
       const { redirectToReferrer } = this.state;
+      console.log('from::',from);
       if (redirectToReferrer) {
-        return <Redirect to={from} />;
+        return <Redirect to={from.pathname} />;
       }
 
       return (
@@ -249,4 +253,9 @@ Login.propTypes = {
     onWallet: PropTypes.func.isRequired
 };
 
-export default withStyles(styles)(Login);
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+export default withStyles(styles)(connect(mapDispatchToProps)(Login));

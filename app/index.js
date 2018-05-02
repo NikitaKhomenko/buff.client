@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import { createMemoryHistory } from 'history';
 import routes from './routes';
-import configureStore from './store';
+import store from './Store/store';
+import { createMemoryHistory } from 'history';
 import './main-style.scss';
 
 const syncHistoryWithStore = (store, history) => {
@@ -14,9 +14,11 @@ const syncHistoryWithStore = (store, history) => {
   }
 };
 
-const initialState = {};
+const initialState = {
+  history: 0,
+  allHistory:[],
+};
 const routerHistory = createMemoryHistory();
-const store = configureStore(initialState, routerHistory);
 // syncHistoryWithStore(store, routerHistory);
 
 let rootElement = document.createElement('div');
