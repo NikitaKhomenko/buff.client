@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import {Grid} from "material-ui";
+import Button from 'material-ui/Button';
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table';
 import './History.scss';
 import TablePagination from "material-ui/es/Table/TablePagination";
@@ -41,69 +42,103 @@ export default class History extends Component {
       const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
       return (
         <div className="HistoryComponent">
-          <div className="HistoryTitle" style={{width: 300, height: 80}}>
-            {title.toLocaleUpperCase()}
-          </div>
-          <div className="contentTitle" style={{width: 550, height: 60}}>
-            You will earn more coins by marking achievement in active game
-          </div>
-          <div className="HistoryMain">
+            <Grid container spacing={24}>
+                <Grid item xs={12} container>
+                    <Grid item xs={9}>
+                      <div className="HistoryTitle" style={{width: 300, height: 80}}>
+                        {title.toLocaleUpperCase()}
+                      </div>
+                      <div className="contentTitle" style={{width: 550, height: 60}}>
+                        You will earn more coins by marking achievement in active game
+                      </div>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <h4>online users: 15,000</h4>
+                        <Button className="buttonShareEarn">
+                            <font face="verdana">
+                                Share and Earn
+                            </font>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+                    <div className="HistoryMain">
             <Grid container spacing={24}>
               <Grid item xs={12} container>
-                <div className="papersMain">
-                  <Paper className="myAcc" elevation={8}>
-                    <div className="titleHistory">
-                      History
-                    </div>
-                    <Table className="tableHistory">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell className="tableColumnHead">Date&Time</TableCell>
-                          <TableCell className="tableColumnHead">Game\Conversion</TableCell>
-                          <TableCell className="tableColumnHead">Achivements</TableCell>
-                          <TableCell className="tableColumnHead">Buff Coins</TableCell>
-                          <TableCell className="tableColumnHead">Conversion</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                          {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
-                          return (
-                            <TableRow key={n.id}>
-                              <TableCell className="tableColumn">{n.date}</TableCell>
-                              <TableCell className="tableColumn">{n.game}</TableCell>
-                              <TableCell className="tableColumn">{n.achievement}</TableCell>
-                              <TableCell className="tableColumn">{n.buffCoins}</TableCell>
-                              <TableCell className="tableColumn">{n.conversion}</TableCell>
+                  <Grid item xs={8}>
+                    <div className="papersMain">
+                      <Paper className="myAcc" elevation={8}>
+                        <div className="titleHistory">
+                          History
+                        </div>
+                        <Table className="tableHistory">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell className="tableColumnHead">Date&Time</TableCell>
+                              <TableCell className="tableColumnHead">Game\Conversion</TableCell>
+                              <TableCell className="tableColumnHead">Achivements</TableCell>
+                              <TableCell className="tableColumnHead">Buff Coins</TableCell>
+                              <TableCell className="tableColumnHead">Conversion</TableCell>
                             </TableRow>
-                          );
-                        })}
-                          {emptyRows > 0 && (
-                              <TableRow style={{ height: 48 * emptyRows }}>
-                                  <TableCell colSpan={6} />
-                              </TableRow>
-                          )}
-                      </TableBody>
-                    </Table>
-                      <TablePagination
-                          component="div"
-                          count={data.length}
-                          rowsPerPage={rowsPerPage}
-                          page={page}
-                          backIconButtonProps={{
-                              'aria-label': 'Previous Page',
-                          }}
-                          nextIconButtonProps={{
-                              'aria-label': 'Next Page',
-                          }}
-                          onChangePage={this.handleChangePage}
-                          onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                      />
-                  </Paper>
+                          </TableHead>
+                          <TableBody>
+                              {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
+                              return (
+                                <TableRow key={n.id}>
+                                  <TableCell className="tableColumn">{n.date}</TableCell>
+                                  <TableCell className="tableColumn">{n.game}</TableCell>
+                                  <TableCell className="tableColumn">{n.achievement}</TableCell>
+                                  <TableCell className="tableColumn">{n.buffCoins}</TableCell>
+                                  <TableCell className="tableColumn">{n.conversion}</TableCell>
+                                </TableRow>
+                              );
+                            })}
+                              {emptyRows > 0 && (
+                                  <TableRow style={{ height: 48 * emptyRows }}>
+                                      <TableCell colSpan={6} />
+                                  </TableRow>
+                              )}
+                          </TableBody>
+                        </Table>
+                          <TablePagination
+                              component="div"
+                              count={data.length}
+                              rowsPerPage={rowsPerPage}
+                              page={page}
+                              backIconButtonProps={{
+                                  'aria-label': 'Previous Page',
+                              }}
+                              nextIconButtonProps={{
+                                  'aria-label': 'Next Page',
+                              }}
+                              onChangePage={this.handleChangePage}
+                              onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                          />
+                      </Paper>
+                    </div>
+                  </Grid>
+                  <Grid item xs={4}>
 
-                </div>
-              </Grid>
-            </Grid>
-          </div>
+                      <paper>
+                          <div className="papersMain">
+
+                              <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
+                                  <div className="titleMyAcc">
+                                      Chat Box
+                                  </div>
+                                  <div className="balanceMyAcc">
+                                      <div style={{color: '#919191'}}>
+                                          lorem ipsum
+                                      </div>
+                                  </div>
+                              </Paper>
+                          </div>
+                      </paper>
+
+                  </Grid>
+                  </Grid>
+                </Grid>
+              </div>
         </div>
     );
   }

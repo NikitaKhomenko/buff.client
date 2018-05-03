@@ -8,6 +8,10 @@
     margin: 0 50px;
     filter: brightness(70%);
   }
+  .buttonShareEarn{
+    color: #43A047;
+    margin-top: 50px;
+  }
   .LeaderboardMain{
     height: 800px;
     background: #131416;
@@ -16,6 +20,17 @@
       margin: 50px;
       .myAcc{
         background: #2E2F30;
+        .titleMyAcc{
+          margin: 0;
+          padding: 5px 25px;
+          color: #00EE7A;
+        }
+        .balanceMyAcc{
+          background: #1E1F21;
+          display: flex;
+          flex-direction:row;
+          padding: 10px 0px 10px 25px;
+        }
         .titleLeaderboard{
           margin: 0;
           font-size: 1.1em;
