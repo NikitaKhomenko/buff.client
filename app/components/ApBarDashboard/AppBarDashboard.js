@@ -14,7 +14,7 @@ import {bindActionCreators} from 'redux';
 import * as mainActions from './../../actions/mainActions';
 
 
- class ApBarDashboard extends Component {
+ class AppBarDashboard extends Component {
 
   constructor(props) {
     super(props);
@@ -121,4 +121,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ApBarDashboard)
+export default connect(mapStateToProps, mapDispatchToProps)(AppBarDashboard)

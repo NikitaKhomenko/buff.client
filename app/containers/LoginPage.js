@@ -22,8 +22,8 @@ const mapDispatchToProps = (dispatch) => {
        dispatch(push('/Registration'));
      },
 
-    onWallet: (data) => {
-        user.login(data);
+    onWallet: () => {
+        user.loginUser();
         dispatch(push('/wallet'));
     }
   };

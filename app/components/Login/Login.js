@@ -113,7 +113,7 @@ class Login extends Component {
 
     return (
       <div className="LoginMain">
-        <CardMedia style={loginContainerStyle} className="container">
+        <div style={loginContainerStyle} className="container">
           <Grid style={loginContainerStyle}>
             <Button
               style={{position: 'absolute', top: 0, right: 0}}
@@ -237,7 +237,7 @@ class Login extends Component {
             </Popover>
 
           </Grid>
-        </CardMedia>
+        </div>
       </div>
 
     );

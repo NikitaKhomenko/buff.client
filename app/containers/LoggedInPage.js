@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ApBarDashboard from '../components/ApBarDashboard/ApBarDashboard';
+import ApBarDashboard from '../components/ApBarDashboard/AppBarDashboard';
 
 const mapStateToProps = (state) => {
     return state;
