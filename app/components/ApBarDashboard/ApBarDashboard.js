@@ -9,9 +9,12 @@ import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import MarketPlace from '../MarketPlace/MarketPlace';
 import NewsTournaments from '../NewsTournaments/NewsTournaments';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as mainActions from './../../actions/mainActions';
 
 
-export default class ApBarDashboard extends Component {
+ class ApBarDashboard extends Component {
 
   constructor(props) {
     super(props);
@@ -40,7 +43,7 @@ export default class ApBarDashboard extends Component {
     console.log('render this.match',this.state.match);
     const {auth, anchorEl} = this.state;
     const open = Boolean(anchorEl);
-
+    console.log('username', this.props.username);
     return (
       <Router>
         <div>
@@ -107,4 +110,15 @@ export default class ApBarDashboard extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
 
+  username:state.username
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApBarDashboard)
