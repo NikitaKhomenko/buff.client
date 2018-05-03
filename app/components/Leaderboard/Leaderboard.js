@@ -24,7 +24,7 @@ export default class Leaderboard extends Component {
         super(props, context);
         this.state = {
             page: 0,
-            rowsPerPage: 2,
+            rowsPerPage: 4,
             data : data
         };
     }
@@ -76,6 +76,11 @@ export default class Leaderboard extends Component {
                                                     </TableRow>
                                                 );
                                             })}
+                                            {emptyRows > 0 && (
+                                                <TableRow style={{ height: 48 * emptyRows }}>
+                                                    <TableCell colSpan={6} />
+                                                </TableRow>
+                                            )}
                                         </TableBody>
                                     </Table>
                                     <TablePagination
