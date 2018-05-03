@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
 import './Dashboard.scss';
-import {Grid} from "material-ui";
-import Button from "material-ui/es/Button/Button";
+import {Grid} from 'material-ui';
+import Button from 'material-ui/es/Button/Button';
 
 const title = 'start playing and earn coins!';
 

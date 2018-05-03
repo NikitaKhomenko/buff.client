@@ -61,26 +61,26 @@ class Login extends Component {
       fakeAuth.authenticate(() => {
         this.setState({ redirectToReferrer: true });
       });
-    }
+    };
 
     handleRegistration = () => {
         this.props.onRegister({
             loggedIn: false
         });
-    }
+    };
 
     handleWallet = () => {
         this.props.onWallet({
             username: this.state.username,
             loggedIn: true
         });
-    }
+    };
 
     handleChange = (e) => {
         this.setState({
             username: e.target.value
         });
-    }
+    };
 
 
     handleForgotPassword = () => {

@@ -81,9 +81,9 @@ export default class Leaderboard extends Component {
                                                 </TableRow>
                                             </TableHead>
                                             <TableBody>
-                                                {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
+                                                {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n,k) => {
                                                     return (
-                                                        <TableRow key={n.id}>
+                                                        <TableRow key={k}>
                                                             <TableCell className="tableColumn">{n.name}</TableCell>
                                                             <TableCell className="tableColumn">{n.period}</TableCell>
                                                             <TableCell className="tableColumn">{n.playerName}</TableCell>

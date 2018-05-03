@@ -76,7 +76,7 @@ export default class History extends Component {
                             <TableRow>
                               <TableCell className="tableColumnHead">Date&Time</TableCell>
                               <TableCell className="tableColumnHead">Game\Conversion</TableCell>
-                              <TableCell className="tableColumnHead">Achivements</TableCell>
+                              <TableCell className="tableColumnHead">Achievements</TableCell>
                               <TableCell className="tableColumnHead">Buff Coins</TableCell>
                               <TableCell className="tableColumnHead">Conversion</TableCell>
                             </TableRow>
