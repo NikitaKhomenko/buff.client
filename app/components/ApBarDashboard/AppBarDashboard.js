@@ -13,7 +13,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as mainActions from './../../actions/mainActions';
 
-class ApBarDashboard extends Component {
+
+ class AppBarDashboard extends Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +23,6 @@ class ApBarDashboard extends Component {
       auth: true,
       anchorEl: null,
     };
-    this.props.addAgenda()
     console.log('constructor this.match',this.state.match);
   }
 
@@ -43,7 +43,7 @@ class ApBarDashboard extends Component {
     console.log('render this.match',this.state.match);
     const {auth, anchorEl} = this.state;
     const open = Boolean(anchorEl);
-
+    console.log('username', this.props.username);
     return (
       <Router>
         <div>
@@ -111,7 +111,8 @@ class ApBarDashboard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  allHistory:state.allHistory
+
+  username:state.username
 });
 
 function mapDispatchToProps(dispatch) {
@@ -119,4 +120,5 @@ function mapDispatchToProps(dispatch) {
     ...bindActionCreators(mainActions, dispatch)
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(ApBarDashboard);
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppBarDashboard)

@@ -8,7 +8,6 @@ import {
 import LoginPage from './containers/LoginPage';
 import LoggedInPage from './containers/LoggedInPage';
 import RegistrationPage from './containers/RegistrationPage';
-import Login from './components/Login/Login';
 
 export const fakeAuth = {
   isAuthenticated: false,
