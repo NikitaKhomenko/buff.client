@@ -23,6 +23,7 @@ import * as mainActions from './../../actions/mainActions';
       auth: true,
       anchorEl: null,
     };
+    this.props.addHistory();
     console.log('constructor this.match',this.state.match);
   }
 
@@ -44,6 +45,7 @@ import * as mainActions from './../../actions/mainActions';
     const {auth, anchorEl} = this.state;
     const open = Boolean(anchorEl);
     console.log('username', this.props.username);
+    console.log('allHistory', this.props.allHistory);
     return (
       <Router>
         <div>
@@ -111,7 +113,7 @@ import * as mainActions from './../../actions/mainActions';
 }
 
 const mapStateToProps = (state) => ({
-
+  allHistory:state.allHistory,
   username:state.username
 });
 

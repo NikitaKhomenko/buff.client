@@ -5,29 +5,19 @@ import Button from 'material-ui/Button';
 import Table, {TableBody, TableCell, TableHead, TableRow} from 'material-ui/Table';
 import './History.scss';
 import TablePagination from 'material-ui/es/Table/TablePagination';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as mainActions from '../../actions/mainActions';
 
 const title = 'start playing and earn coins!';
-let id = 0;
 
-function createData(date, game, achievement, buffCoins, conversion) {
-  id += 1;
-  return {date, game, achievement, buffCoins, conversion};
-}
-
-const data = [
-  createData('12.7.17 | 8:02', 'League of Legends', '3 kills', 6, ''),
-  createData('1.7.17 | 11:02', 'League of Legends', 'First Blood', 1, ''),
-  createData('22.22.22 | 7:02', 'Conversion', '', 5, '7$'),
-  createData('3.6.17 | 22:23', 'Conversion', '', 10, '10$'),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-export default class History extends Component {
+class History extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       page: 0,
       rowsPerPage: 4,
-      data: data
+      data: this.props.allHistory
     };
   }
 
@@ -41,7 +31,7 @@ export default class History extends Component {
 
   render() {
     const {rowsPerPage, page} = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, data.length - page * rowsPerPage);
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, this.state.data.length - page * rowsPerPage);
     return (
       <div className="HistoryComponent">
         <Grid container spacing={24}>
@@ -84,12 +74,13 @@ export default class History extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                        {this.state.data.map((n, k) => {
+                          console.log('DAATA:::::>',n ,k);
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">{n.date}</TableCell>
-                              <TableCell className="tableColumn">{n.game}</TableCell>
-                              <TableCell className="tableColumn">{n.achievement}</TableCell>
+                              <TableCell className="tableColumn">{n.gameConversion}</TableCell>
+                              <TableCell className="tableColumn">{n.achievements}</TableCell>
                               <TableCell className="tableColumn">{n.buffCoins}</TableCell>
                               <TableCell className="tableColumn">{n.conversion}</TableCell>
                             </TableRow>
@@ -104,7 +95,7 @@ export default class History extends Component {
                     </Table>
                     <TablePagination
                       component="div"
-                      count={data.length}
+                      count={this.state.data.length}
                       rowsPerPage={rowsPerPage}
                       page={page}
                       backIconButtonProps={{
@@ -142,3 +133,14 @@ export default class History extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  allHistory:state.allHistory,
+  username:state.username
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(History)
