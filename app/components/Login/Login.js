@@ -23,6 +23,7 @@ const styles = theme => {
       color: green[100],
     },
     inputUnderline: {
+      color: '#fff',
       '&:after': {
         backgroundColor: green[100],
       },
@@ -145,11 +146,13 @@ class Login extends Component {
                 }}
                 id="username"
                 inputRef = {(input) => {this.usernameInput = input}}
+                required={true}
               />
             </FormControl>
 
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
+                required={true}
                 formcontrolclasses={{
                   focused: this.props.classes.inputLabelFocused,
                 }}
@@ -158,6 +161,7 @@ class Login extends Component {
                 <font color="#C8E6C9">Password</font>
               </InputLabel>
               <Input
+                type="password"
                 classes={{
                   underline: this.props.classes.inputUnderline,
                   focused: this.props.classes.inputLabelFocused,
@@ -165,30 +169,28 @@ class Login extends Component {
                 id="password"
               />
             </FormControl>
-
-            <h3></h3>
-
             <Button
               variant="raised"
               className="buttonMain"
               onClick={this.handleLogin}>
               Log In
             </Button>
+            <div >
+              <Button
+                variant="raised"
+                className="buttonMain"
+                onClick={this.handleRegistration}>
+                Not registered yet? Click here!
+              </Button>
+              <Button
+                className={this.props.classes.flatbutton}
+                onClick={this.handleForgotPassword}>
+                <font face="verdana" color="#C8E6C9">
+                  Forgot password? click here!
+                </font>
+              </Button>
+            </div>
 
-            <Button
-              variant='raised'
-              className='buttonMain'
-              onClick={this.handleRegistration}>
-              Not registered yet? Click here!
-            </Button>
-
-            <Button
-              className={this.props.classes.flatbutton}
-              onClick={this.handleForgotPassword}>
-              <font face="verdana" color="#C8E6C9">
-                Forgot password? click here!
-              </font>
-            </Button>
 
             <Popover
               open={this.state.open}
