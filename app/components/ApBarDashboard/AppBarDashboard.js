@@ -9,9 +9,6 @@ import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import MarketPlace from '../MarketPlace/MarketPlace';
 import NewsTournaments from '../NewsTournaments/NewsTournaments';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import * as mainActions from './../../actions/mainActions';
 
 
  class AppBarDashboard extends Component {
@@ -24,6 +21,7 @@ import * as mainActions from './../../actions/mainActions';
       anchorEl: null,
     };
     this.props.addHistory();
+    this.props.addLeaderBoard();
     console.log('constructor this.match',this.state.match);
   }
 

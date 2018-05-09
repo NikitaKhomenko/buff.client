@@ -38,6 +38,32 @@ const historyAPI = [{
     conversion: '10$'
   },
 ];
+const leaderBoardAPI = [
+  {
+    id: 23456789,
+    name:'Dota 2',
+    period: 'past week',
+    playerName:'Ron B',
+    achievements:'10 kills',
+    buffEarn:1250,
+  },
+  {
+    id: 23456788,
+    name:'Dota 2',
+    period: 'past week',
+    playerName:'John K',
+    achievements:'0 kills',
+    buffEarn:0,
+  },
+  {
+    id: 23456787,
+    name:'CS-GO',
+    period: 'past week',
+    playerName:'Mike R',
+    achievements:'2 kills',
+    buffEarn:250,
+  }
+];
 
 export function loginUser(data = {}) {
   return {
@@ -50,5 +76,11 @@ export function addHistory(history = historyAPI) {
   return (dispatch) => dispatch({
     type: actionTypes.ADD_HISTORY,
     payload: historyAPI
+  });
+}
+export function addLeaderBoard(leaderBoard = leaderBoardAPI) {
+  return (dispatch) => dispatch({
+    type: actionTypes.ADD_LEADERBOARD,
+    payload: leaderBoardAPI
   });
 }
