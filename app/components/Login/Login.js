@@ -164,7 +164,7 @@ class Login extends Component {
               onClick={this.handleLogin}>
               Log In
             </Button>
-            <div >
+            <div  className="buttomDown">
               <Button
                 variant="raised"
                 className="buttonMain"
