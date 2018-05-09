@@ -8,34 +8,18 @@
   .buttomDown{
     margin-top: 180px;
   }
-  .btn_login, .btn_forgot {
-    margin: 10px 0;
-  }
+
   .buttonMain {
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 35px;
     background: #66BB6A;
   }
-  .root {
-    flexGrow: 1
-  }
+
   .buttonExit {
     margin-bottom: 10px;
     background: #2E7D32;
     alignment: right;
-  }
-  .typography {
-    margin: 100px;
-  }
-  .container {
-    display: 'flex';
-    flexWrap: 'wrap';
-  }
-  .popover {
-    text-align: center;
-    flex-direction: column;
-    justify-content: center;
   }
 
 }
