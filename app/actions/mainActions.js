@@ -1,69 +1,5 @@
 import * as actionTypes from './../Store/constant';
-
-
-const historyAPI = [{
-  id: 123456789,
-  date: '12.7.17',
-  time: '8:02',
-  gameConversion: 'League of Legends',
-  achievements: '4 kills',
-  buffCoins: 6,
-  conversion: ''
-  },
-  {
-    id: 123456788,
-    date: '1.7.17',
-    time: '11:02',
-    gameConversion: 'League of Legends',
-    achievements: 'First Blood',
-    buffCoins: 1,
-    conversion: ''
-  },
-  {
-    id: 123456787,
-    date: '22.22.22',
-    time: '7:02',
-    gameConversion: 'Conversion',
-    achievements: '',
-    buffCoins: 5,
-    conversion: '7$'
-  },
-  {
-    id: 123456786,
-    date: '3.6.17',
-    time: '22:23',
-    gameConversion: 'Conversion',
-    achievements: '',
-    buffCoins: 10,
-    conversion: '10$'
-  },
-];
-const leaderBoardAPI = [
-  {
-    id: 23456789,
-    name:'Dota 2',
-    period: 'past week',
-    playerName:'Ron B',
-    achievements:'10 kills',
-    buffEarn:1250,
-  },
-  {
-    id: 23456788,
-    name:'Dota 2',
-    period: 'past week',
-    playerName:'John K',
-    achievements:'0 kills',
-    buffEarn:0,
-  },
-  {
-    id: 23456787,
-    name:'CS-GO',
-    period: 'past week',
-    playerName:'Mike R',
-    achievements:'2 kills',
-    buffEarn:250,
-  }
-];
+import mock from './mockAPI'
 
 export function loginUser(data = {}) {
   return {
@@ -72,15 +8,21 @@ export function loginUser(data = {}) {
   };
 }
 
-export function addHistory(history = historyAPI) {
+export function addHistory(history = mock.historyAPI) {
   return (dispatch) => dispatch({
     type: actionTypes.ADD_HISTORY,
-    payload: historyAPI
+    payload: mock.historyAPI
   });
 }
-export function addLeaderBoard(leaderBoard = leaderBoardAPI) {
+export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
   return (dispatch) => dispatch({
     type: actionTypes.ADD_LEADERBOARD,
-    payload: leaderBoardAPI
+    payload: mock.leaderBoardAPI
+  });
+}
+export function addNews(news = mock.newsAPI) {
+  return (dispatch) => dispatch({
+    type: actionTypes.ADD_NEWS,
+    payload:  mock.newsAPI
   });
 }

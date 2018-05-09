@@ -3,11 +3,18 @@ import Paper from 'material-ui/Paper';
 import './Dashboard.scss';
 import {Grid} from 'material-ui';
 import Button from 'material-ui/es/Button/Button';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import * as mainActions from '../../actions/mainActions';
 
 const title = 'start playing and earn coins!';
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
+
+
   render() {
+    let news = this.props.allNews;
+    console.log('allNewsallNew', news);
     return (
       <div className="dashboardComponent">
         <Grid container spacing={24}>
@@ -22,11 +29,11 @@ export default class Dashboard extends Component {
             </Grid>
             <Grid item xs={3}>
               <h4>online users: 15,000</h4>
-              <Button className="buttonShareEarn">
-                <font face="verdana">
-                  Share and Earn
-                </font>
-              </Button>
+              {/*<Button className="buttonShareEarn">*/}
+              {/*<font face="verdana">*/}
+              {/*Share and Earn*/}
+              {/*</font>*/}
+              {/*</Button>*/}
             </Grid>
           </Grid>
         </Grid>
@@ -53,34 +60,29 @@ export default class Dashboard extends Component {
 
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        Gold Status
+                        Status:
                       </div>
                       <div style={{padding: '0 10px', color: '#347139'}}>
-                        New Zealand Clan
+                        Silver
                       </div>
                     </div>
                   </Paper>
                 </div>
 
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 130}}>
+                  <Paper className="myAcc" elevation={8} style={{width: 370}}>
                     <div className="titleMyAcc">
                       Active Games
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        CS:GO
+                        League of Legands
                       </div>
 
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        Dota2
-                      </div>
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        PUBG
+                        Dota 2
                       </div>
                     </div>
 
@@ -92,62 +94,34 @@ export default class Dashboard extends Component {
               <Grid item xs={4}>
                 <div className="papersMain">
 
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
+                  <Paper className="myAcc" elevation={8} style={{width: 370}}>
                     <div className="titleMyAcc">
                       News
                     </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Weekly Dota2 Challange - Join now
-                      </div>
-                      <div style={{padding: '0 10px', color: '#616161'}}>
-                        12.7.18
-                      </div>
-                      <Button className="buttonReadMore">
-                        Read More
-                      </Button>
-                    </div>
-
-                    <div style={{borderTop: '1px solid #131416'}}/>
-
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Latest version...
-                      </div>
-                      <div style={{padding: '0 10px', color: '#616161'}}>
-                        12.7.18
-                      </div>
-                      <Button className="buttonReadMore">
-                        Read More
-                      </Button>
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Lorem ipsum
-                      </div>
-                      <div style={{padding: '0 10px', color: '#616161'}}>
-                        12.7.18
-                      </div>
-                      <Button className="buttonReadMore">
-                        Read More
-                      </Button>
-                    </div>
-
-                    <div style={{borderTop: '1px solid #131416'}}/>
-
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Lorem ipsum
-                      </div>
-                      <div style={{padding: '0 10px', color: '#616161'}}>
-                        12.7.18
-                      </div>
-                      <Button className="buttonReadMore">
-                        Read More
-                      </Button>
-                    </div>
+                    {news.map((n, k) => {
+                      return <div key={k}>
+                        <div className="newsMain">
+                          <div className="newsDotesContents">
+                            <div className="newsDotes"/>
+                          </div>
+                          <div className="newsContent">
+                            {n.title}
+                            <div className="sectionButton">
+                              <div className="newsTitle">
+                                {n.data}</div>
+                              <Button size="small" className="buttonReadMore">
+                                Read More
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                        <div style={{
+                          height: '1.5px',
+                          borderTop: '1.5px solid #000'
+                        }}/>
+                      </div>;
+                    })}
                   </Paper>
-
                 </div>
               </Grid>
               <Grid item xs={4}>
@@ -172,3 +146,15 @@ export default class Dashboard extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  allNews: state.reducerMain.allNews,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);

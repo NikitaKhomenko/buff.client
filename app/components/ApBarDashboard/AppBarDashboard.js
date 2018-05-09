@@ -22,6 +22,7 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
     };
     this.props.addHistory();
     this.props.addLeaderBoard();
+    this.props.addNews();
     console.log('constructor this.match',this.state.match);
   }
 

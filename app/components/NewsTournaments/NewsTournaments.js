@@ -21,11 +21,11 @@ export default class NewsTournaments extends Component {
                         </Grid>
                         <Grid item xs={3}>
                             <h4>online users: 15,000</h4>
-                            <Button className="buttonShareEarn">
-                                <font face="verdana">
-                                    Share and Earn
-                                </font>
-                            </Button>
+                            {/*<Button className="buttonShareEarn">*/}
+                                {/*<font face="verdana">*/}
+                                    {/*Share and Earn*/}
+                                {/*</font>*/}
+                            {/*</Button>*/}
                         </Grid>
                     </Grid>
                 </Grid>
