@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import CardMedia from 'material-ui/Card/CardMedia';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover';
@@ -11,7 +10,6 @@ import {withStyles} from 'material-ui/styles';
 import './Login.scss';
 import {fakeAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
-
 const styles = theme => {
   return ({
     formControl: {
@@ -65,16 +63,7 @@ class Login extends Component {
   };
 
   handleRegistration = () => {
-    this.props.onRegister({
-      loggedIn: false
-    });
-  };
-
-  handleWallet = () => {
-    this.props.onWallet({
-      username: this.state.username,
-      loggedIn: true
-    });
+    this.props.onRegister();
   };
 
   handleChange = (e) => {
@@ -190,8 +179,6 @@ class Login extends Component {
                 </font>
               </Button>
             </div>
-
-
             <Popover
               open={this.state.open}
               anchorPosition={{top: 500, left: 400}}
@@ -220,9 +207,6 @@ class Login extends Component {
                   defaultValue={this.state.username}
                   type="text"
                   margin="normal"/>
-
-                <h3></h3>
-
                 <Button
                   variant="raised"
                   className="buttonMain">

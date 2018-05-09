@@ -14,11 +14,7 @@ const syncHistoryWithStore = (store, history) => {
   }
 };
 
-const initialState = {
-  username: '',
-  history: 0,
-  allHistory: []
-};
+const initialState = {};
 const routerHistory = createMemoryHistory();
 const store = configureStore(initialState, routerHistory);
 syncHistoryWithStore(store, routerHistory);

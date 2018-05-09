@@ -4,8 +4,9 @@ import { bindActionCreators } from 'redux';
 import Login from '../components/Login/Login';
 import * as TodoActionCreators from '../actions/mainActions'
 console.log('TodoActionCreators',TodoActionCreators);
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   console.log('LoginPage', state);
+  console.log('ownProps', ownProps);
   return state;
 };
 
@@ -22,10 +23,6 @@ const mapDispatchToProps = (dispatch) => {
        dispatch(push('/Registration'));
      },
 
-    onWallet: () => {
-        user.loginUser();
-        dispatch(push('/wallet'));
-    }
   };
 };
 

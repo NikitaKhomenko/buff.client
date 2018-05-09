@@ -113,8 +113,8 @@ import * as mainActions from './../../actions/mainActions';
 }
 
 const mapStateToProps = (state) => ({
-  allHistory:state.allHistory,
-  username:state.username
+  allHistory:state.reducerMain.allHistory,
+  username:state.reducerMain.username
 });
 
 function mapDispatchToProps(dispatch) {
