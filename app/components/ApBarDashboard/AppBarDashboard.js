@@ -46,6 +46,7 @@ import * as mainActions from './../../actions/mainActions';
     const open = Boolean(anchorEl);
     console.log('username', this.props.username);
     console.log('allHistory', this.props.allHistory);
+    console.log('ownProps', this.props.ownProps);
     return (
       <Router>
         <div>
@@ -57,14 +58,14 @@ import * as mainActions from './../../actions/mainActions';
                 <Typography variant="title">
                   <div className="logo"></div>
                 </Typography>
-                <Link to={`${this.state.match.url}/dashboard`}><Button
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/dashboard`}><Button
                   className="buttonAppBar">Dashboard</Button></Link>
-                <Link to={`${this.state.match.url}/history`}><Button className="buttonAppBar">History</Button></Link>
-                <Link to={`${this.state.match.url}/leaderboard`}><Button
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/history`}><Button className="buttonAppBar">History</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/leaderboard`}><Button
                   className="buttonAppBar">Leaderboared</Button></Link>
-                <Link to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar">Market
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar">Market
                   place</Button></Link>
-                <Link to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar">News and
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar">News and
                   Tournaments</Button></Link>
                 {auth && (
                   <div>
@@ -112,15 +113,4 @@ import * as mainActions from './../../actions/mainActions';
   }
 }
 
-const mapStateToProps = (state) => ({
-  allHistory:state.reducerMain.allHistory,
-  username:state.reducerMain.username
-});
-
-function mapDispatchToProps(dispatch) {
-  return {
-    ...bindActionCreators(mainActions, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppBarDashboard)
+export default AppBarDashboard

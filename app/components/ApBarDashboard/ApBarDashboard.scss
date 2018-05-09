@@ -27,6 +27,14 @@
     background-size: cover;
   }
   .buttonAppBar {
-    color: #E0E0E0;
+    color: #fff;
   }
+  .buttonAppBar:hover {
+    background:  rgba(0, 238, 122, 0.3);
+  }
+  .buttonAppBarActive{
+    color: #0b97c4;
+  }
+
+
 }

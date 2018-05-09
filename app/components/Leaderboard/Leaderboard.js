@@ -119,7 +119,7 @@ export default class Leaderboard extends Component {
                             </Grid>
                             <Grid item xs={4}>
 
-                                <paper>
+                                <Paper>
                                     <div className="papersMain">
 
                                         <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
@@ -133,7 +133,7 @@ export default class Leaderboard extends Component {
                                             </div>
                                         </Paper>
                                     </div>
-                                </paper>
+                                </Paper>
 
                             </Grid>
                         </Grid>
