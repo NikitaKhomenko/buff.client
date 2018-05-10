@@ -3,7 +3,7 @@ import {AppBar, Button, IconButton, Toolbar, Typography} from 'material-ui';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import './ApBarDashboard.scss';
-import {BrowserRouter as Router, Route, Link, Redirect} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-router-dom';
 import Dashboard from '../Dashboard/Dashboard';
 import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
@@ -26,6 +26,9 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
     console.log('constructor this.match',this.state.match);
   }
 
+     state = {
+         anchorEl: null,
+     };
 
   handleChange = (event, checked) => {
     this.setState({auth: checked});
@@ -69,7 +72,8 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
                 {auth && (
                   <div>
                     <IconButton
-                      aria-owns={open ? 'menu-appbar' : null}
+                      style={{position: 'absolute', top: 0, right: 0}}
+                      aria-owns={anchorEl ? 'menu-appbar' : null}
                       aria-haspopup="true"
                       onClick={this.handleMenu}
                       color="inherit"
@@ -77,6 +81,7 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
                       <AccountCircle/>
                     </IconButton>
                     <Menu
+                      className="logoMenu"
                       id="menu-appbar"
                       anchorEl={anchorEl}
                       anchorOrigin={{
@@ -97,19 +102,21 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
                 )}
               </Toolbar>
             </AppBar>
-            {console.log('this.state.match.url.',this.state.match.url)  }
+              {console.log('this.state.match.url.',this.state.match.url)  }
+            <Switch>
             <Route path={`${this.state.match.url}/dashboard`} component={Dashboard}/>
-            <Redirect from={this.state.match.url} to={`${this.state.match.url}/dashboard`} />
             <Route path={`${this.state.match.url}/history`} component={History}/>
             <Route path={`${this.state.match.url}/leaderboard`} component={Leaderboard}/>
             <Route path={`${this.state.match.url}/marketPlace`} component={MarketPlace}/>
             <Route path={`${this.state.match.url}/newsTournaments`} component={NewsTournaments}/>
-
+            <Redirect to={`${this.state.match.url}/dashboard`} />
+            </Switch>
           </div>
         </div>
       </Router>
     );
   }
 }
+
 
 export default AppBarDashboard
