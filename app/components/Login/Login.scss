@@ -79,31 +79,31 @@
 .loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
 
 .loader-line-wrap:nth-child(1) .loader-line {
-  border-color: hsl(0, 80%, 60%);
+  border-color: #eee;
   height: 90px;
   width: 90px;
   top: 7px;
 }
 .loader-line-wrap:nth-child(2) .loader-line {
-  border-color: hsl(60, 80%, 60%);
+  border-color: #00EE7A;
   height: 76px;
   width: 76px;
   top: 14px;
 }
 .loader-line-wrap:nth-child(3) .loader-line {
-  border-color: hsl(120, 80%, 60%);
+  border-color: rgb(52, 113, 57);
   height: 62px;
   width: 62px;
   top: 21px;
 }
 .loader-line-wrap:nth-child(4) .loader-line {
-  border-color: hsl(180, 80%, 60%);
+  border-color: #4e4e4e;
   height: 48px;
   width: 48px;
   top: 28px;
 }
 .loader-line-wrap:nth-child(5) .loader-line {
-  border-color: hsl(240, 80%, 60%);
+  border-color: #1E1F21;
   height: 34px;
   width: 34px;
   top: 35px;

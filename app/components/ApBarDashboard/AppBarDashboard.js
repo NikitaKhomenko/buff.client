@@ -31,6 +31,7 @@ class AppBarDashboard extends Component {
     this.setState({
       anchorEl: event.currentTarget,
     });
+    console.log('handleMenu', this.state.anchorEl);
   };
   handleClose = () => {
     this.setState({
@@ -46,6 +47,7 @@ class AppBarDashboard extends Component {
 
   render() {
     const {anchorEl , menuButton} = this.state;
+    const open = anchorEl !== null;
     console.log('anchorEl',anchorEl);
     return (
       <Router>
@@ -82,23 +84,35 @@ class AppBarDashboard extends Component {
                   Tournaments</Button></Link>
 
                 <div>
-                  <Button variant="raised" onClick={this.handleMenu}>
-                    Open Popover
-                  </Button>
-                    {/*<AccountCircle/>*/}
-                  <Popover
-                    open={Boolean(anchorEl)}
-                    onClose={this.handleClose}
-                    anchorOrigin={{
-                      vertical: 'bottom',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}>
-                    <Typography>Profile</Typography>
-                  </Popover>
+                  <div>
+                    <IconButton
+                      style={{position: 'absolute', top: 0, right: 0}}
+                      aria-owns={anchorEl ? 'menu-appbar' : null}
+                      aria-haspopup="true"
+                      onClick={this.handleMenu}
+                      color="inherit"
+                    >
+                      <AccountCircle/>
+                    </IconButton>
+                    <Menu
+                      className="logoMenu"
+                      id="menu-appbar"
+                      anchorEl={anchorEl}
+                      anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      open={open}
+                      onClose={this.handleClose}
+                    >
+                      <MenuItem >Profile</MenuItem>
+                      <MenuItem >My account</MenuItem>
+                    </Menu>
+                  </div>
                 </div>
 
               </Toolbar>
