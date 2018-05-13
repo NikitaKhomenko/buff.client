@@ -93,7 +93,6 @@ class Registration extends Component {
     const {anchorEl} = this.state;
     return (
       <div className="RegistrationMain">
-        <CardMedia style={RegistrationContainerStyle} className="container">
           <Button
             style={{position: 'absolute', bottom: 0, right: 0}}
             variant='raised'
@@ -320,8 +319,7 @@ class Registration extends Component {
               </Grid>
             </Grid>
           </Grid>
-        </CardMedia>
-      </div>
+        </div>
     );
   }
 }

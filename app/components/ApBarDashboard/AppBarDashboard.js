@@ -19,6 +19,7 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
       match: props.match,
       auth: true,
       anchorEl: null,
+      menuButton: 'dashboard'
     };
     this.props.addHistory();
     this.props.addLeaderBoard();
@@ -41,10 +42,15 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
   handleClose = () => {
     this.setState({anchorEl: null});
   };
+  handleButtonPress= name => event => {
+     this.setState({
+       menuButton: name,
+     });
+   };
 
   render() {
     console.log('render this.match',this.state.match);
-    const {auth, anchorEl} = this.state;
+    const {auth, anchorEl, menuButton} = this.state;
     const open = Boolean(anchorEl);
     console.log('username', this.props.username);
     console.log('allHistory', this.props.allHistory);
@@ -58,16 +64,19 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
             <AppBar position="static" style={{background: 'none'}}>
               <Toolbar>
                 <Typography variant="title">
-                  <div className="logo"></div>
                 </Typography>
+                <div className="logo"></div>
+                <div>{menuButton}</div>
                 <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/dashboard`}><Button
-                  className="buttonAppBar">Dashboard</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/history`}><Button className="buttonAppBar">History</Button></Link>
+                  className="buttonAppBar" onClick={this.handleButtonPress('dashboard')} >Dashboard</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/history`}><Button
+                  onClick={this.handleButtonPress('history')} className="buttonAppBar">History</Button></Link>
                 <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/leaderboard`}><Button
-                  className="buttonAppBar">Leaderboared</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar">Market
-                  place</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar">News and
+                  onClick={this.handleButtonPress('leaderboard')} className="buttonAppBar">Leaderboared</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/marketPlace`}><Button
+                  onClick={this.handleButtonPress('marketPlace')} className="buttonAppBar">Market place</Button></Link>
+                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/newsTournaments`}><Button
+                  onClick={this.handleButtonPress('newsTournaments')} className="buttonAppBar">News and
                   Tournaments</Button></Link>
                 {auth && (
                   <div>
