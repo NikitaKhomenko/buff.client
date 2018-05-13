@@ -13,7 +13,11 @@ export const fakeAuth = {
   isAuthenticated: false,
   authenticate(cb) {
     this.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
+    // setTimeout(cb, 100); // fake async
+    // return this.isAuthenticated;
+    return new Promise(isAuthenticated => {
+      setTimeout(() => {isAuthenticated(this.isAuthenticated);}, 100);
+    });
   },
   signout(cb) {
     this.isAuthenticated = false;

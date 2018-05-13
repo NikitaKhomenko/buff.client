@@ -48,18 +48,27 @@ class Login extends Component {
     username: '',
     open: false,
     anchorEl: null,
-    redirectToReferrer: false
+    redirectToReferrer: false,
+    isLoading: false
   };
 
   handleLogin = () => {
-    console.log('LOGIN', this.usernameInput.value);
-    this.props.onLogin({
-      username: this.usernameInput.value,
-      loggedIn: true
-    });
-    fakeAuth.authenticate(() => {
-      this.setState({redirectToReferrer: true});
-    });
+    // console.log('LOGIN', this.usernameInput.value);
+    let self = this;
+    this.setState({isLoading: true});
+    if (!fakeAuth.isAuthenticated) {
+      fakeAuth.authenticate().then(isAuthenticated => {
+        console.log("isAuth ", isAuthenticated);
+        self.setState({
+          redirectToReferrer: isAuthenticated,
+          isLoading: false
+        });
+        self.props.onLogin({
+          username: this.state.username,
+          loggedIn: true
+        });
+      })
+    }
   };
 
   handleRegistration = () => {
@@ -67,7 +76,6 @@ class Login extends Component {
   };
 
   handleChange = (e) => {
-    console.log('eeee', e.target.value);
     this.setState({
       username: e.target.value
     });
@@ -96,8 +104,31 @@ class Login extends Component {
 
   render() {
     const {from} = this.props.location.state || {from: {pathname: '/'}};
-    const {redirectToReferrer} = this.state;
-    if (redirectToReferrer) {
+    const {redirectToReferrer, username, open} = this.state;
+    if (this.state.isLoading){
+      return (
+        <div className="LoginMain">
+          <div className="loader-inner">
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    if (redirectToReferrer && from.pathname !== '/') {
       return <Redirect to={from}/>;
     }
 
@@ -120,12 +151,10 @@ class Login extends Component {
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
                 formcontrolclasses={{
-                  focused: this.props.classes.inputLabelFocused,
-
+                  focused: this.props.classes.inputLabelFocused
                 }}
                 htmlFor="username"
               >
-
                 <font color="#C8E6C9">Username</font>
               </InputLabel>
               <Input
@@ -134,7 +163,7 @@ class Login extends Component {
                   focused: this.props.classes.inputLabelFocused,
                 }}
                 id="username"
-                inputRef = {(input) => {this.usernameInput = input}}
+                onChange={this.handleChange}
                 required={true}
               />
             </FormControl>
@@ -180,7 +209,7 @@ class Login extends Component {
               </Button>
             </div>
             <Popover
-              open={this.state.open}
+              open={open}
               anchorPosition={{top: 500, left: 400}}
               onClose={this.handleCloseForgotPassword}
               anchorOrigin={{
@@ -204,7 +233,7 @@ class Login extends Component {
                   required
                   id="email"
                   label="Your email:"
-                  defaultValue={this.state.username}
+                  defaultValue={username}
                   type="text"
                   margin="normal"/>
                 <Button

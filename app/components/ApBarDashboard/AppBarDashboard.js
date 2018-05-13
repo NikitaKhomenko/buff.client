@@ -17,7 +17,6 @@ class AppBarDashboard extends Component {
     super(props);
     this.state = {
       match: props.match,
-      auth: false,
       anchorEl: null,
       menuButton: 'dashboard',
     };
@@ -27,14 +26,10 @@ class AppBarDashboard extends Component {
     console.log('constructor this.match', this.state.match);
   }
 
-  state = {
-    anchorEl: null,
-  };
-
-  handleMenu = () => {
-    console.log('handleMenu');
+  handleMenu = event => {
+    console.log('handleMenu', this.state.anchorEl);
     this.setState({
-      auth: !this.state.auth,
+      anchorEl: event.currentTarget,
     });
   };
   handleClose = () => {
@@ -50,7 +45,8 @@ class AppBarDashboard extends Component {
   };
 
   render() {
-    const {auth, anchorEl, menuButton} = this.state;
+    const {anchorEl , menuButton} = this.state;
+    console.log('anchorEl',anchorEl);
     return (
       <Router>
         <div>
@@ -86,18 +82,13 @@ class AppBarDashboard extends Component {
                   Tournaments</Button></Link>
 
                 <div>
-                  <Button
-                    style={{position: 'absolute', top: 0, right: 0}}
-                    aria-owns={anchorEl ? 'menu-appbar' : null}
-                    variant="raised"
-                    onClick={this.handleMenu}
-                    color="inherit"
-                  >
-                    <AccountCircle/>
+                  <Button variant="raised" onClick={this.handleMenu}>
+                    Open Popover
                   </Button>
+                    {/*<AccountCircle/>*/}
                   <Popover
-                    open={auth}
-                    onClose={this.handleMenu}
+                    open={Boolean(anchorEl)}
+                    onClose={this.handleClose}
                     anchorOrigin={{
                       vertical: 'bottom',
                       horizontal: 'center',
@@ -106,8 +97,7 @@ class AppBarDashboard extends Component {
                       vertical: 'top',
                       horizontal: 'center',
                     }}>
-                    <MenuItem onClick={() => console.log('radu gay')}>Profile</MenuItem>
-                    <MenuItem onClick={() => console.log('radu gay2')}>My account</MenuItem>
+                    <Typography>Profile</Typography>
                   </Popover>
                 </div>
 
