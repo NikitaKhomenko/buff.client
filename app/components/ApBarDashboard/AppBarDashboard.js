@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppBar, Button, IconButton, Toolbar, Typography} from 'material-ui';
+import {AppBar, Button, IconButton, Popover, Toolbar, Typography} from 'material-ui';
 import AccountCircle from 'material-ui-icons/AccountCircle';
 import Menu, {MenuItem} from 'material-ui/Menu';
 import './ApBarDashboard.scss';
@@ -19,7 +19,7 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
       match: props.match,
       auth: true,
       anchorEl: null,
-      menuButton: 'dashboard'
+      menuButton: 'dashboard',
     };
     this.props.addHistory();
     this.props.addLeaderBoard();
@@ -31,17 +31,17 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
          anchorEl: null,
      };
 
-  handleChange = (event, checked) => {
-    this.setState({auth: checked});
-  };
+   handleMenu = event => {
+     this.setState({
+       anchorEl: event.currentTarget,
+     });
+   };
+   handleClose = () => {
+     this.setState({
+       anchorEl: null,
+     });
+   };
 
-  handleMenu = event => {
-    this.setState({anchorEl: event.currentTarget});
-  };
-
-  handleClose = () => {
-    this.setState({anchorEl: null});
-  };
   handleButtonPress= name => event => {
      this.setState({
        menuButton: name,
@@ -49,64 +49,59 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
    };
 
   render() {
-    console.log('render this.match',this.state.match);
     const {auth, anchorEl, menuButton} = this.state;
-    const open = Boolean(anchorEl);
-    console.log('username', this.props.username);
-    console.log('allHistory', this.props.allHistory);
-    console.log('ownProps', this.props.ownProps);
     return (
       <Router>
         <div>
-          <div key="background" className="appBarDashboardBG">
-          </div>
+          <div key="background" className="appBarDashboardBG"/>
           <div key="main" className="appBarDashboardMain">
             <AppBar position="static" style={{background: 'none'}}>
               <Toolbar>
                 <Typography variant="title">
                 </Typography>
-                <div className="logo"></div>
-                <div>{menuButton}</div>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/dashboard`}><Button
-                  className="buttonAppBar" onClick={this.handleButtonPress('dashboard')} >Dashboard</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/history`}><Button
-                  onClick={this.handleButtonPress('history')} className="buttonAppBar">History</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/leaderboard`}><Button
-                  onClick={this.handleButtonPress('leaderboard')} className="buttonAppBar">Leaderboared</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/marketPlace`}><Button
-                  onClick={this.handleButtonPress('marketPlace')} className="buttonAppBar">Market place</Button></Link>
-                <Link style={{ textDecoration: 'none' }} to={`${this.state.match.url}/newsTournaments`}><Button
-                  onClick={this.handleButtonPress('newsTournaments')} className="buttonAppBar">News and
+                <div className="logo"/>
+                <Link
+                  className={menuButton==='dashboard'?'dashboardMenuActive':'dashboardMenu'}
+                  to={`${this.state.match.url}/dashboard`}><Button className="buttonAppBar" onClick={this.handleButtonPress('dashboard')} >Dashboard</Button></Link>
+                <Link
+                  className={menuButton==='history'?'dashboardMenuActive':'dashboardMenu'}
+                  to={`${this.state.match.url}/history`}><Button className="buttonAppBar" onClick={this.handleButtonPress('history')}>History</Button></Link>
+                <Link
+                  className={menuButton==='leaderboard'?'dashboardMenuActive':'dashboardMenu'}
+                  to={`${this.state.match.url}/leaderboard`}><Button className="buttonAppBar" onClick={this.handleButtonPress('leaderboard')}>Leaderboared</Button></Link>
+                <Link
+                  className={menuButton==='marketPlace'?'dashboardMenuActive':'dashboardMenu'}
+                  to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar" onClick={this.handleButtonPress('marketPlace')}>Market place</Button></Link>
+                <Link
+                  className={menuButton==='newsTournaments'?'dashboardMenuActive':'dashboardMenu'}
+                  to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar" onClick={this.handleButtonPress('newsTournaments')}>News and
                   Tournaments</Button></Link>
                 {auth && (
                   <div>
                     <IconButton
                       style={{position: 'absolute', top: 0, right: 0}}
                       aria-owns={anchorEl ? 'menu-appbar' : null}
-                      aria-haspopup="true"
+                      variant="raised"
                       onClick={this.handleMenu}
                       color="inherit"
                     >
                       <AccountCircle/>
                     </IconButton>
-                    <Menu
-                      className="logoMenu"
-                      id="menu-appbar"
+                    <Popover
+                      open={Boolean(anchorEl)}
                       anchorEl={anchorEl}
+                      onClose={this.handleClose}
                       anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
+                        vertical: 'bottom',
+                        horizontal: 'center',
                       }}
                       transformOrigin={{
                         vertical: 'top',
-                        horizontal: 'right',
-                      }}
-                      open={open}
-                      onClose={this.handleClose}
-                    >
-                      <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                      <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                    </Menu>
+                        horizontal: 'center',
+                      }}>
+                      <MenuItem onClick={() => console.log("radu gay")}>Profile</MenuItem>
+                      <MenuItem onClick={() => console.log("radu gay2")}>My account</MenuItem>
+                    </Popover>
                   </div>
                 )}
               </Toolbar>
