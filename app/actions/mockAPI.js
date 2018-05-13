@@ -59,6 +59,14 @@ const leaderBoardAPI = [
     playerName: 'Mike R',
     achievements: '2 kills',
     buffEarn: 250,
+  },
+  {
+    id: 23456786,
+    name: 'CS-GO',
+    period: 'past week',
+    playerName: 'Jon R',
+    achievements: '1 kills',
+    buffEarn: 50,
   }
 ];
 const newsAPI = [

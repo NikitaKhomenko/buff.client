@@ -11,42 +11,43 @@ import MarketPlace from '../MarketPlace/MarketPlace';
 import NewsTournaments from '../NewsTournaments/NewsTournaments';
 
 
- class AppBarDashboard extends Component {
+class AppBarDashboard extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       match: props.match,
-      auth: true,
+      auth: false,
       anchorEl: null,
       menuButton: 'dashboard',
     };
     this.props.addHistory();
     this.props.addLeaderBoard();
     this.props.addNews();
-    console.log('constructor this.match',this.state.match);
+    console.log('constructor this.match', this.state.match);
   }
 
-     state = {
-         anchorEl: null,
-     };
+  state = {
+    anchorEl: null,
+  };
 
-   handleMenu = event => {
-     this.setState({
-       anchorEl: event.currentTarget,
-     });
-   };
-   handleClose = () => {
-     this.setState({
-       anchorEl: null,
-     });
-   };
+  handleMenu = () => {
+    console.log('handleMenu');
+    this.setState({
+      auth: !this.state.auth,
+    });
+  };
+  handleClose = () => {
+    this.setState({
+      anchorEl: null,
+    });
+  };
 
-  handleButtonPress= name => event => {
-     this.setState({
-       menuButton: name,
-     });
-   };
+  handleButtonPress = name => event => {
+    this.setState({
+      menuButton: name,
+    });
+  };
 
   render() {
     const {auth, anchorEl, menuButton} = this.state;
@@ -61,59 +62,65 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
                 </Typography>
                 <div className="logo"/>
                 <Link
-                  className={menuButton==='dashboard'?'dashboardMenuActive':'dashboardMenu'}
-                  to={`${this.state.match.url}/dashboard`}><Button className="buttonAppBar" onClick={this.handleButtonPress('dashboard')} >Dashboard</Button></Link>
+                  className={menuButton === 'dashboard' ? 'dashboardMenuActive' : 'dashboardMenu'}
+                  to={`${this.state.match.url}/dashboard`}><Button className="buttonAppBar"
+                                                                   onClick={this.handleButtonPress('dashboard')}>Dashboard</Button></Link>
                 <Link
-                  className={menuButton==='history'?'dashboardMenuActive':'dashboardMenu'}
-                  to={`${this.state.match.url}/history`}><Button className="buttonAppBar" onClick={this.handleButtonPress('history')}>History</Button></Link>
+                  className={menuButton === 'history' ? 'dashboardMenuActive' : 'dashboardMenu'}
+                  to={`${this.state.match.url}/history`}><Button className="buttonAppBar"
+                                                                 onClick={this.handleButtonPress('history')}>History</Button></Link>
                 <Link
-                  className={menuButton==='leaderboard'?'dashboardMenuActive':'dashboardMenu'}
-                  to={`${this.state.match.url}/leaderboard`}><Button className="buttonAppBar" onClick={this.handleButtonPress('leaderboard')}>Leaderboared</Button></Link>
+                  className={menuButton === 'leaderboard' ? 'dashboardMenuActive' : 'dashboardMenu'}
+                  to={`${this.state.match.url}/leaderboard`}><Button className="buttonAppBar"
+                                                                     onClick={this.handleButtonPress('leaderboard')}>Leaderboared</Button></Link>
                 <Link
-                  className={menuButton==='marketPlace'?'dashboardMenuActive':'dashboardMenu'}
-                  to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar" onClick={this.handleButtonPress('marketPlace')}>Market place</Button></Link>
+                  className={menuButton === 'marketPlace' ? 'dashboardMenuActive' : 'dashboardMenu'}
+                  to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar"
+                                                                     onClick={this.handleButtonPress('marketPlace')}>Market
+                  place</Button></Link>
                 <Link
-                  className={menuButton==='newsTournaments'?'dashboardMenuActive':'dashboardMenu'}
-                  to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar" onClick={this.handleButtonPress('newsTournaments')}>News and
+                  className={menuButton === 'newsTournaments' ? 'dashboardMenuActive' : 'dashboardMenu'}
+                  to={`${this.state.match.url}/newsTournaments`}><Button className="buttonAppBar"
+                                                                         onClick={this.handleButtonPress('newsTournaments')}>News
+                  and
                   Tournaments</Button></Link>
-                {auth && (
-                  <div>
-                    <IconButton
-                      style={{position: 'absolute', top: 0, right: 0}}
-                      aria-owns={anchorEl ? 'menu-appbar' : null}
-                      variant="raised"
-                      onClick={this.handleMenu}
-                      color="inherit"
-                    >
-                      <AccountCircle/>
-                    </IconButton>
-                    <Popover
-                      open={Boolean(anchorEl)}
-                      anchorEl={anchorEl}
-                      onClose={this.handleClose}
-                      anchorOrigin={{
-                        vertical: 'bottom',
-                        horizontal: 'center',
-                      }}
-                      transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'center',
-                      }}>
-                      <MenuItem onClick={() => console.log("radu gay")}>Profile</MenuItem>
-                      <MenuItem onClick={() => console.log("radu gay2")}>My account</MenuItem>
-                    </Popover>
-                  </div>
-                )}
+
+                <div>
+                  <Button
+                    style={{position: 'absolute', top: 0, right: 0}}
+                    aria-owns={anchorEl ? 'menu-appbar' : null}
+                    variant="raised"
+                    onClick={this.handleMenu}
+                    color="inherit"
+                  >
+                    <AccountCircle/>
+                  </Button>
+                  <Popover
+                    open={auth}
+                    onClose={this.handleMenu}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}>
+                    <MenuItem onClick={() => console.log('radu gay')}>Profile</MenuItem>
+                    <MenuItem onClick={() => console.log('radu gay2')}>My account</MenuItem>
+                  </Popover>
+                </div>
+
               </Toolbar>
             </AppBar>
-              {console.log('this.state.match.url.',this.state.match.url)  }
+            {console.log('this.state.match.url.', this.state.match.url)}
             <Switch>
-            <Route path={`${this.state.match.url}/dashboard`} component={Dashboard}/>
-            <Route path={`${this.state.match.url}/history`} component={History}/>
-            <Route path={`${this.state.match.url}/leaderboard`} component={Leaderboard}/>
-            <Route path={`${this.state.match.url}/marketPlace`} component={MarketPlace}/>
-            <Route path={`${this.state.match.url}/newsTournaments`} component={NewsTournaments}/>
-            <Redirect to={`${this.state.match.url}/dashboard`} />
+              <Route path={`${this.state.match.url}/dashboard`} component={Dashboard}/>
+              <Route path={`${this.state.match.url}/history`} component={History}/>
+              <Route path={`${this.state.match.url}/leaderboard`} component={Leaderboard}/>
+              <Route path={`${this.state.match.url}/marketPlace`} component={MarketPlace}/>
+              <Route path={`${this.state.match.url}/newsTournaments`} component={NewsTournaments}/>
+              <Redirect to={`${this.state.match.url}/dashboard`}/>
             </Switch>
           </div>
         </div>
@@ -123,4 +130,4 @@ import NewsTournaments from '../NewsTournaments/NewsTournaments';
 }
 
 
-export default AppBarDashboard
+export default AppBarDashboard;
