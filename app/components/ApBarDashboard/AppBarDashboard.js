@@ -23,6 +23,7 @@ class AppBarDashboard extends Component {
     this.props.addHistory();
     this.props.addLeaderBoard();
     this.props.addNews();
+    this.props.addTournaments();
     console.log('constructor this.match', this.state.match);
   }
 

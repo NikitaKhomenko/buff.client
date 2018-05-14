@@ -1,4 +1,5 @@
 import * as actionTypes from './../Store/constant';
+import Api from "../Store/ApiRequests";
 import mock from './mockAPI'
 
 export function loginUser(data = {}) {
@@ -21,8 +22,15 @@ export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
   });
 }
 export function addNews(news = mock.newsAPI) {
-  return (dispatch) => dispatch({
+  return (dispatch) =>Api.getNewsAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_NEWS,
-    payload:  mock.newsAPI
+    payload:  res
   });
+}
+export function addTournaments(history = mock.historyAPI) {
+  return (dispatch) => Api.getTournamentsAPI().then((res) => dispatch({
+      type: actionTypes.ADD_TOURNAMENTS,
+      payload: res
+    })
+  )
 }

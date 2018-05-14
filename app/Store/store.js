@@ -18,7 +18,11 @@ export default function configureStore(initialState, routerHistory) {
       case actionTypes.USER_LOGIN:
         return {...state, username: action.data.username};
       case actionTypes.ADD_NEWS:
+        console.log('NEWS--->',action.payload);
         return {...state, allNews: action.payload};
+      case actionTypes.ADD_TOURNAMENTS:
+        console.log('ADD_TOURNAMENTS--->',action.payload);
+        return {...state, allTournaments: action.payload};
       default:
         return state;
     }
