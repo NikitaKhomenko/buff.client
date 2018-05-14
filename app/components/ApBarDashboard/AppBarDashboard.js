@@ -88,7 +88,7 @@ class AppBarDashboard extends Component {
                   <IconButton
                     style={{
                       position: 'absolute',
-                      top: 0,
+                      top: 8,
                       right: 120,
                       fontSize: '1em',
                       fontFamily: 'Roboto, Helvetica'
