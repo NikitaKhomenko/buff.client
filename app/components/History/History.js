@@ -36,7 +36,7 @@ class History extends Component {
       <div className="HistoryComponent">
         <Grid container spacing={24}>
           <Grid item xs={12} container>
-            <Grid item xs={9}>
+            <Grid item xs={10}>
               <div className="HistoryTitle" style={{width: 300, height: 80}}>
                 {title.toLocaleUpperCase()}
               </div>
@@ -44,7 +44,7 @@ class History extends Component {
                 You will earn more coins by marking achievement in active game
               </div>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
               <h4>online users: 15,000</h4>
               {/*<Button className="buttonShareEarn">*/}
                 {/*<font face="verdana">*/}

@@ -89,7 +89,7 @@ class AppBarDashboard extends Component {
                     style={{
                       position: 'absolute',
                       top: 0,
-                      right: 70,
+                      right: 120,
                       fontSize: '1em',
                       fontFamily: 'Roboto, Helvetica'
                     }}
