@@ -31,7 +31,11 @@ class Leaderboard extends Component {
 
   render() {
     const {rowsPerPage, page} = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, this.state.data.length - page * rowsPerPage);
+    let dataLiderboard = this.state.data;
+    let emptyRows= 0
+    if(dataLiderboard) {
+      emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
+    }
     return (
       <div className="LeaderboardComponent">
         <Grid container spacing={24}>
@@ -74,7 +78,7 @@ class Leaderboard extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {this.state.data.map((n, k) => {
+                        {dataLiderboard?dataLiderboard.map((n, k) => {
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">{n.name}</TableCell>
@@ -84,7 +88,7 @@ class Leaderboard extends Component {
                               <TableCell className="tableColumn">{n.buffEarn}</TableCell>
                             </TableRow>
                           );
-                        })}
+                        }):<div/>}
                         {emptyRows > 0 && (
                           <TableRow style={{height: 48 * emptyRows}}>
                             <TableCell colSpan={6}/>
@@ -94,7 +98,7 @@ class Leaderboard extends Component {
                     </Table>
                     <TablePagination
                       component="div"
-                      count={this.state.data.length}
+                      count={dataLiderboard?dataLiderboard.length:0}
                       rowsPerPage={rowsPerPage}
                       page={page}
                       backIconButtonProps={{

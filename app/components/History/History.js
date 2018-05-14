@@ -31,7 +31,11 @@ class History extends Component {
 
   render() {
     const {rowsPerPage, page} = this.state;
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, this.state.data.length - page * rowsPerPage);
+    let dataHistory = this.state.data;
+    let emptyRows= 0
+    if(dataHistory) {
+      emptyRows = rowsPerPage - Math.min(rowsPerPage, dataHistory.length - page * rowsPerPage);
+    }
     return (
       <div className="HistoryComponent">
         <Grid container spacing={24}>
@@ -74,7 +78,7 @@ class History extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {this.state.data.map((n, k) => {
+                        {dataHistory?dataHistory.map((n, k) => {
                           console.log('DAATA:::::>',n ,k);
                           return (
                             <TableRow key={k}>
@@ -85,7 +89,7 @@ class History extends Component {
                               <TableCell className="tableColumn">{n.conversion}</TableCell>
                             </TableRow>
                           );
-                        })}
+                        }):<div/>}
                         {emptyRows > 0 && (
                           <TableRow style={{height: 48 * emptyRows}}>
                             <TableCell colSpan={6}/>
@@ -95,7 +99,7 @@ class History extends Component {
                     </Table>
                     <TablePagination
                       component="div"
-                      count={this.state.data.length}
+                      count={dataHistory?dataHistory.length:0}
                       rowsPerPage={rowsPerPage}
                       page={page}
                       backIconButtonProps={{

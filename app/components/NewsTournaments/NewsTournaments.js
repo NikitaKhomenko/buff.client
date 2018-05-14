@@ -3,10 +3,15 @@ import './NewsTournaments.scss';
 import Grid from 'material-ui/es/Grid/Grid';
 import Paper from 'material-ui/es/Paper/Paper';
 import Button from 'material-ui/es/Button/Button';
+import * as mainActions from '../../actions/mainActions';
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 
 const title = 'start playing and earn coins!';
-export default class NewsTournaments extends Component {
+class NewsTournaments extends Component {
   render() {
+    let tournaments= this.props.allTournaments;
+    console.log('tournaments',tournaments);
     return (
       <div className="NewsTournamentsComponent">
         <Grid container spacing={24}>
@@ -50,21 +55,16 @@ export default class NewsTournaments extends Component {
                     <div className="titleMyAcc">
                       Tournaments
                     </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Dota 2 face off -weekly- open for all.
+                    {tournaments?tournaments.map((n,k) => {
+                      <div className="balanceMyAcc" key={k}>
+                        <div style={{color: '#919191'}}>
+                          {<n className="title"></n>} face off -weekly- open {n.link}.
+                        </div>
                       </div>
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Clan war....
-                      </div>
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Australian open...
-                      </div>
-                    </div>
+                    }):<div/>}
+
+
+
                   </Paper>
                 </div>
               </Grid>
@@ -91,3 +91,13 @@ export default class NewsTournaments extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  allTournaments:state.reducerMain.allTournaments,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(NewsTournaments)

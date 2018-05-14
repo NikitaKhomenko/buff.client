@@ -6,7 +6,8 @@ console.log('TodoActionCreators',mainActions);
 const mapStateToProps = (state,ownProps) => ({
   allHistory:state.reducerMain.allHistory,
   username:state.reducerMain.username,
-  ownProps:ownProps
+  ownProps:ownProps,
+  tournaments:state.reducerMain.allTournaments
 });
 
 function mapDispatchToProps(dispatch) {

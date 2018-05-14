@@ -24,13 +24,14 @@ export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
 export function addNews(news = mock.newsAPI) {
   return (dispatch) =>Api.getNewsAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_NEWS,
-    payload:  res
-  });
+    payload:  mock.newsAPI
+  })
+  )
 }
-export function addTournaments(history = mock.historyAPI) {
-  return (dispatch) => Api.getTournamentsAPI().then((res) => dispatch({
+export function addTournaments(tournaments = mock.tournamentsAPI) {
+  return (dispatch) =>  dispatch({
       type: actionTypes.ADD_TOURNAMENTS,
-      payload: res
-    })
+      payload: mock.tournamentsAPI
+    }
   )
 }

@@ -98,7 +98,7 @@ class Dashboard extends Component {
                     <div className="titleMyAcc">
                       News
                     </div>
-                    {news.map((n, k) => {
+                    {news?news.map((n, k) => {
                       return <div key={k}>
                         <div className="newsMain">
                           <div className="newsDotesContents">
@@ -120,7 +120,7 @@ class Dashboard extends Component {
                           borderTop: '1.5px solid #000'
                         }}/>
                       </div>;
-                    })}
+                    }):<div/>  }
                   </Paper>
                 </div>
               </Grid>
