@@ -46,9 +46,10 @@ class AppBarDashboard extends Component {
   };
 
   render() {
-    const {anchorEl , menuButton} = this.state;
+    const {anchorEl, menuButton} = this.state;
     const open = anchorEl !== null;
-    console.log('anchorEl',anchorEl);
+    console.log('anchorEl', anchorEl);
+    console.log('props::', this.props);
     return (
       <Router>
         <div>
@@ -84,35 +85,39 @@ class AppBarDashboard extends Component {
                   Tournaments</Button></Link>
 
                 <div>
-                  <div>
-                    <IconButton
-                      style={{position: 'absolute', top: 0, right: 0}}
-                      aria-owns={anchorEl ? 'menu-appbar' : null}
-                      aria-haspopup="true"
-                      onClick={this.handleMenu}
-                      color="inherit"
-                    >
-                      <AccountCircle/>
-                    </IconButton>
-                    <Menu
-                      className="logoMenu"
-                      id="menu-appbar"
-                      anchorEl={anchorEl}
-                      anchorOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                      }}
-                      transformOrigin={{
-                        vertical: 'top',
-                        horizontal: 'right',
-                      }}
-                      open={open}
-                      onClose={this.handleClose}
-                    >
-                      <MenuItem >Profile</MenuItem>
-                      <MenuItem >My account</MenuItem>
-                    </Menu>
-                  </div>
+                  <IconButton
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      right: 70,
+                      fontSize: '1em',
+                      fontFamily: 'Roboto, Helvetica'
+                    }}
+                    aria-owns={anchorEl ? 'menu-appbar' : null}
+                    aria-haspopup="true"
+                    onClick={this.handleMenu}
+                    color="inherit"
+                  >
+                    <AccountCircle style={{fontSize: 30, color: '#3B8C41'}}/>{this.props.username}
+                  </IconButton>
+                  <Menu
+                    className="logoMenu"
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    open={false}
+                    onClose={this.handleClose}
+                  >
+                    <MenuItem>Profile</MenuItem>
+                    <MenuItem>My account</MenuItem>
+                  </Menu>
                 </div>
 
               </Toolbar>
