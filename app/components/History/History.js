@@ -79,7 +79,6 @@ class History extends Component {
                       </TableHead>
                       <TableBody>
                         {dataHistory?dataHistory.map((n, k) => {
-                          console.log('DAATA:::::>',n ,k);
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">{n.date}</TableCell>

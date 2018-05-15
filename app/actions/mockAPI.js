@@ -93,13 +93,13 @@ const newsAPI = [
 ];
 const tournamentsAPI = [
   {
-    "id": 1,
-    "title": "Dota2",
-    "link": "www.valve.com/dota2",
-    "game": "dota2",
-    "date": "2018-05-10T15:39:01.776Z",
-    "createdAt": "2018-05-10T15:50:00.378Z",
-    "updatedAt": "2018-05-10T15:50:00.378Z"
+    id: 1,
+    title: "Dota2",
+    link: "www.valve.com/dota2",
+    game: "dota2",
+    date: "2018-05-10T15:39:01.776Z",
+    createdAt: "2018-05-10T15:50:00.378Z",
+    updatedAt: "2018-05-10T15:50:00.378Z"
   }
 ];
 const mock = {

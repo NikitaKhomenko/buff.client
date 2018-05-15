@@ -22,9 +22,9 @@ export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
   });
 }
 export function addNews(news = mock.newsAPI) {
-  return (dispatch) =>Api.getNewsAPI().then((res) =>  dispatch({
+  return (dispatch) => Api.getNewsAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_NEWS,
-    payload:  mock.newsAPI
+    payload:  res.data
   })
   )
 }
