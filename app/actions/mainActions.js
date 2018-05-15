@@ -29,9 +29,9 @@ export function addNews(news = mock.newsAPI) {
   )
 }
 export function addTournaments(tournaments = mock.tournamentsAPI) {
-  return (dispatch) =>  dispatch({
+  return (dispatch) => Api.getTournamentsAPI().then((res) =>   dispatch({
       type: actionTypes.ADD_TOURNAMENTS,
-      payload: mock.tournamentsAPI
-    }
+      payload: res.data
+    })
   )
 }

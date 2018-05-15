@@ -11,7 +11,6 @@ const title = 'start playing and earn coins!';
 class NewsTournaments extends Component {
   render() {
     let tournaments= this.props.allTournaments;
-    console.log('tournaments',tournaments);
     return (
       <div className="NewsTournamentsComponent">
         <Grid container spacing={24}>
@@ -55,16 +54,13 @@ class NewsTournaments extends Component {
                     <div className="titleMyAcc">
                       Tournaments
                     </div>
-                    {tournaments?tournaments.map((n,k) => {
+                    {tournaments?tournaments.map((n,k) =>
                       <div className="balanceMyAcc" key={k}>
                         <div style={{color: '#919191'}}>
-                          {<n className="title"></n>} face off -weekly- open {n.link}.
+                          {n.title} face off -weekly- open {n.link}.
                         </div>
                       </div>
-                    }):<div/>}
-
-
-
+                    ):<div>In the near future there are no tournaments</div>}
                   </Paper>
                 </div>
               </Grid>
