@@ -19,8 +19,11 @@
       font-size: 0.9em;
       margin: 50px;
       .myAcc{
-        width: 25%;
+        width: 370px;
         background: #2E2F30;
+        height: 380px;
+        overflow: auto;
+
         .titleMyAcc{
           margin: 0;
           padding: 5px 25px;
@@ -79,5 +82,23 @@
       }
     }
 
+  }
+}
+@media screen and (min-width: 900px) {
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  ::-webkit-scrollbar-thumb {
+    background: #163751;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 }

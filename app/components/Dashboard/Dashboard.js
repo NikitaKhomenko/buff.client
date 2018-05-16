@@ -94,7 +94,7 @@ class Dashboard extends Component {
               <Grid item xs={4}>
                 <div className="papersMain">
 
-                  <Paper className="myAcc" elevation={8} style={{width: 370}}>
+                  <Paper className="myAcc" elevation={8}>
                     <div className="titleMyAcc">
                       News
                     </div>
@@ -132,7 +132,8 @@ class Dashboard extends Component {
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        lorem ipsum
+                        <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
+                                height="350" allowTransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>
                   </Paper>
