@@ -8,7 +8,6 @@ import {bindActionCreators} from 'redux';
 import * as mainActions from '../../actions/mainActions';
 
 const title = 'start playing and earn coins!';
-
 class Dashboard extends Component {
 
 
@@ -70,7 +69,7 @@ class Dashboard extends Component {
                 </div>
 
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370}}>
+                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 240}}>
                     <div className="titleMyAcc">
                       Active Games
                     </div>
@@ -126,7 +125,7 @@ class Dashboard extends Component {
               </Grid>
               <Grid item xs={4}>
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
+                  <Paper className="myAcc" elevation={8} >
                     <div className="titleMyAcc">
                       Chat Box
                     </div>

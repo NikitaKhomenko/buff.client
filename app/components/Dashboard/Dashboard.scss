@@ -17,12 +17,13 @@
     background: #131416;
     .papersMain{
       font-size: 0.9em;
-      margin: 50px;
+      margin:50px 20px;
       .myAcc{
         width: 370px;
         background: #2E2F30;
         height: 380px;
-        overflow: auto;
+
+        //overflow: auto;
 
         .titleMyAcc{
           margin: 0;
