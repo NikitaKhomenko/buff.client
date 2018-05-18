@@ -1,18 +1,53 @@
-.RegistrationMain {
+.RegistrationComponent {
+  width: 100%;
   height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 25%;
-  .btn_login, .btn_forgot {
-    margin: 10px 0;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-image: url("./../../../assets/Materials/Registration_background.jpg");
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(60%);
+
+  .RegistrationTitle {
+    margin: auto;
+    margin-top: 60px;
+    font-size: 3em;
+    width: 250px;
+    font-family: Helvetica Neue;
+    font-weight: bold;
   }
-  .buttonMain {
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 35px;
-    background: #2E7D32;
+  .buttonExit {
+    background: #1B5E20;
+    width: 160px;
+  }
+  .buttonRegister {
+    background: #1B5E20;
+    width: 250px;
+    height: 60px;
+  }
+  .RegistrationMain {
+    height: 800px;
+    background: #131416;
+    .btn_login, .btn_forgot {
+      margin: 10px 0;
+    }
+    .Line {
+      margin-left: 135px;
+      margin-top: 47px;
+      margin-bottom: 72px;
+      font-size: 1.3em;
+      font-family: Helvetica Neue;
+    }
+    .Line1 {
+      margin-left: 70px;
+      margin-top: 47px;
+      margin-bottom: 72px;
+      font-size: 1.3em;
+      font-family: Helvetica Neue;
+    }
   }
 }
 
