@@ -24,10 +24,7 @@ class Leaderboard extends Component {
   handleChangePage = (event, page) => {
     this.setState({page});
   };
-
-  handleChangeRowsPerPage = event => {
-    this.setState({rowsPerPage: event.target.value});
-  };
+  
 
   render() {
     const {rowsPerPage, page} = this.state;
@@ -78,7 +75,7 @@ class Leaderboard extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {dataLiderboard?dataLiderboard.map((n, k) => {
+                        {dataLiderboard?dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">{n.name}</TableCell>
@@ -108,7 +105,6 @@ class Leaderboard extends Component {
                         'aria-label': 'Next Page',
                       }}
                       onChangePage={this.handleChangePage}
-                      onChangeRowsPerPage={this.handleChangeRowsPerPage}
                     />
                   </Paper>
 

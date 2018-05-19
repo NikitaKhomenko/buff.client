@@ -25,9 +25,6 @@ class History extends Component {
     this.setState({page});
   };
 
-  handleChangeRowsPerPage = event => {
-    this.setState({rowsPerPage: event.target.value});
-  };
 
   render() {
     const {rowsPerPage, page} = this.state;
@@ -78,7 +75,7 @@ class History extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {dataHistory?dataHistory.map((n, k) => {
+                        {dataHistory?dataHistory.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">{n.date}</TableCell>
@@ -108,7 +105,6 @@ class History extends Component {
                         'aria-label': 'Next Page',
                       }}
                       onChangePage={this.handleChangePage}
-                      onChangeRowsPerPage={this.handleChangeRowsPerPage}
                     />
                   </Paper>
                 </div>
