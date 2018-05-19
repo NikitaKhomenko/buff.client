@@ -72,7 +72,7 @@ export default class MarketPlace extends Component {
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
                         <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
-                                height="350" allowTransparency="true" frameBorder="0"></iframe>
+                                height="350" allowtransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>
                   </Paper>

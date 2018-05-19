@@ -12,7 +12,6 @@ const mapDispatchToProps = (dispatch) => {
   const user = bindActionCreators(TodoActionCreators, dispatch);
   return {
     onLogin: (data) => {
-      console.log('data onLogin:',data);
       user.loginUser(data);
       if (fakeAuth.isAuthenticated) {
         dispatch(push('/loggedin'));

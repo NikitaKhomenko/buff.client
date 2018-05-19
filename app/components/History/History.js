@@ -20,10 +20,14 @@ class History extends Component {
       data: this.props.allHistory
     };
     setInterval(() => {
-      this.setState({
-        data: this.props.allHistory
-      })
-      	}, 1000)
+      this.updateHistory(this.props.allHistory)
+    }, 1000)
+  }
+
+  updateHistory(history){
+    if(this.state.data !== history) {
+      this.setState({data: history});
+    }
   }
 
   handleChangePage = (event, page) => {
@@ -58,10 +62,8 @@ class History extends Component {
   render() {
     const {rowsPerPage, page} = this.state;
     let dataHistory = this.state.data;
-    let emptyRows= 0
-    if(dataHistory) {
-      emptyRows = rowsPerPage - Math.min(rowsPerPage, dataHistory.length - page * rowsPerPage);
-    }
+    let emptyRows= 0;
+    let tableRowsHistory = this.getDataRowsHistory(dataHistory, page, rowsPerPage, emptyRows)
     return (
       <div className="HistoryComponent">
         <Grid container spacing={24}>
@@ -103,27 +105,9 @@ class History extends Component {
                           <TableCell className="tableColumnHead">Conversion</TableCell>
                         </TableRow>
                       </TableHead>
-                      <TableBody>
-                        {dataHistory?dataHistory.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
-                          let realTime = this.getDate(n.gamedata.timestamp);
-                          let gameName = this.getGameName(n.gamedata.gameId);
-                          
-                          return (
-                            <TableRow key={k}>
-                              <TableCell className="tableColumn">{realTime }</TableCell>
-                              <TableCell className="tableColumn">{gameName}</TableCell>
-                              <TableCell className="tableColumn">{n.gamedata.kda}</TableCell>
-                              <TableCell className="tableColumn">{n.gamedata.gpm}</TableCell>
-                              <TableCell className="tableColumn">{n.amount}</TableCell>
-                            </TableRow>
-                          );
-                        }):<div/>}
-                        {emptyRows > 0 && (
-                          <TableRow style={{height: 48 * emptyRows}}>
-                            <TableCell colSpan={6}/>
-                          </TableRow>
-                        )}
-                      </TableBody>
+
+                      {tableRowsHistory}
+
                     </Table>
                     <TablePagination
                       component="div"
@@ -151,7 +135,7 @@ class History extends Component {
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
                         <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
-                                height="350" allowTransparency="true" frameBorder="0"></iframe>
+                                height="350" allowtransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>
                   </Paper>
@@ -163,6 +147,34 @@ class History extends Component {
         </div>
       </div>
     );
+  }
+
+  getDataRowsHistory(dataHistory, page, rowsPerPage, emptyRows) {
+    if(dataHistory) {
+      emptyRows = rowsPerPage - Math.min(rowsPerPage, dataHistory.length - page * rowsPerPage);
+    }
+    return (
+      <TableBody>
+      {dataHistory?dataHistory.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+        let realTime = this.getDate(n.gamedata.timestamp);
+        let gameName = this.getGameName(n.gamedata.gameId);
+
+        return (
+          <TableRow key={k}>
+            <TableCell className="tableColumn">{realTime }</TableCell>
+            <TableCell className="tableColumn">{gameName}</TableCell>
+            <TableCell className="tableColumn">{n.gamedata.kda}</TableCell>
+            <TableCell className="tableColumn">{n.gamedata.gpm}</TableCell>
+            <TableCell className="tableColumn">{n.amount}</TableCell>
+          </TableRow>
+        );
+      }):<TableRow/>}
+      {emptyRows > 0 && (
+        <TableRow style={{height: 48 * emptyRows}}>
+          <TableCell colSpan={6}/>
+        </TableRow>
+      )}
+    </TableBody>);
   }
 }
 const mapStateToProps = (state) => ({

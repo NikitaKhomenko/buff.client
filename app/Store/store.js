@@ -11,8 +11,11 @@ export default function configureStore(initialState, routerHistory) {
 
   const reducers = (state = initialState, action) => {
     switch (action.type) {
-      case actionTypes.ADD_HISTORY:
+      case actionTypes.ADD_HISTORY: {
+        console.log('Store transactions:::', action.payload.transactions);
+        localStorage.setItem('history', JSON.stringify(action.payload.transactions));
         return {...state, allHistory: action.payload.transactions};
+      }
       case actionTypes.ADD_LEADERBOARD:
         return {...state, leaderBoard: action.payload};
       case actionTypes.USER_LOGIN:

@@ -120,7 +120,6 @@ class AppBarDashboard extends Component {
 
               </Toolbar>
             </AppBar>
-            {console.log('this.state.match.url.', this.state.match.url)}
             <Switch>
               <Route path={`${this.state.match.url}/dashboard`} component={Dashboard}/>
               <Route path={`${this.state.match.url}/history`} component={History}/>
