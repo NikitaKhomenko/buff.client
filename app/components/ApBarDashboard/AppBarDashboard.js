@@ -24,7 +24,6 @@ class AppBarDashboard extends Component {
     this.props.addLeaderBoard();
     this.props.addNews();
     this.props.addTournaments();
-    console.log('constructor this.match', this.state.match);
   }
 
   handleMenu = event => {
@@ -49,8 +48,6 @@ class AppBarDashboard extends Component {
   render() {
     const {anchorEl, menuButton} = this.state;
     const open = anchorEl !== null;
-    console.log('anchorEl', anchorEl);
-    console.log('props::', this.props);
     return (
       <Router>
         <div>

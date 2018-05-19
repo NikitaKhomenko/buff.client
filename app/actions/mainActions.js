@@ -10,10 +10,11 @@ export function loginUser(data = {}) {
 }
 
 export function addHistory(history = mock.historyAPI) {
-  return (dispatch) => dispatch({
+  return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_HISTORY,
-    payload: mock.historyAPI
-  });
+    payload: res.data
+  })
+  )
 }
 export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
   return (dispatch) => dispatch({

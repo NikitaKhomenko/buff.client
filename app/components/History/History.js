@@ -19,12 +19,41 @@ class History extends Component {
       rowsPerPage: 4,
       data: this.props.allHistory
     };
+    setInterval(() => {
+      this.setState({
+        data: this.props.allHistory
+      })
+      	}, 1000)
   }
 
   handleChangePage = (event, page) => {
     this.setState({page});
   };
-
+  getGameName(name){
+    if(name === 7314)
+      name = 'Dota 2'
+    else if (name === 5426)
+      name = 'League of Legends'
+    else name = 'undefined'
+    return name
+  }
+  getDate(d) {
+    let realDate = new Date(d);
+    let h = this.addZero( realDate.getHours());
+    let m = this.addZero(realDate.getMinutes());
+    let date = realDate.getFullYear() + '-'
+      + (realDate.getMonth() + 1) + '-'
+      + realDate.getDate() + ' '
+      + h + ':'
+      + m;
+    return date
+  }
+  addZero = (i) => {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  };
 
   render() {
     const {rowsPerPage, page} = this.state;
@@ -76,13 +105,16 @@ class History extends Component {
                       </TableHead>
                       <TableBody>
                         {dataHistory?dataHistory.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                          let realTime = this.getDate(n.gamedata.timestamp);
+                          let gameName = this.getGameName(n.gamedata.gameId);
+                          
                           return (
                             <TableRow key={k}>
-                              <TableCell className="tableColumn">{n.date}</TableCell>
-                              <TableCell className="tableColumn">{n.gameConversion}</TableCell>
-                              <TableCell className="tableColumn">{n.achievements}</TableCell>
-                              <TableCell className="tableColumn">{n.buffCoins}</TableCell>
-                              <TableCell className="tableColumn">{n.conversion}</TableCell>
+                              <TableCell className="tableColumn">{realTime }</TableCell>
+                              <TableCell className="tableColumn">{gameName}</TableCell>
+                              <TableCell className="tableColumn">{n.gamedata.kda}</TableCell>
+                              <TableCell className="tableColumn">{n.gamedata.gpm}</TableCell>
+                              <TableCell className="tableColumn">{n.amount}</TableCell>
                             </TableRow>
                           );
                         }):<div/>}

@@ -24,7 +24,7 @@ class Leaderboard extends Component {
   handleChangePage = (event, page) => {
     this.setState({page});
   };
-  
+
 
   render() {
     const {rowsPerPage, page} = this.state;
