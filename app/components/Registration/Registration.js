@@ -7,9 +7,6 @@ import Input, {InputLabel} from 'material-ui/Input';
 import green from 'material-ui/colors/green';
 import {withStyles} from 'material-ui/styles';
 import Button from 'material-ui/Button';
-import Menu, {MenuItem} from 'material-ui/Menu';
-import List, {ListItem, ListItemText} from 'material-ui/List';
-import Typography from 'material-ui/es/Typography/Typography';
 import './Registration.scss';
 import grey from "material-ui/es/colors/grey";
 
@@ -17,7 +14,7 @@ import grey from "material-ui/es/colors/grey";
 const styles = theme => {
   return ({
     formControl: {
-      margin: theme.spacing.unit * 3,
+      margin: theme.spacing.unit * 1.5,
       width: 260
     },
     inputLabelFocused: {
@@ -100,14 +97,14 @@ class Registration extends Component {
     return (
       <div className="RegistrationComponent">
         <Button
-          style={{position: 'absolute', bottom: 90, right: 117}}
+          style={{position: 'absolute', bottom: 40, right: 130}}
           variant='raised'
           className="buttonExit"
           onClick={this.handleBackToLogin}>
           <font face='verdana' color='#fffff'>Back to login</font>
         </Button>
         <Button
-          style={{position: 'absolute', bottom: 180, right: 80}}
+          style={{position: 'absolute', bottom: 110, right: 110}}
           variant="raised"
           className="buttonRegister">
           <font face='verdana' color='#fffff'> Sign In</font>

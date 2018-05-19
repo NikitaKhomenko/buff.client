@@ -193,7 +193,7 @@ class Login extends Component {
               onClick={this.handleLogin}>
               Log In
             </Button>
-            <div  className="buttomDown">
+            <div className="buttomDown">
               <Button
                 variant="raised"
                 className="buttonMain"
@@ -231,6 +231,7 @@ class Login extends Component {
                 </font></p>
                 <TextField
                   required
+                  className="emailField"
                   id="email"
                   label="Your email:"
                   defaultValue={username}
@@ -238,12 +239,12 @@ class Login extends Component {
                   margin="normal"/>
                 <Button
                   variant="raised"
-                  className="buttonMain">
-                  Send me
+                  className="buttonSendMe">
+                    Send me
                 </Button>
                 <button
-                  className={this.props.classes.flatbutton}
-                  onClick={this.handleCloseForgotPassword}>
+                    className="buttonExitPassword"
+                    onClick={this.handleCloseForgotPassword}>
                   <font face="verdana">
                     CLOSE
                   </font>

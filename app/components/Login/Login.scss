@@ -13,6 +13,7 @@
     margin-left: 100px;
     margin-right: 100px;
     margin-bottom: 35px;
+    margin-top: 10px;
     background: #66BB6A;
   }
 
@@ -22,6 +23,28 @@
     alignment: right;
   }
 
+  .buttonExitPassword {
+    width: 100px;
+    height: 30px;
+    background-color: #F5F5F5;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .buttonSendMe {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background: #66BB6A;
+    width: 150px;
+  }
+
+  .emailField {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 250px;
+  }
 }
 
 .loader {
