@@ -68,7 +68,7 @@ class Dashboard extends Component {
                 </div>
 
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 240}}>
+                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 250}}>
                     <div className="titleMyAcc">
                       Active Games
                     </div>
