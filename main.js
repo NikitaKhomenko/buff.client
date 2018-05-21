@@ -19,12 +19,12 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 1250,
-    height: 700,
+    height: 780,
     show: false,
     maxWidth: 1440,
     minWidth: 1250,
-    maxHeight: 800,
-    minHeight: 700
+    maxHeight: 850,
+    minHeight: 780
   });
 
   // and load the index.html of the app.

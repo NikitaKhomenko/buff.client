@@ -52,6 +52,7 @@
     "electron-builder": "^20.0.7",
     "electron-devtools-installer": "^2.1.0",
     "electron-mocha": "^5.0.0",
+    "electron-packager": "^12.0.2",
     "eslint": "^4.3.0",
     "eslint-plugin-react": "^7.1.0",
     "file-loader": "^1.1.11",
