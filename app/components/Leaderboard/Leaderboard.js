@@ -7,7 +7,10 @@ import Button from 'material-ui/es/Button/Button';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as mainActions from '../../actions/mainActions';
+import IconButton from 'material-ui/es/IconButton/IconButton';
+import ReactTooltip from 'react-tooltip'
 
+import DeleteIcon from 'material-ui-icons/Delete';
 
 const title = 'start playing and earn coins!';
 
@@ -20,24 +23,31 @@ class Leaderboard extends Component {
       data: this.props.allLeaaderBoard
     };
     setInterval(() => {
-      this.updateLeaders(this.props.allLeaaderBoard)
-    }, 1000)
+      this.updateLeaders(this.props.allLeaaderBoard);
+    }, 1000);
   }
-  updateLeaders(leader){
-    if(this.state.data !== leader) {
+
+  updateLeaders(leader) {
+    if (this.state.data !== leader) {
       this.setState({data: leader});
     }
   }
+
   handleChangePage = (event, page) => {
     this.setState({page});
   };
-
+  handleOpenKey = event => {
+    this.setState({anchorEl: event.currentTarget});
+  };
+  handleClose = () => {
+    this.setState({anchorEl: null});
+  };
 
   render() {
     const {rowsPerPage, page} = this.state;
     let dataLiderboard = this.state.data;
-    let emptyRows= 0
-    if(dataLiderboard) {
+    let emptyRows = 0;
+    if (dataLiderboard) {
       emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
     }
     return (
@@ -55,9 +65,9 @@ class Leaderboard extends Component {
             <Grid item xs={3}>
               <h4>online users: 15,000</h4>
               {/*<Button className="buttonShareEarn">*/}
-                {/*<font face="verdana">*/}
-                  {/*Share and Earn*/}
-                {/*</font>*/}
+              {/*<font face="verdana">*/}
+              {/*Share and Earn*/}
+              {/*</font>*/}
               {/*</Button>*/}
             </Grid>
           </Grid>
@@ -69,7 +79,7 @@ class Leaderboard extends Component {
                 <div className="papersMain">
                   <Paper className="myAcc" elevation={8}>
                     <div className="titleLeaderboard">
-                      Leaderboard
+                     Leaderboard
                     </div>
                     <Table className="tableLeaderboard">
                       <TableHead>
@@ -82,17 +92,20 @@ class Leaderboard extends Component {
                         </TableRow>
                       </TableHead>
                       <TableBody>
-                        {dataLiderboard?dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                        {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
                           return (
                             <TableRow key={k}>
                               <TableCell className="tableColumn">Dota 2</TableCell>
                               <TableCell className="tableColumn">past week</TableCell>
-                              <TableCell className="tableColumn">{n.publicKey.substring(0,10)}...</TableCell>
+                              <TableCell data-tip={n.publicKey} className="tableColumn" onClick={this.handleOpenKey}>
+                                {n.publicKey.substring(0, 10)}...
+                              </TableCell>
+                              <ReactTooltip effect="solid" type="light"/>
                               <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
                               <TableCell className="tableColumn">{n.reward}</TableCell>
-                            </TableRow>
+                            </TableRow >
                           );
-                        }):<div/>}
+                        }) : <TableRow/>}
                         {emptyRows > 0 && (
                           <TableRow style={{height: 48 * emptyRows}}>
                             <TableCell colSpan={6}/>
@@ -102,7 +115,7 @@ class Leaderboard extends Component {
                     </Table>
                     <TablePagination
                       component="div"
-                      count={dataLiderboard?dataLiderboard.length:0}
+                      count={dataLiderboard ? dataLiderboard.length : 0}
                       rowsPerPage={rowsPerPage}
                       page={page}
                       backIconButtonProps={{
