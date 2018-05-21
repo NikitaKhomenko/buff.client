@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 const title = 'start playing and earn coins!';
 class NewsTournaments extends Component {
   render() {
+    let news = this.props.allNews;
     let tournaments= this.props.allTournaments;
     return (
       <div className="NewsTournamentsComponent">
@@ -36,29 +37,66 @@ class NewsTournaments extends Component {
         <div className="NewsTournamentsMain">
           <Grid container spacing={24}>
             <Grid item xs={12} container>
-              <Grid item xs={8}>
+              <Grid item xs={4}>
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 700, height: 90}}>
+                  <Paper className="myAcc" elevation={8}>
                     <div className="titleMyAcc">
                       Latest News
                     </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        New version! -build your clan...
-                      </div>
-                    </div>
+                    {news?news.slice(news.length -2,news.length).map((n, k) => {
+                      return <div key={k}>
+                        <div className="newsMain">
+                          <div className="newsDotesContents">
+                            <div className="newsDotes"/>
+                          </div>
+                          <div className="newsContent">
+                            {n.title}
+                            <div className="sectionButton">
+                              <div className="newsTitle">
+                                {n.date}</div>
+                              <Button size="small" className="buttonReadMore" href ={n.link} target="_blank">
+                                Read More
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                        <div style={{
+                          height: '1.5px',
+                          borderTop: '1.5px solid #000'
+                        }}/>
+                      </div>;
+                    }):<div/>  }
                   </Paper>
                 </div>
+
+              </Grid>
+              <Grid item xs={4}>
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 700, height: 210}}>
+                  <Paper className="myAcc" elevation={8} >
                     <div className="titleMyAcc">
                       Tournaments
                     </div>
                     {tournaments?tournaments.map((n,k) =>
-                      <div className="balanceMyAcc" key={k}>
-                        <div style={{color: '#919191'}}>
-                          {n.title} face off -weekly- open {n.link}.
+                      <div key={k}>
+                        <div className="newsMain">
+                          <div className="newsDotesContents">
+                            <div className="newsDotes"/>
+                          </div>
+                          <div className="newsContent">
+                            {n.title}
+                            <div className="sectionButton">
+                              <div className="newsTitle">
+                                {n.date}</div>
+                              <Button size="small" className="buttonReadMore" href ={n.link} target="_blank">
+                                Read More
+                              </Button>
+                            </div>
+                          </div>
                         </div>
+                        <div style={{
+                          height: '1.5px',
+                          borderTop: '1.5px solid #000'
+                        }}/>
                       </div>
                     ):<div>In the near future there are no tournaments</div>}
                   </Paper>
@@ -67,7 +105,7 @@ class NewsTournaments extends Component {
               <Grid item xs={4}>
 
                 <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
+                  <Paper className="myAcc" elevation={8}>
                     <div className="titleMyAcc">
                       Chat Box
                     </div>
@@ -90,6 +128,7 @@ class NewsTournaments extends Component {
 }
 const mapStateToProps = (state) => ({
   allTournaments:state.reducerMain.allTournaments,
+  allNews: state.reducerMain.allNews,
 });
 
 function mapDispatchToProps(dispatch) {
