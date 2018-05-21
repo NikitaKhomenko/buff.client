@@ -97,10 +97,11 @@ class Leaderboard extends Component {
                             <TableRow key={k}>
                               <TableCell className="tableColumn">Dota 2</TableCell>
                               <TableCell className="tableColumn">past week</TableCell>
-                              <TableCell data-tip={n.publicKey} className="tableColumn" onClick={this.handleOpenKey}>
-                                {n.publicKey.substring(0, 10)}...
+                              <TableCell className="tableColumn" onClick={this.handleOpenKey}>
+                                <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
+                                </div>
+                                <ReactTooltip effect="solid" type="light"/>
                               </TableCell>
-                              <ReactTooltip effect="solid" type="light"/>
                               <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
                               <TableCell className="tableColumn">{n.reward}</TableCell>
                             </TableRow >
@@ -157,7 +158,8 @@ class Leaderboard extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  allLeaaderBoard: state.reducerMain.leaderBoard,
+  allLeaaderBoard: state.reducerMain.leaderBoardDota,
+  allLeaaderBoardLol: state.reducerMain.leaderBoardLol,
   username: state.reducerMain.username
 });
 

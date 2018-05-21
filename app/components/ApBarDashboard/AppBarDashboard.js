@@ -21,7 +21,8 @@ class AppBarDashboard extends Component {
       menuButton: 'dashboard',
     };
     this.props.addHistory();
-    this.props.addLeaderBoard();
+    this.props.addLeaderBoardDota();
+    this.props.addLeaderBoardLOL();
     this.props.addNews();
     this.props.addTournaments();
   }

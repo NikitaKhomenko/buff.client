@@ -16,8 +16,10 @@ export default function configureStore(initialState, routerHistory) {
         localStorage.setItem('history', JSON.stringify(action.payload.transactions));
         return {...state, allHistory: action.payload.transactions};
       }
-      case actionTypes.ADD_LEADERBOARD:
-        return {...state, leaderBoard: action.payload.leaders};
+      case actionTypes.ADD_LEADERBOARD_DOTA:
+        return {...state, leaderBoardDota: action.payload.leaders};
+      case actionTypes.ADD_LEADERBOARD_LOL:
+        return {...state, leaderBoardLol: action.payload.leaders};
       case actionTypes.USER_LOGIN:
         return {...state, username: action.data.username};
       case actionTypes.ADD_NEWS:

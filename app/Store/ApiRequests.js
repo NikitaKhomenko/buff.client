@@ -10,7 +10,10 @@ export default class Api {
   static getHistoryAPI() {
     return axios.get('http://18.219.35.208:4000/api/history?page=1')
   }
-  static getLeaderboardAPI() {
+  static getLeaderboardDotaAPI() {
+    return axios.get('http://18.219.35.208:4000/api/leaders?gameId=7314')
+  }
+  static getLeaderboardLoLAPI() {
     return axios.get('http://18.219.35.208:4000/api/leaders?gameId=7314')
   }
 }
