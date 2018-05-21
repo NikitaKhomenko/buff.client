@@ -17,10 +17,10 @@ export function addHistory(history = mock.historyAPI) {
   )
 }
 export function addLeaderBoard(leaderBoard = mock.leaderBoardAPI) {
-  return (dispatch) => dispatch({
+  return (dispatch) => Api.getLeaderboardAPI().then((res) => dispatch({
     type: actionTypes.ADD_LEADERBOARD,
-    payload: mock.leaderBoardAPI
-  });
+    payload: res.data
+  }));
 }
 export function addNews(news = mock.newsAPI) {
   return (dispatch) => Api.getNewsAPI().then((res) =>  dispatch({

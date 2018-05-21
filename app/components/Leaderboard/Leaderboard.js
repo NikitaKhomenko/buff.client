@@ -16,11 +16,18 @@ class Leaderboard extends Component {
     super(props, context);
     this.state = {
       page: 0,
-      rowsPerPage: 4,
+      rowsPerPage: 5,
       data: this.props.allLeaaderBoard
     };
+    setInterval(() => {
+      this.updateLeaders(this.props.allLeaaderBoard)
+    }, 1000)
   }
-
+  updateLeaders(leader){
+    if(this.state.data !== leader) {
+      this.setState({data: leader});
+    }
+  }
   handleChangePage = (event, page) => {
     this.setState({page});
   };
@@ -78,11 +85,11 @@ class Leaderboard extends Component {
                         {dataLiderboard?dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
                           return (
                             <TableRow key={k}>
-                              <TableCell className="tableColumn">{n.name}</TableCell>
-                              <TableCell className="tableColumn">{n.period}</TableCell>
-                              <TableCell className="tableColumn">{n.playerName}</TableCell>
-                              <TableCell className="tableColumn">{n.achievements}</TableCell>
-                              <TableCell className="tableColumn">{n.buffEarn}</TableCell>
+                              <TableCell className="tableColumn">Dota 2</TableCell>
+                              <TableCell className="tableColumn">past week</TableCell>
+                              <TableCell className="tableColumn">{n.publicKey.substring(0,10)}...</TableCell>
+                              <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
+                              <TableCell className="tableColumn">{n.reward}</TableCell>
                             </TableRow>
                           );
                         }):<div/>}

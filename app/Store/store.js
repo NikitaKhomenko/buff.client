@@ -17,7 +17,7 @@ export default function configureStore(initialState, routerHistory) {
         return {...state, allHistory: action.payload.transactions};
       }
       case actionTypes.ADD_LEADERBOARD:
-        return {...state, leaderBoard: action.payload};
+        return {...state, leaderBoard: action.payload.leaders};
       case actionTypes.USER_LOGIN:
         return {...state, username: action.data.username};
       case actionTypes.ADD_NEWS:
