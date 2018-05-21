@@ -107,7 +107,7 @@ class Dashboard extends Component {
                             <div className="sectionButton">
                               <div className="newsTitle">
                                 {n.date}</div>
-                              <Button size="small" className="buttonReadMore">
+                              <Button size="small" className="buttonReadMore" href ={n.link} target="_blank">
                                 Read More
                               </Button>
                             </div>

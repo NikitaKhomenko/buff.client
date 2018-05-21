@@ -100,7 +100,7 @@ class History extends Component {
                         <TableRow>
                           <TableCell className="tableColumnHead">Date&Time</TableCell>
                           <TableCell className="tableColumnHead">Game\Conversion</TableCell>
-                          <TableCell className="tableColumnHead">Achievements</TableCell>
+                          <TableCell className="tableColumnHead">KDA</TableCell>
                           <TableCell className="tableColumnHead">Buff Coins</TableCell>
                           <TableCell className="tableColumnHead">Conversion</TableCell>
                         </TableRow>
@@ -164,8 +164,8 @@ class History extends Component {
             <TableCell className="tableColumn">{realTime }</TableCell>
             <TableCell className="tableColumn">{gameName}</TableCell>
             <TableCell className="tableColumn">{n.gamedata.kda}</TableCell>
-            <TableCell className="tableColumn">{n.gamedata.gpm}</TableCell>
-            <TableCell className="tableColumn">{n.amount}</TableCell>
+            <TableCell className="tableColumn">{n.gamedata.reward}</TableCell>
+            <TableCell className="tableColumn">{parseInt(n.gamedata.reward/2)}$</TableCell>
           </TableRow>
         );
       }):<TableRow/>}

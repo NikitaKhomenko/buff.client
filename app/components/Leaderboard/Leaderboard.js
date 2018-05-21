@@ -69,8 +69,8 @@ class Leaderboard extends Component {
                         <TableRow>
                           <TableCell className="tableColumnHead">Name</TableCell>
                           <TableCell className="tableColumnHead">Period</TableCell>
-                          <TableCell className="tableColumnHead">Player Name</TableCell>
-                          <TableCell className="tableColumnHead">Achievements</TableCell>
+                          <TableCell className="tableColumnHead">Public key</TableCell>
+                          <TableCell className="tableColumnHead">Win / Lose</TableCell>
                           <TableCell className="tableColumnHead">Buff Earned</TableCell>
                         </TableRow>
                       </TableHead>
