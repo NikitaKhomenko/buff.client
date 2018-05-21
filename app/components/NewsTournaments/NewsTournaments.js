@@ -53,7 +53,7 @@ class NewsTournaments extends Component {
                             {n.title}
                             <div className="sectionButton">
                               <div className="newsTitle">
-                                {n.date}</div>
+                                {n.date.substring(0, 10)}</div>
                               <Button size="small" className="buttonReadMore" href ={n.link} target="_blank">
                                 Read More
                               </Button>
@@ -86,7 +86,7 @@ class NewsTournaments extends Component {
                             {n.title}
                             <div className="sectionButton">
                               <div className="newsTitle">
-                                {n.date}</div>
+                                {n.date.substring(0, 10)}</div>
                               <Button size="small" className="buttonReadMore" href ={n.link} target="_blank">
                                 Read More
                               </Button>
