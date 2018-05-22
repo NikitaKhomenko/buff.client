@@ -12,6 +12,7 @@ import Api from './Store/ApiRequests';
 
 export const realAuth = {
   isAuthenticated: false,
+  isRegistered: false,
   authenticate(user, cb) {
     return new Promise(isAuthenticated => {
       Api.postLogin(user).then((res) => {
@@ -21,6 +22,20 @@ export const realAuth = {
         }
       ).catch((error) => {
         let er = JSON.stringify(error.response.data.error.message);
+        this.isAuthenticated = false;
+        isAuthenticated({status: this.isAuthenticated, data: er});
+      });
+    });
+  },
+  registration(user, cb) {
+    return new Promise(isAuthenticated => {
+      Api.postRegister(user).then((res) => {
+          let user = res.data.user;
+          this.isAuthenticated = true;
+        isAuthenticated({status: this.isAuthenticated, data: user});
+        }
+      ).catch((error) => {
+        let er = JSON.stringify(error.response.data.error);
         this.isAuthenticated = false;
         isAuthenticated({status: this.isAuthenticated, data: er});
       });

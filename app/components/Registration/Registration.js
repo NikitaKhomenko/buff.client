@@ -8,6 +8,8 @@ import green from 'material-ui/colors/green';
 import {withStyles} from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import './Registration.scss';
+import {realAuth} from '../../routes';
+import {Redirect} from 'react-router-dom';
 
 
 const styles = theme => {
@@ -33,12 +35,6 @@ const styles = theme => {
     },
   });
 };
-
-const RegistrationContainerStyle = ({
-  width: '100%',
-  height: '100%',
-  align: 'center'
-});
 
 
 const options = [
@@ -67,32 +63,115 @@ const options = [
 
 
 class Registration extends Component {
-
   state = {
+    isLoading: false,
     username: '',
+    nickname: '',
+    fullname: '',
+    confPassword: '',
+    confEmail: '',
+    email: '',
+    password: '',
     open: false,
     anchorEl: null,
     selectedIndex: 1,
   };
-
-  handleClickListItem = event => {
-    this.setState({anchorEl: event.currentTarget});
+  handleChangeUsername = (e) => {
+    this.setState({
+      username: e.target.value
+    });
   };
-
-  handleMenuItemClick = (event, index) => {
-    this.setState({selectedIndex: index, anchorEl: null});
+  handleChangeNickName = (e) => {
+    this.setState({
+      nickname: e.target.value
+    });
   };
-
-  handleClose = () => {
-    this.setState({anchorEl: null});
+  handleChangeFullName = (e) => {
+    this.setState({
+      fullname: e.target.value
+    });
   };
-
+  handleChangeEmail = (e) => {
+    this.setState({
+      email: e.target.value
+    });
+  };
+  handleChangeConfEmail= (e) => {
+    this.setState({
+      confEmail: e.target.value
+    });
+  };
+  handleChangeConfPassword= (e) => {
+    this.setState({
+      confPassword: e.target.value
+    });
+  };
+  handleChangePassword= (e) => {
+    this.setState({
+      password: e.target.value
+    });
+  };
   handleBackToLogin = () => {
     this.props.onBackToLogin({});
   };
+  handleRegister = () => {
+    console.log(this.state);
+    let self = this;
+
+    self.setState({isLoading: true});
+    if (!realAuth.isAuthenticated) {
+      realAuth.registration({
+        "username": self.state.username,
+        "nickname": self.state.nickname,
+        "fullname": self.state.fullname,
+        "email": self.state.email,
+        "password": self.state.password
+      }).then(isAuthenticated => {
+        self.setState({
+          redirectToReferrer: isAuthenticated.status,
+          isLoading: false
+        });
+        console.log('isRegistered.status',isAuthenticated);
+        if(isAuthenticated.status){
+          self.props.onRegister(isAuthenticated);
+        }
+      }).catch(error => {
+        console.log("error::>", error);
+      });
+    }
+  };
 
   render() {
-    const {anchorEl} = this.state;
+    const {from} = this.props.location.state || {from: {pathname: '/'}};
+    const {redirectToReferrer} = this.state;
+
+    if (this.state.isLoading){
+      return (
+        <div className="LoginMain">
+          <div className="loader-inner">
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+            <div className="loader-line-wrap">
+              <div className="loader-line"></div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    if (redirectToReferrer && from.pathname !== '/') {
+      return <Redirect to={from}/>;
+    }
+
     return (
       <div className="RegistrationComponent">
         <Button
@@ -103,7 +182,8 @@ class Registration extends Component {
         </Button>
         <Button
           variant="raised"
-          className="buttonRegister">
+          className="buttonRegister"
+          onClick={this.handleRegister}>
            Sign In
         </Button>
 
@@ -111,15 +191,13 @@ class Registration extends Component {
           Registration
         </div>
         <div className="RegistrationMain">
-          <CardMedia style={RegistrationContainerStyle} className="container">
-            <Grid style={RegistrationContainerStyle}>
+            <Grid >
               <Grid container spacing={24}>
                 <Grid item xs={12} container>
                   <Grid item xs={3}>
                     <p className="Line">User Name:</p>
                     <p className="Line">Nick Name:</p>
-                    <p className="Line">First Name:</p>
-                    <p className="Line">Last Name:</p>
+                    <p className="Line">Full Name:</p>
                   </Grid>
                   <Grid item xs={3}>
                     <FormControl className={this.props.classes.formControl}>
@@ -137,6 +215,7 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='username'
+                        onChange={this.handleChangeUsername}
                       />
                     </FormControl>
 
@@ -155,6 +234,8 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='NickName'
+                        onChange={this.handleChangeNickName}
+
                       />
                     </FormControl>
 
@@ -163,38 +244,21 @@ class Registration extends Component {
                         formcontrolclasses={{
                           focused: this.props.classes.inputLabelFocused,
                         }}
-                        htmlFor='FirstName'
+                        htmlFor='Fullname'
                       >
-                          <font color="#C8E6C9"> First Name </font>
+                          <font color="#C8E6C9"> Full Name </font>
                       </InputLabel>
                       <Input
                         classes={{
                           underline: this.props.classes.inputUnderline,
                           focused: this.props.classes.inputLabelFocused,
                         }}
-                        id='FirstName'
-                      />
-                    </FormControl>
+                        id='FullName'
+                        onChange={this.handleChangeFullName}
 
-                    <FormControl className={this.props.classes.formControl}>
-                      <InputLabel
-                        formcontrolclasses={{
-                          focused: this.props.classes.inputLabelFocused,
-                        }}
-                        htmlFor='LastName'
-                      >
-                          <font color="#C8E6C9"> Last Name </font>
-                      </InputLabel>
-                      <Input
-                        classes={{
-                          underline: this.props.classes.inputUnderline,
-                          focused: this.props.classes.inputLabelFocused,
-                        }}
-                        id='LastName'
                       />
                     </FormControl>
                   </Grid>
-
                   <Grid item xs={3}>
                     <p className="Line1">Email address:</p>
                     <p className="Line1">Confirm Email address:</p>
@@ -218,6 +282,7 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='EmailAddress'
+                        onChange={this.handleChangeEmail}
                       />
                     </FormControl>
 
@@ -236,6 +301,7 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='ConfirmEmailAddress'
+                        onChange={this.handleChangeConfEmail}
                       />
                     </FormControl>
                     <FormControl className={this.props.classes.formControl}>
@@ -255,6 +321,7 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='Password'
+                        onChange={this.handleChangePassword}
                       />
                     </FormControl>
 
@@ -274,13 +341,13 @@ class Registration extends Component {
                           focused: this.props.classes.inputLabelFocused,
                         }}
                         id='ConfirmPassword'
+                        onChange={this.handleChangeConfPassword}
                       />
                     </FormControl>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
-          </CardMedia>
         </div>
       </div>
     );

@@ -65,14 +65,13 @@ class Login extends Component {
     if (!realAuth.isAuthenticated) {
       realAuth.authenticate({'username': this.state.username,
                               'password': this.state.password}).then(isAuthenticated => {
-        console.log("isAuth LOGIN: ", isAuthenticated);
         self.setState({
           redirectToReferrer: isAuthenticated.status,
           isLoading: false
         });
         self.props.onLogin(isAuthenticated);
       }).catch(error => {
-        console.log("ilya::error::", error);
+        console.log("error::>", error);
       });
     }
   };
