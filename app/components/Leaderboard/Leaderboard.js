@@ -1,22 +1,33 @@
 import React, {Component} from 'react';
 import Paper from 'material-ui/Paper';
-import {Grid} from 'material-ui';
+import {AppBar, Grid, Tab, Tabs, Typography} from 'material-ui';
 import Table, {TableBody, TableCell, TableHead, TableRow, TablePagination} from 'material-ui/Table';
 import './Leaderboard.scss';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as mainActions from '../../actions/mainActions';
 import ReactTooltip from 'react-tooltip'
+import SwipeableViews from 'react-swipeable-views';
 
 
 const title = 'start playing and earn coins!';
+
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  );
+}
+
 
 class Leaderboard extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
+      value: 0,
       page: 0,
-      rowsPerPage: 5,
+      rowsPerPage: 3,
       data: this.props.allLeaaderBoard
     };
     setInterval(() => {
@@ -40,6 +51,13 @@ class Leaderboard extends Component {
     this.setState({anchorEl: null});
   };
 
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
+  };
   render() {
     const {rowsPerPage, page} = this.state;
     let dataLiderboard = this.state.data;
@@ -47,6 +65,8 @@ class Leaderboard extends Component {
     if (dataLiderboard) {
       emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
     }
+    const {theme } = this.props;
+
     return (
       <div className="LeaderboardComponent">
         <Grid container spacing={24}>
@@ -78,52 +98,118 @@ class Leaderboard extends Component {
                     <div className="titleLeaderboard">
                      Leaderboard
                     </div>
-                    <Table className="tableLeaderboard">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell className="tableColumnHead">Name</TableCell>
-                          <TableCell className="tableColumnHead">Period</TableCell>
-                          <TableCell className="tableColumnHead">Public key</TableCell>
-                          <TableCell className="tableColumnHead">Win / Lose</TableCell>
-                          <TableCell className="tableColumnHead">Buff Earned</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
-                          return (
-                            <TableRow key={k}>
-                              <TableCell className="tableColumn">Dota 2</TableCell>
-                              <TableCell className="tableColumn">past week</TableCell>
-                              <TableCell className="tableColumn" onClick={this.handleOpenKey}>
-                                <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
-                                </div>
-                                <ReactTooltip effect="solid" type="light"/>
-                              </TableCell>
-                              <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
-                              <TableCell className="tableColumn">{n.reward}</TableCell>
-                            </TableRow >
-                          );
-                        }) : <TableRow/>}
-                        {emptyRows > 0 && (
-                          <TableRow style={{height: 48 * emptyRows}}>
-                            <TableCell colSpan={6}/>
+                    <AppBar position="static" className="titleLeaderboard">
+                      <Tabs
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        indicatorColor="primary"
+                        fullWidth
+                      >
+                        <Tab style={{fontWeight: "bold",color:"#347139"}} label="Dota 2" />
+                        <Tab  style={{fontWeight: "bold",color:"#347139"}} label="League of legends" />
+                      </Tabs>
+                    </AppBar>
+                    <SwipeableViews
+                      index={this.state.value}
+                      onChangeIndex={this.handleChangeIndex}
+                    >
+                      <TabContainer >
+                        <Table className="tableLeaderboard">
+                          <TableHead>
+                            <TableRow>
+                              <TableCell className="tableColumnHead">Name</TableCell>
+                              <TableCell className="tableColumnHead">Period</TableCell>
+                              <TableCell className="tableColumnHead">Public key</TableCell>
+                              <TableCell className="tableColumnHead">Win / Lose</TableCell>
+                              <TableCell className="tableColumnHead">Buff Earned</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                              return (
+                                <TableRow key={k}>
+                                  <TableCell className="tableColumn">Dota 2</TableCell>
+                                  <TableCell className="tableColumn">past week</TableCell>
+                                  <TableCell className="tableColumn" onClick={this.handleOpenKey}>
+                                    <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
+                                    </div>
+                                    <ReactTooltip effect="solid" type="light"/>
+                                  </TableCell>
+                                  <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
+                                  <TableCell className="tableColumn">{n.reward}</TableCell>
+                                </TableRow >
+                              );
+                            }) : <TableRow/>}
+                            {emptyRows > 0 && (
+                              <TableRow style={{height: 48 * emptyRows}}>
+                                <TableCell colSpan={6}/>
+                              </TableRow>
+                            )}
+                          </TableBody>
+                        </Table>
+                        <TablePagination
+                          component="div"
+                          count={dataLiderboard ? dataLiderboard.length : 0}
+                          rowsPerPage={rowsPerPage}
+                          page={page}
+                          backIconButtonProps={{
+                            'aria-label': 'Previous Page',
+                          }}
+                          nextIconButtonProps={{
+                            'aria-label': 'Next Page',
+                          }}
+                          onChangePage={this.handleChangePage}
+                        />
+                      </TabContainer>
+                      <TabContainer>
+                        <Table className="tableLeaderboard">
+                        <TableHead>
+                          <TableRow>
+                            <TableCell className="tableColumnHead">Name</TableCell>
+                            <TableCell className="tableColumnHead">Period</TableCell>
+                            <TableCell className="tableColumnHead">Public key</TableCell>
+                            <TableCell className="tableColumnHead">Win / Lose</TableCell>
+                            <TableCell className="tableColumnHead">Buff Earned</TableCell>
                           </TableRow>
-                        )}
-                      </TableBody>
-                    </Table>
-                    <TablePagination
-                      component="div"
-                      count={dataLiderboard ? dataLiderboard.length : 0}
-                      rowsPerPage={rowsPerPage}
-                      page={page}
-                      backIconButtonProps={{
-                        'aria-label': 'Previous Page',
-                      }}
-                      nextIconButtonProps={{
-                        'aria-label': 'Next Page',
-                      }}
-                      onChangePage={this.handleChangePage}
-                    />
+                        </TableHead>
+                        <TableBody>
+                          {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                            return (
+                              <TableRow key={k}>
+                                <TableCell className="tableColumn">Dota 2</TableCell>
+                                <TableCell className="tableColumn">past week</TableCell>
+                                <TableCell className="tableColumn" onClick={this.handleOpenKey}>
+                                  <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
+                                  </div>
+                                  <ReactTooltip effect="solid" type="light"/>
+                                </TableCell>
+                                <TableCell className="tableColumn">{n.win}/{n.lose}</TableCell>
+                                <TableCell className="tableColumn">{n.reward}</TableCell>
+                              </TableRow >
+                            );
+                          }) : <TableRow/>}
+                          {emptyRows > 0 && (
+                            <TableRow style={{height: 48 * emptyRows}}>
+                              <TableCell colSpan={6}/>
+                            </TableRow>
+                          )}
+                        </TableBody>
+                      </Table>
+                        <TablePagination
+                          component="div"
+                          count={dataLiderboard ? dataLiderboard.length : 0}
+                          rowsPerPage={rowsPerPage}
+                          page={page}
+                          backIconButtonProps={{
+                            'aria-label': 'Previous Page',
+                          }}
+                          nextIconButtonProps={{
+                            'aria-label': 'Next Page',
+                          }}
+                          onChangePage={this.handleChangePage}
+                        />
+                      </TabContainer>
+                    </SwipeableViews>
                   </Paper>
 
                 </div>

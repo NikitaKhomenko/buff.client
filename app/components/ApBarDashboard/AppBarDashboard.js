@@ -70,7 +70,7 @@ class AppBarDashboard extends Component {
                 <Link
                   className={menuButton === 'leaderboard' ? 'dashboardMenuActive' : 'dashboardMenu'}
                   to={`${this.state.match.url}/leaderboard`}><Button className="buttonAppBar"
-                                                                     onClick={this.handleButtonPress('leaderboard')}>Leaderboared</Button></Link>
+                                                                     onClick={this.handleButtonPress('leaderboard')}>Leaderboard</Button></Link>
                 <Link
                   className={menuButton === 'marketPlace' ? 'dashboardMenuActive' : 'dashboardMenu'}
                   to={`${this.state.match.url}/marketPlace`}><Button className="buttonAppBar"
