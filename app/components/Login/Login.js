@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Grid from 'material-ui/Grid';
-import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover';
 import {FormControl} from 'material-ui/Form';
@@ -10,13 +9,19 @@ import {withStyles} from 'material-ui/styles';
 import './Login.scss';
 import {fakeAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
+
 const styles = theme => {
   return ({
     formControl: {
       marginRight: theme.spacing.unit * 15,
       marginLeft: theme.spacing.unit * 15,
-      margin: theme.spacing.unit,
+      marginBottom: theme.spacing.unit,
+      width: 240,
     },
+      formControl2: {
+          marginBottom: theme.spacing.unit*5,
+          width: 250,
+      },
     inputLabelFocused: {
       color: green[100],
     },
@@ -26,11 +31,12 @@ const styles = theme => {
         backgroundColor: green[100],
       },
       '&:before': {
-        backgroundColor: green[400],
+          backgroundColor: green[300],
       },
     },
     flatbutton: {
       marginBottom: theme.spacing.unit * 4,
+      color: green[100],
     },
   });
 };
@@ -141,12 +147,9 @@ class Login extends Component {
               variant="raised"
               className="buttonExit"
               onClick={this.handleCloseApp}>
-              <font face="verdana" color="#fffff">Exit</font>
+             Exit
             </Button>
-
-            <font face="verdana" color="#C8E6C9">
-              <h1>Login to BUFF</h1>
-            </font>
+              <h1 className={"Title"}>Login to BUFF</h1>
 
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
@@ -155,7 +158,7 @@ class Login extends Component {
                 }}
                 htmlFor="username"
               >
-                <font color="#C8E6C9">Username</font>
+                <font color="#C8E6C9"> Username </font>
               </InputLabel>
               <Input
                 classes={{
@@ -176,7 +179,7 @@ class Login extends Component {
                 }}
                 htmlFor="password"
               >
-                <font color="#C8E6C9">Password</font>
+                  <font color="#C8E6C9"> Password </font>
               </InputLabel>
               <Input
                 type="password"
@@ -203,9 +206,7 @@ class Login extends Component {
               <Button
                 className={this.props.classes.flatbutton}
                 onClick={this.handleForgotPassword}>
-                <font face="verdana" color="#C8E6C9">
                   Forgot password? click here!
-                </font>
               </Button>
             </div>
             <Popover
@@ -221,34 +222,44 @@ class Login extends Component {
                 horizontal: 'center',
               }}>
 
-              <div className="LoginMain">
-                <p><font face="verdana" color="black">
+              <div className="LoginMain" style={{background: '#212121',  margin: '0px'}}>
+                <p><font face="Helvetica" color="#E8F5E9">
                   If you've forgotten your password,
                   you can use this form to reset it. After resetting,
                   a message will be sent to your email address.
                   If you do not find the message in your inbox,
                   please check if the message did not reach your spam.
                 </font></p>
-                <TextField
-                  required
-                  className="emailField"
-                  id="email"
-                  label="Your email:"
-                  defaultValue={username}
-                  type="text"
-                  margin="normal"/>
+                 <center> <FormControl className={this.props.classes.formControl2}>
+                      <InputLabel
+                          formcontrolclasses={{
+                              focused: this.props.classes.inputLabelFocused
+                          }}
+                          htmlFor="emailField"
+                      >
+                          <font color="#C8E6C9"> Your email: </font>
+                      </InputLabel>
+                      <Input
+                          classes={{
+                              underline: this.props.classes.inputUnderline,
+                              focused: this.props.classes.inputLabelFocused,
+                          }}
+                          id="emailField"
+                          onChange={this.handleChange}
+                          required={true}
+                      />
+                 </FormControl></center>
                 <Button
                   variant="raised"
                   className="buttonSendMe">
                     Send me
                 </Button>
-                <button
+                <Button
+                    variant="raised"
                     className="buttonExitPassword"
                     onClick={this.handleCloseForgotPassword}>
-                  <font face="verdana">
                     CLOSE
-                  </font>
-                </button>
+                </Button>
               </div>
             </Popover>
 

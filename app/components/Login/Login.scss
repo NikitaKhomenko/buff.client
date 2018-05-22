@@ -5,8 +5,15 @@
   flex-direction: column;
   justify-content: center;
   margin: 0 25%;
+  filter: brightness(80%);
   .buttomDown{
     margin-top: 180px;
+  }
+
+  .Title {
+    font-family: Helvetica;
+    color: #A5D6A7;
+    font-size: 3em;
   }
 
   .buttonMain {
@@ -21,29 +28,27 @@
     margin-bottom: 10px;
     background: #2E7D32;
     alignment: right;
+    font-family: Helvetica;
   }
 
   .buttonExitPassword {
     width: 100px;
     height: 30px;
-    background-color: #F5F5F5;
+    background: #616161;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-family: Helvetica;
+    -webkit-text-fill-color: #BDBDBD;
   }
 
   .buttonSendMe {
     margin: auto;
     margin-top: 10px;
-    margin-bottom: 50px;
-    background: #66BB6A;
+    margin-bottom: 40px;
+    background: #1B5E20;
+    font-family: Helvetica;
     width: 150px;
-  }
-
-  .emailField {
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    width: 250px;
+    -webkit-text-fill-color: #BDBDBD;
   }
 }
 

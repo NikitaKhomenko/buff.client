@@ -3,14 +3,11 @@ import Paper from 'material-ui/Paper';
 import {Grid} from 'material-ui';
 import Table, {TableBody, TableCell, TableHead, TableRow, TablePagination} from 'material-ui/Table';
 import './Leaderboard.scss';
-import Button from 'material-ui/es/Button/Button';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as mainActions from '../../actions/mainActions';
-import IconButton from 'material-ui/es/IconButton/IconButton';
 import ReactTooltip from 'react-tooltip'
 
-import DeleteIcon from 'material-ui-icons/Delete';
 
 const title = 'start playing and earn coins!';
 
@@ -54,7 +51,7 @@ class Leaderboard extends Component {
       <div className="LeaderboardComponent">
         <Grid container spacing={24}>
           <Grid item xs={12} container>
-            <Grid item xs={9}>
+            <Grid item xs={10}>
               <div className="LeaderboardTitle" style={{width: 300, height: 80}}>
                 {title.toLocaleUpperCase()}
               </div>
@@ -62,7 +59,7 @@ class Leaderboard extends Component {
                 You will earn more coins by marking achievement in active game
               </div>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={2}>
               <h4>online users: 15,000</h4>
               {/*<Button className="buttonShareEarn">*/}
               {/*<font face="verdana">*/}

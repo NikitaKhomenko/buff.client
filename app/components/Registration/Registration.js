@@ -8,17 +8,16 @@ import green from 'material-ui/colors/green';
 import {withStyles} from 'material-ui/styles';
 import Button from 'material-ui/Button';
 import './Registration.scss';
-import grey from "material-ui/es/colors/grey";
 
 
 const styles = theme => {
   return ({
     formControl: {
       margin: theme.spacing.unit * 1.5,
-      width: 260
+      width: 260,
     },
     inputLabelFocused: {
-      color: green[100],
+        color: green[100],
     },
     listCountries: {
       marginTop: theme.spacing.unit * 3,
@@ -26,10 +25,10 @@ const styles = theme => {
     inputUnderline: {
       color: '#fff',
       '&:after': {
-        backgroundColor: green[100],
+          backgroundColor: green[100],
       },
       '&:before': {
-        backgroundColor: grey[100],
+          backgroundColor: green[300],
       },
     },
   });
@@ -97,20 +96,18 @@ class Registration extends Component {
     return (
       <div className="RegistrationComponent">
         <Button
-          style={{position: 'absolute', bottom: 40, right: 130}}
           variant='raised'
           className="buttonExit"
           onClick={this.handleBackToLogin}>
-          <font face='verdana' color='#fffff'>Back to login</font>
+          Back to login
         </Button>
         <Button
-          style={{position: 'absolute', bottom: 110, right: 110}}
           variant="raised"
           className="buttonRegister">
-          <font face='verdana' color='#fffff'> Sign In</font>
+           Sign In
         </Button>
 
-        <div className="RegistrationTitle" style={{height: 150}}>
+        <div className="RegistrationTitle">
           Registration
         </div>
         <div className="RegistrationMain">
@@ -132,7 +129,7 @@ class Registration extends Component {
                         }}
                         htmlFor='username'
                       >
-                        <font color='#C8E6C9'>User Name</font>
+                          <font color="#C8E6C9"> User Name </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -150,7 +147,7 @@ class Registration extends Component {
                         }}
                         htmlFor='NickName'
                       >
-                        <font color='#C8E6C9'>*Not necessary</font>
+                          <font color="#C8E6C9"> *Not necessary </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -168,7 +165,7 @@ class Registration extends Component {
                         }}
                         htmlFor='FirstName'
                       >
-                        <font color='#C8E6C9'>First Name</font>
+                          <font color="#C8E6C9"> First Name </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -186,7 +183,7 @@ class Registration extends Component {
                         }}
                         htmlFor='LastName'
                       >
-                        <font color='#C8E6C9'>Last Name</font>
+                          <font color="#C8E6C9"> Last Name </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -213,8 +210,7 @@ class Registration extends Component {
                         }}
                         htmlFor='EmailAddress'
                       >
-
-                        <font color='#C8E6C9'>Email address</font>
+                          <font color="#C8E6C9"> Email address </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -232,7 +228,7 @@ class Registration extends Component {
                         }}
                         htmlFor='ConfirmEmailAddress'
                       >
-                        <font color='#C8E6C9'>Confirm Email address</font>
+                          <font color="#C8E6C9"> Confirm Email address </font>
                       </InputLabel>
                       <Input
                         classes={{
@@ -250,8 +246,7 @@ class Registration extends Component {
                         }}
                         htmlFor='Password'
                       >
-
-                        <font color='#C8E6C9'>Password</font>
+                          <font color="#C8E6C9"> Password </font>
                       </InputLabel>
                       <Input
                         type="Password"
@@ -270,7 +265,7 @@ class Registration extends Component {
                         }}
                         htmlFor='ConfirmPassword'
                       >
-                        <font color='#C8E6C9'>Confirm Password</font>
+                          <font color="#C8E6C9"> Confirm Password </font>
                       </InputLabel>
                       <Input
                         type="password"
