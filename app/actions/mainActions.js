@@ -2,13 +2,6 @@ import * as actionTypes from './../Store/constant';
 import Api from "../Store/ApiRequests";
 import mock from './mockAPI'
 
-export function loginUser(data = {}) {
-  return {
-    type: actionTypes.USER_LOGIN,
-    data
-  };
-}
-
 export function addHistory(history = mock.historyAPI) {
   return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_HISTORY,
@@ -42,19 +35,4 @@ export function addTournaments(tournaments = mock.tournamentsAPI) {
     })
   )
 }
-export function postLogin(user) {
-  return (dispatch) => Api.postLogin(user).then((res,err) =>  {
-    console.log('RESSSSS:>>>', res);
-    console.log('errr:>>>', err);
-    return dispatch({
-      type: actionTypes.USER_LOGIN,
-      payload: res.data
-    })}
-  ).catch((error) => {
-    console.log('ER>>>', error);
-    return dispatch({
-      type: actionTypes.USER_LOGIN,
-      payload: {user:{fullname: "ERROR"}}
-    })
-  })
-}
+
