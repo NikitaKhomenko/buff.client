@@ -8,17 +8,25 @@ import {
 import LoginPage from './containers/LoginPage';
 import LoggedInPage from './containers/LoggedInPage';
 import RegistrationPage from './containers/RegistrationPage';
+import * as actionTypes from './Store/constant';
+import Api from './Store/ApiRequests';
 
-export const fakeAuth = {
+export const realAuth = {
   isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true;
-    // setTimeout(cb, 100); // fake async
-    // return this.isAuthenticated;
+  authenticate(user, cb) {
     return new Promise(isAuthenticated => {
-      setTimeout(() => {isAuthenticated(this.isAuthenticated);}, 100);
+        Api.postLogin(user).then((res) => {
+            console.log('RESSSSS:>>>', res);
+            this.isAuthenticated = true;
+          isAuthenticated(this.isAuthenticated);
+          }
+        ).catch((error) => {
+          console.log('error:::', error);
+          this.isAuthenticated = false;
+          isAuthenticated(this.isAuthenticated);
+        });
     });
-  },
+      },
   signout(cb) {
     this.isAuthenticated = false;
     setTimeout(cb, 100);
@@ -29,7 +37,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={props =>
-      fakeAuth.isAuthenticated ? (
+      realAuth.isAuthenticated ? (
         <Component {...props} />
       ) : (
         <Redirect

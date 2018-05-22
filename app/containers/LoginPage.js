@@ -3,7 +3,7 @@ import {push} from 'react-router-redux';
 import {bindActionCreators} from 'redux';
 import Login from '../components/Login/Login';
 import * as TodoActionCreators from '../actions/mainActions';
-import {fakeAuth} from '../routes';
+import {realAuth} from '../routes';
 
 const mapStateToProps = (state, ownProps) => {
   return state;
@@ -12,14 +12,12 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   const user = bindActionCreators(TodoActionCreators, dispatch);
   return {
-    onLogin: (data) => {
-      user.postLogin(data);
-      if (fakeAuth.isAuthenticated) {
+    onLogin: () => {
+      if (realAuth.isAuthenticated) {
         dispatch(push('/loggedin'));
       }
     },
     onRegister: () => {
-      user.loginUser();
       dispatch(push('/Registration'));
     },
 

@@ -7,7 +7,7 @@ import Input, {InputLabel} from 'material-ui/Input';
 import green from 'material-ui/colors/green';
 import {withStyles} from 'material-ui/styles';
 import './Login.scss';
-import {fakeAuth} from '../../routes';
+import {realAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
 
 const styles = theme => {
@@ -62,19 +62,18 @@ class Login extends Component {
   handleLogin = () => {
     let self = this;
     this.setState({isLoading: true});
-    if (!fakeAuth.isAuthenticated) {
-      fakeAuth.authenticate().then(isAuthenticated => {
+    if (!realAuth.isAuthenticated) {
+      realAuth.authenticate({'username': this.state.username,
+                              'password': this.state.password}).then(isAuthenticated => {
         console.log("isAuth ", isAuthenticated);
         self.setState({
           redirectToReferrer: isAuthenticated,
           isLoading: false
         });
-        self.props.onLogin({
-          username: this.state.username,
-          password:this.state.password,
-          // loggedIn: true
-        });
-      })
+        self.props.onLogin();
+      }).catch(error => {
+        console.log("ilya::error::", error);
+      });
     }
   };
 
