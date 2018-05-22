@@ -42,3 +42,19 @@ export function addTournaments(tournaments = mock.tournamentsAPI) {
     })
   )
 }
+export function postLogin(user) {
+  return (dispatch) => Api.postLogin(user).then((res,err) =>  {
+    console.log('RESSSSS:>>>', res);
+    console.log('errr:>>>', err);
+    return dispatch({
+      type: actionTypes.USER_LOGIN,
+      payload: res.data
+    })}
+  ).catch((error) => {
+    console.log('ER>>>', error);
+    return dispatch({
+      type: actionTypes.USER_LOGIN,
+      payload: {user:{fullname: "ERROR"}}
+    })
+  })
+}

@@ -52,6 +52,7 @@ class Login extends Component {
 
   state = {
     username: '',
+    password: '',
     open: false,
     anchorEl: null,
     redirectToReferrer: false,
@@ -59,7 +60,6 @@ class Login extends Component {
   };
 
   handleLogin = () => {
-    // console.log('LOGIN', this.usernameInput.value);
     let self = this;
     this.setState({isLoading: true});
     if (!fakeAuth.isAuthenticated) {
@@ -71,7 +71,8 @@ class Login extends Component {
         });
         self.props.onLogin({
           username: this.state.username,
-          loggedIn: true
+          password:this.state.password,
+          // loggedIn: true
         });
       })
     }
@@ -81,9 +82,14 @@ class Login extends Component {
     this.props.onRegister();
   };
 
-  handleChange = (e) => {
+  handleChangeUser = (e) => {
     this.setState({
       username: e.target.value
+    });
+  };
+  handleChangePass = (e) => {
+    this.setState({
+      password: e.target.value
     });
   };
 
@@ -166,7 +172,7 @@ class Login extends Component {
                   focused: this.props.classes.inputLabelFocused,
                 }}
                 id="username"
-                onChange={this.handleChange}
+                onChange={this.handleChangeUser}
                 required={true}
               />
             </FormControl>
@@ -188,6 +194,7 @@ class Login extends Component {
                   focused: this.props.classes.inputLabelFocused,
                 }}
                 id="password"
+                onChange={this.handleChangePass}
               />
             </FormControl>
             <Button

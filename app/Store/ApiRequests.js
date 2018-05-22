@@ -16,4 +16,8 @@ export default class Api {
   static getLeaderboardLoLAPI() {
     return axios.get('http://18.219.35.208:4000/api/leaders?gameId=7314')
   }
+  static postLogin(user) {
+    console.log('USER',user);
+    return axios.post('http://18.219.35.208:8000/api/login', user)
+  }
 }
