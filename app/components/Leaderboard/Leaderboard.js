@@ -14,7 +14,7 @@ const title = 'start playing and earn coins!';
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir}>
       {children}
     </Typography>
   );
@@ -99,7 +99,7 @@ class Leaderboard extends Component {
                     <div className="titleLeaderboard">
                      Leaderboard
                     </div>
-                    <AppBar position="static" className="titleLeaderboard">
+                    <AppBar position="static" className="mainLeaderboard">
                       <Tabs
                         value={this.state.value}
                         onChange={this.handleChange}
