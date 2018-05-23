@@ -12,6 +12,7 @@ const title = 'start playing and earn coins!';
 class MarketPlace extends Component {
   render() {
     let onlineUser = this.props.online;
+    let userBalance = this.props.userBalance;
     return (
       <div className="dashboardComponent">
         <Grid container spacing={24}>
@@ -49,7 +50,7 @@ class MarketPlace extends Component {
                         Buff Balance
                       </div>
                       <div style={{padding: '0 10px', color: '#347139'}}>
-                        20 coins
+                        {userBalance?userBalance:0}
                       </div>
                     </div>
 
@@ -92,6 +93,7 @@ class MarketPlace extends Component {
 }
 const mapStateToProps = (state) => ({
   online: state.reducerMain.onlineUsers,
+  userBalance: state.reducerMain.userBalance,
 });
 
 function mapDispatchToProps(dispatch) {

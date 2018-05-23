@@ -26,6 +26,7 @@ class AppBarDashboard extends Component {
     this.props.addNews();
     this.props.addTournaments();
     this.props.addOnlineUsers();
+    this.props.addUserBalance();
   }
 
   handleMenu = event => {

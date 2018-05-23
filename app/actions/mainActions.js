@@ -1,6 +1,5 @@
 import * as actionTypes from './../Store/constant';
-import Api from "../Store/ApiRequests";
-import mock from './mockAPI'
+import Api from '../Store/ApiRequests';
 
 export function addHistory() {
   return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
@@ -38,6 +37,13 @@ export function addTournaments() {
 export function addOnlineUsers() {
   return (dispatch) => Api.getOnlineAPI().then((res) =>   dispatch({
       type: actionTypes.ADD_ONLINE,
+      payload: res.data
+    })
+  )
+}
+export function addUserBalance() {
+  return (dispatch) => Api.getBalanceAPI().then((res) =>   dispatch({
+      type: actionTypes.ADD_BALANCE,
       payload: res.data
     })
   )

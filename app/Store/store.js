@@ -26,8 +26,9 @@ export default function configureStore(initialState, routerHistory) {
       case actionTypes.ADD_TOURNAMENTS:
         return {...state, allTournaments: action.payload};
       case actionTypes.ADD_ONLINE:
-        console.log('ONLINEUSER STORE',action.payload);
         return {...state, onlineUsers: action.payload.games_online};
+      case actionTypes.ADD_BALANCE:
+        return {...state, userBalance: action.payload.buff_balance};
       default:
         return state;
     }
