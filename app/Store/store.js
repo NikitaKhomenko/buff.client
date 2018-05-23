@@ -3,7 +3,7 @@ import {routerMiddleware} from 'react-router-redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import {routerReducer} from 'react-router-redux';
-import {combineReducers} from 'redux'
+import {combineReducers} from 'redux';
 import * as actionTypes from './constant';
 
 export default function configureStore(initialState, routerHistory) {
@@ -25,11 +25,17 @@ export default function configureStore(initialState, routerHistory) {
         return {...state, allNews: action.payload};
       case actionTypes.ADD_TOURNAMENTS:
         return {...state, allTournaments: action.payload};
+      case actionTypes.ADD_ONLINE:
+        console.log('ONLINEUSER STORE',action.payload);
+        return {...state, onlineUsers: action.payload.games_online};
       default:
         return state;
     }
   };
 
 
-  return createStore(combineReducers({routing:routerReducer,reducerMain:reducers}), initialState, composeWithDevTools(applyMiddleware(thunk, router)));
+  return createStore(combineReducers({
+    routing: routerReducer,
+    reducerMain: reducers
+  }), initialState, composeWithDevTools(applyMiddleware(thunk, router)));
 }

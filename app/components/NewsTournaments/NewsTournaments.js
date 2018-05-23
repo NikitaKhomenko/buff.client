@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 const title = 'start playing and earn coins!';
 class NewsTournaments extends Component {
   render() {
+    let onlineUser = this.props.online;
     let news = this.props.allNews;
     let tournaments= this.props.allTournaments;
     return (
@@ -25,7 +26,7 @@ class NewsTournaments extends Component {
               </div>
             </Grid>
             <Grid item xs={2}>
-              <h4>online users: 15,000</h4>
+              <h4>online users: {onlineUser?onlineUser:0}</h4>
               {/*<Button className="buttonShareEarn">*/}
               {/*<font face="verdana">*/}
               {/*Share and Earn*/}
@@ -129,6 +130,7 @@ class NewsTournaments extends Component {
 const mapStateToProps = (state) => ({
   allTournaments:state.reducerMain.allTournaments,
   allNews: state.reducerMain.allNews,
+  online: state.reducerMain.onlineUsers,
 });
 
 function mapDispatchToProps(dispatch) {

@@ -60,6 +60,7 @@ class History extends Component {
   };
 
   render() {
+    let onlineUser = this.props.online;
     const {rowsPerPage, page} = this.state;
     let dataHistory = this.state.data;
     let emptyRows= 0;
@@ -77,7 +78,7 @@ class History extends Component {
               </div>
             </Grid>
             <Grid item xs={2}>
-              <h4>online users: 15,000</h4>
+              <h4>online users: {onlineUser?onlineUser:0}</h4>
               {/*<Button className="buttonShareEarn">*/}
                 {/*<font face="verdana">*/}
                   {/*Share and Earn*/}
@@ -179,7 +180,8 @@ class History extends Component {
 }
 const mapStateToProps = (state) => ({
   allHistory:state.reducerMain.allHistory,
-  username:state.reducerMain.username
+  username:state.reducerMain.username,
+  online: state.reducerMain.onlineUsers,
 });
 
 function mapDispatchToProps(dispatch) {

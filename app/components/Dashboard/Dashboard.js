@@ -13,6 +13,7 @@ class Dashboard extends Component {
 
   render() {
     let news = this.props.allNews;
+    let onlineUser = this.props.online;
     return (
       <div className="dashboardComponent">
         <Grid container spacing={24}>
@@ -26,7 +27,7 @@ class Dashboard extends Component {
               </div>
             </Grid>
             <Grid item xs={2}>
-              <h4>online users: 15,000</h4>
+              <h4>online users: {onlineUser?onlineUser:0}</h4>
               {/*<Button className="buttonShareEarn">*/}
               {/*<font face="verdana">*/}
               {/*Share and Earn*/}
@@ -148,6 +149,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => ({
   allNews: state.reducerMain.allNews,
+  online: state.reducerMain.onlineUsers,
 });
 
 function mapDispatchToProps(dispatch) {

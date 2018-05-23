@@ -20,7 +20,9 @@ export default class Api {
     return axios.post('http://18.219.35.208:8000/api/login', user)
   }
   static postRegister(user) {
-    console.log('REGISTRATION::>',user);
     return axios.post('http://18.219.35.208:8000/api/users', user)
+  }
+  static getOnlineAPI() {
+    return axios.get('http://18.219.35.208:4000/api/game-start/games-online')
   }
 }
