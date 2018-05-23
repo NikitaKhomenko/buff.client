@@ -9,6 +9,8 @@ import {withStyles} from 'material-ui/styles';
 import './Login.scss';
 import {realAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
+import {FormHelperText} from 'material-ui';
+import red from 'material-ui/es/colors/red';
 
 const styles = theme => {
   return ({
@@ -18,10 +20,15 @@ const styles = theme => {
       marginBottom: theme.spacing.unit,
       width: 240,
     },
-      formControl2: {
-          marginBottom: theme.spacing.unit*5,
-          width: 250,
-      },
+    FormHelperText: {
+      display: 'flex',
+      justifyContent: 'center',
+      color: red[500],
+    },
+    formControl2: {
+      marginBottom: theme.spacing.unit * 5,
+      width: 250,
+    },
     inputLabelFocused: {
       color: green[100],
     },
@@ -31,7 +38,7 @@ const styles = theme => {
         backgroundColor: green[100],
       },
       '&:before': {
-          backgroundColor: green[300],
+        backgroundColor: green[300],
       },
     },
     flatbutton: {
@@ -51,6 +58,10 @@ const loginContainerStyle = ({
 class Login extends Component {
 
   state = {
+    status: {
+      status: null,
+      data: null
+    },
     username: '',
     password: '',
     open: false,
@@ -63,15 +74,18 @@ class Login extends Component {
     let self = this;
     this.setState({isLoading: true});
     if (!realAuth.isAuthenticated) {
-      realAuth.authenticate({'username': this.state.username,
-                              'password': this.state.password}).then(isAuthenticated => {
+      realAuth.authenticate({
+        'username': this.state.username,
+        'password': this.state.password
+      }).then(isAuthenticated => {
         self.setState({
           redirectToReferrer: isAuthenticated.status,
+          status: isAuthenticated,
           isLoading: false
         });
         self.props.onLogin(isAuthenticated);
       }).catch(error => {
-        console.log("error::>", error);
+        console.log('error::>', error);
       });
     }
   };
@@ -115,7 +129,7 @@ class Login extends Component {
   render() {
     const {from} = this.props.location.state || {from: {pathname: '/'}};
     const {redirectToReferrer, username, open} = this.state;
-    if (this.state.isLoading){
+    if (this.state.isLoading) {
       return (
         <div className="LoginMain">
           <div className="loader-inner">
@@ -136,12 +150,11 @@ class Login extends Component {
             </div>
           </div>
         </div>
-      )
+      );
     }
     if (redirectToReferrer && from.pathname !== '/') {
       return <Redirect to={from}/>;
     }
-
     return (
       <div className="LoginMain">
         <div style={loginContainerStyle} className="container">
@@ -151,9 +164,9 @@ class Login extends Component {
               variant="raised"
               className="buttonExit"
               onClick={this.handleCloseApp}>
-             Exit
+              Exit
             </Button>
-              <h1 className={"Title"}>Login to BUFF</h1>
+            <h1 className={'Title'}>Login to BUFF</h1>
 
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
@@ -174,6 +187,9 @@ class Login extends Component {
                 required={true}
               />
             </FormControl>
+            <FormHelperText className={this.props.classes.FormHelperText}>
+              {this.state.status.status === false ? this.state.status.data : ''}
+            </FormHelperText>
 
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
@@ -183,7 +199,7 @@ class Login extends Component {
                 }}
                 htmlFor="password"
               >
-                  <font color="#C8E6C9"> Password </font>
+                <font color="#C8E6C9"> Password </font>
               </InputLabel>
               <Input
                 type="password"
@@ -211,7 +227,7 @@ class Login extends Component {
               <Button
                 className={this.props.classes.flatbutton}
                 onClick={this.handleForgotPassword}>
-                  Forgot password? click here!
+                Forgot password? click here!
               </Button>
             </div>
             <Popover
@@ -227,7 +243,7 @@ class Login extends Component {
                 horizontal: 'center',
               }}>
 
-              <div className="LoginMain" style={{background: '#212121',  margin: '0px'}}>
+              <div className="LoginMain" style={{background: '#212121', margin: '0px'}}>
                 <p><font face="Helvetica" color="#E8F5E9">
                   If you've forgotten your password,
                   you can use this form to reset it. After resetting,
@@ -235,35 +251,35 @@ class Login extends Component {
                   If you do not find the message in your inbox,
                   please check if the message did not reach your spam.
                 </font></p>
-                 <center> <FormControl className={this.props.classes.formControl2}>
-                      <InputLabel
-                          formcontrolclasses={{
-                              focused: this.props.classes.inputLabelFocused
-                          }}
-                          htmlFor="emailField"
-                      >
-                          <font color="#C8E6C9"> Your email: </font>
-                      </InputLabel>
-                      <Input
-                          classes={{
-                              underline: this.props.classes.inputUnderline,
-                              focused: this.props.classes.inputLabelFocused,
-                          }}
-                          id="emailField"
-                          onChange={this.handleChange}
-                          required={true}
-                      />
-                 </FormControl></center>
+                <center><FormControl className={this.props.classes.formControl2}>
+                  <InputLabel
+                    formcontrolclasses={{
+                      focused: this.props.classes.inputLabelFocused
+                    }}
+                    htmlFor="emailField"
+                  >
+                    <font color="#C8E6C9"> Your email: </font>
+                  </InputLabel>
+                  <Input
+                    classes={{
+                      underline: this.props.classes.inputUnderline,
+                      focused: this.props.classes.inputLabelFocused,
+                    }}
+                    id="emailField"
+                    onChange={this.handleChange}
+                    required={true}
+                  />
+                </FormControl></center>
                 <Button
                   variant="raised"
                   className="buttonSendMe">
-                    Send me
+                  Send me
                 </Button>
                 <Button
-                    variant="raised"
-                    className="buttonExitPassword"
-                    onClick={this.handleCloseForgotPassword}>
-                    CLOSE
+                  variant="raised"
+                  className="buttonExitPassword"
+                  onClick={this.handleCloseForgotPassword}>
+                  CLOSE
                 </Button>
               </div>
             </Popover>
