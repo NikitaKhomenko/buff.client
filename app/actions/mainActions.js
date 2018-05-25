@@ -1,36 +1,49 @@
 import * as actionTypes from './../Store/constant';
-import Api from "../Store/ApiRequests";
-import mock from './mockAPI'
+import Api from '../Store/ApiRequests';
 
-export function addHistory(history = mock.historyAPI) {
+export function addHistory() {
   return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_HISTORY,
     payload: res.data
   })
   )
 }
-export function addLeaderBoardDota(leaderBoard = mock.leaderBoardAPI) {
+export function addLeaderBoardDota() {
   return (dispatch) => Api.getLeaderboardDotaAPI().then((res) => dispatch({
     type: actionTypes.ADD_LEADERBOARD_DOTA,
     payload: res.data
   }));
 }
-export function addLeaderBoardLOL(leaderBoard = mock.leaderBoardAPI) {
+export function addLeaderBoardLOL() {
   return (dispatch) => Api.getLeaderboardLoLAPI().then((res) => dispatch({
     type: actionTypes.ADD_LEADERBOARD_LOL,
     payload: res.data
   }));
 }
-export function addNews(news = mock.newsAPI) {
+export function addNews() {
   return (dispatch) => Api.getNewsAPI().then((res) =>  dispatch({
     type: actionTypes.ADD_NEWS,
     payload:  res.data
   })
   )
 }
-export function addTournaments(tournaments = mock.tournamentsAPI) {
+export function addTournaments() {
   return (dispatch) => Api.getTournamentsAPI().then((res) =>   dispatch({
       type: actionTypes.ADD_TOURNAMENTS,
+      payload: res.data
+    })
+  )
+}
+export function addOnlineUsers() {
+  return (dispatch) => Api.getOnlineAPI().then((res) =>   dispatch({
+      type: actionTypes.ADD_ONLINE,
+      payload: res.data
+    })
+  )
+}
+export function addUserBalance() {
+  return (dispatch) => Api.getBalanceAPI().then((res) =>   dispatch({
+      type: actionTypes.ADD_BALANCE,
       payload: res.data
     })
   )

@@ -3,11 +3,16 @@ import './MarketPlace.scss';
 import Grid from 'material-ui/es/Grid/Grid';
 import Paper from 'material-ui/es/Paper/Paper';
 import Button from 'material-ui/es/Button/Button';
+import {bindActionCreators} from 'redux';
+import * as mainActions from '../../actions/mainActions';
+import {connect} from 'react-redux';
 
 const title = 'start playing and earn coins!';
 
-export default class MarketPlace extends Component {
+class MarketPlace extends Component {
   render() {
+    let onlineUser = this.props.online;
+    let userBalance = this.props.userBalance;
     return (
       <div className="dashboardComponent">
         <Grid container spacing={24}>
@@ -21,7 +26,7 @@ export default class MarketPlace extends Component {
               </div>
             </Grid>
             <Grid item xs={2}>
-              <h4>online users: 15,000</h4>
+              <h4>online users: {onlineUser?onlineUser:0}</h4>
               {/*<Button className="buttonShareEarn">*/}
               {/*<font face="verdana">*/}
               {/*Share and Earn*/}
@@ -45,7 +50,7 @@ export default class MarketPlace extends Component {
                         Buff Balance
                       </div>
                       <div style={{padding: '0 10px', color: '#347139'}}>
-                        20 coins
+                        {userBalance?userBalance:0}
                       </div>
                     </div>
 
@@ -86,3 +91,14 @@ export default class MarketPlace extends Component {
     );
   }
 }
+const mapStateToProps = (state) => ({
+  online: state.reducerMain.onlineUsers,
+  userBalance: state.reducerMain.userBalance,
+});
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ...bindActionCreators(mainActions, dispatch)
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(MarketPlace)

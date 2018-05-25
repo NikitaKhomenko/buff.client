@@ -147,8 +147,8 @@ class Registration extends Component {
                     if (isAuthenticated.status) {
                         self.props.onRegister(isAuthenticated);
                     }
-                }).catch(error => {
-                    console.log('error::>', error);
+                }).catch(div => {
+                    console.log('div::>', div);
                 });
             }
         }
@@ -314,7 +314,6 @@ class Registration extends Component {
                                             id="ConfirmEmailAddress"
                                             onChange={this.handleChangeConfEmail}
                                         />
-                                        <error> {this.state.emailIsEquel} </error>
                                         <FormHelperText className={this.props.classes.FormHelperText}>
                                             {this.state.emailIsEquel === false ? 'Emails are not match.' : ''}
                                         </FormHelperText>
@@ -359,7 +358,6 @@ class Registration extends Component {
                                             id="ConfirmPassword"
                                             onChange={this.handleChangeConfPassword}
                                         />
-                                        <error> {this.state.passwordIsEquel} </error>
                                         <FormHelperText className={this.props.classes.FormHelperText}>
                                             {this.state.passwordIsEquel === false ? 'Passwords are not match.' : ''}
                                         </FormHelperText>

@@ -14,7 +14,7 @@ const title = 'start playing and earn coins!';
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+    <Typography component="div" dir={dir}>
       {children}
     </Typography>
   );
@@ -59,6 +59,7 @@ class Leaderboard extends Component {
     this.setState({ value: index });
   };
   render() {
+    let onlineUser = this.props.online;
     const {rowsPerPage, page} = this.state;
     let dataLiderboard = this.state.data;
     let emptyRows = 0;
@@ -80,7 +81,7 @@ class Leaderboard extends Component {
               </div>
             </Grid>
             <Grid item xs={2}>
-              <h4>online users: 15,000</h4>
+              <h4>online users: {onlineUser?onlineUser:0}</h4>
               {/*<Button className="buttonShareEarn">*/}
               {/*<font face="verdana">*/}
               {/*Share and Earn*/}
@@ -98,7 +99,7 @@ class Leaderboard extends Component {
                     <div className="titleLeaderboard">
                      Leaderboard
                     </div>
-                    <AppBar position="static" className="titleLeaderboard">
+                    <AppBar position="static" className="mainLeaderboard">
                       <Tabs
                         value={this.state.value}
                         onChange={this.handleChange}
@@ -243,7 +244,8 @@ class Leaderboard extends Component {
 const mapStateToProps = (state) => ({
   allLeaaderBoard: state.reducerMain.leaderBoardDota,
   allLeaaderBoardLol: state.reducerMain.leaderBoardLol,
-  username: state.reducerMain.username
+  username: state.reducerMain.username,
+  online: state.reducerMain.onlineUsers,
 });
 
 function mapDispatchToProps(dispatch) {

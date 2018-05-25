@@ -31,12 +31,15 @@
           flex-direction:row;
           padding: 10px 0px 10px 25px;
         }
-        .titleLeaderboard{
-          background: #131416;
+        .titleLeaderboard, .mainLeaderboard{
+          background: #2e2f30;
           margin: 0;
           font-size: 1.1em;
           padding: 10px 5px 10px 25px;
           color: #00EE7A;
+        }
+        .mainLeaderboard{
+          background: #1E1F21;
         }
         .tableLeaderboard{
           background: #1E1F21;
