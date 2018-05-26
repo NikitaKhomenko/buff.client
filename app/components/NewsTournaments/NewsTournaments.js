@@ -44,7 +44,7 @@ class NewsTournaments extends Component {
                     <div className="titleMyAcc">
                       Latest News
                     </div>
-                    {news?news.slice(news.length -2,news.length).map((n, k) => {
+                    {news?news.map((n, k) => {
                       return <div key={k}>
                         <div className="newsMain">
                           <div className="newsDotesContents">
