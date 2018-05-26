@@ -125,6 +125,11 @@ class Login extends Component {
     w.close();
   };
 
+  onKeyPress= (e) => {
+    if (e.key === 'Enter') {
+      this.handleLogin();
+    }
+  };
 
   render() {
     const {from} = this.props.location.state || {from: {pathname: '/'}};
@@ -156,7 +161,7 @@ class Login extends Component {
       return <Redirect to={from}/>;
     }
     return (
-      <div className="LoginMain">
+      <div className="LoginMain"  onKeyPress={this.onKeyPress} >
         <div style={loginContainerStyle} className="container">
           <Grid style={loginContainerStyle}>
             <Button
@@ -214,7 +219,8 @@ class Login extends Component {
             <Button
               variant="raised"
               className="buttonMain"
-              onClick={this.handleLogin}>
+              onClick={this.handleLogin}
+            >
               Log In
             </Button>
             <div className="buttomDown">
@@ -283,14 +289,10 @@ class Login extends Component {
                 </Button>
               </div>
             </Popover>
-
           </Grid>
         </div>
       </div>
-
     );
   }
 }
-
-
 export default withStyles(styles)(Login);

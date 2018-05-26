@@ -9,6 +9,7 @@ import History from '../History/History';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import MarketPlace from '../MarketPlace/MarketPlace';
 import NewsTournaments from '../NewsTournaments/NewsTournaments';
+import {realAuth} from '../../routes';
 
 
 class AppBarDashboard extends Component {
@@ -41,7 +42,10 @@ class AppBarDashboard extends Component {
       anchorEl: null,
     });
   };
-
+  handleCloseApp = () => {
+    this.props.onBackToLogin();
+    realAuth.signout()
+  };
   handleButtonPress = name => event => {
     this.setState({
       menuButton: name,
@@ -90,7 +94,7 @@ class AppBarDashboard extends Component {
                     style={{
                       position: 'absolute',
                       top: 8,
-                      right: 120,
+                      right: 165,
                       fontSize: '1em',
                       fontFamily: 'Roboto, Helvetica'
                     }}
@@ -119,6 +123,13 @@ class AppBarDashboard extends Component {
                     <MenuItem>Profile</MenuItem>
                     <MenuItem>My account</MenuItem>
                   </Menu>
+                  <Button
+                    size="small"
+                    variant="raised"
+                    className="exitButton"
+                    onClick={this.handleCloseApp}>
+                    SIGN OUT
+                  </Button>
                 </div>
 
               </Toolbar>

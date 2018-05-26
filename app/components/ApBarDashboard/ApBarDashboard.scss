@@ -36,9 +36,12 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-  //.logoMenu {
-  //  background-color: #ffd699 !important;
-  //}
+  .exitButton {
+    background-color: rgba(0, 238, 122, 0.3);
+    position: absolute;
+    top: 17px;
+    right: 20px;
+  }
 
   .buttonAppBar:hover {
     background:  rgba(0, 238, 122, 0.3);

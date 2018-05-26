@@ -41,9 +41,8 @@ export const realAuth = {
       });
     });
   },
-  signout(cb) {
+  signout() {
     this.isAuthenticated = false;
-    setTimeout(cb, 100);
   }
 };
 

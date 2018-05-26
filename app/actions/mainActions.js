@@ -1,5 +1,6 @@
 import * as actionTypes from './../Store/constant';
 import Api from '../Store/ApiRequests';
+import {push} from 'react-router-redux';
 
 export function addHistory() {
   return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
@@ -48,4 +49,8 @@ export function addUserBalance() {
     })
   )
 }
+export function  onBackToLogin(){
+  return (dispatch) => dispatch(push('/'));
+}
+
 
