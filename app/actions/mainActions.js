@@ -42,8 +42,8 @@ export function addOnlineUsers() {
     })
   )
 }
-export function addUserBalance() {
-  return (dispatch) => Api.getBalanceAPI().then((res) =>   dispatch({
+export function addUserBalance(address) {
+  return (dispatch) => Api.getBalanceAPI(address).then((res) => dispatch({
       type: actionTypes.ADD_BALANCE,
       payload: res.data
     })

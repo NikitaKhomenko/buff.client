@@ -63,7 +63,7 @@ class Dashboard extends Component {
                         Status:
                       </div>
                       <div style={{padding: '0 10px', color: '#347139'}}>
-                        Silver
+                        Bronze
                       </div>
                     </div>
                   </Paper>

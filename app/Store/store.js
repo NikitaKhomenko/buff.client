@@ -20,7 +20,7 @@ export default function configureStore(initialState, routerHistory) {
       case actionTypes.ADD_LEADERBOARD_LOL:
         return {...state, leaderBoardLol: action.payload.leaders};
       case actionTypes.USER_LOGIN:
-        return {...state, username: action.payload.username,};
+        return {...state, username: action.payload.username,address:action.payload.address};
       case actionTypes.ADD_NEWS:
         return {...state, allNews: action.payload};
       case actionTypes.ADD_TOURNAMENTS:
@@ -28,6 +28,7 @@ export default function configureStore(initialState, routerHistory) {
       case actionTypes.ADD_ONLINE:
         return {...state, onlineUsers: action.payload.games_online};
       case actionTypes.ADD_BALANCE:
+        console.log('action.ADD_BALANCE',action.payload);
         return {...state, userBalance: action.payload.buff_balance};
       default:
         return state;
