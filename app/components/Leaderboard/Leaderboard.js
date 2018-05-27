@@ -31,14 +31,23 @@ class Leaderboard extends Component {
       data: this.props.allLeaaderBoard
     };
     setInterval(() => {
-      this.updateLeaders(this.props.allLeaaderBoard);
+      this.updateLeaders(this.props.allLeaaderBoard, 'DOTA');
+      this.updateLeaders(this.props.allLeaaderBoardLol, 'LOL');
     }, 1000);
   }
 
-  updateLeaders(leader) {
-    if (this.state.data !== leader) {
-      this.setState({data: leader});
+  updateLeaders(leader,game) {
+    if(game ==='DOTA'){
+      if (this.state.data !== leader) {
+        this.setState({data: leader});
+      }
     }
+    else {
+      if (this.state.data !== leader) {
+        this.setState({dataLoL: leader});
+      }
+    }
+
   }
 
   handleChangePage = (event, page) => {
@@ -62,7 +71,12 @@ class Leaderboard extends Component {
     let onlineUser = this.props.online;
     const {rowsPerPage, page} = this.state;
     let dataLiderboard = this.state.data;
+    let dataLiderboardLoL = this.state.dataLoL;
     let emptyRows = 0;
+    let emptyRowsLoL = 0;
+    if (dataLiderboardLoL) {
+      emptyRowsLoL = rowsPerPage - Math.min(rowsPerPage, dataLiderboardLoL.length - page * rowsPerPage);
+    }
     if (dataLiderboard) {
       emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
     }
@@ -174,10 +188,10 @@ class Leaderboard extends Component {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                          {dataLiderboardLoL ? dataLiderboardLoL.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
                             return (
                               <TableRow key={k}>
-                                <TableCell className="tableColumn">Dota 2</TableCell>
+                                <TableCell className="tableColumn">League of Legands</TableCell>
                                 <TableCell className="tableColumn">past week</TableCell>
                                 <TableCell className="tableColumn" onClick={this.handleOpenKey}>
                                   <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
@@ -189,8 +203,8 @@ class Leaderboard extends Component {
                               </TableRow >
                             );
                           }) : <TableRow/>}
-                          {emptyRows > 0 && (
-                            <TableRow style={{height: 48 * emptyRows}}>
+                          {emptyRowsLoL > 0 && (
+                            <TableRow style={{height: 48 * emptyRowsLoL}}>
                               <TableCell colSpan={6}/>
                             </TableRow>
                           )}
@@ -198,7 +212,7 @@ class Leaderboard extends Component {
                       </Table>
                         <TablePagination
                           component="div"
-                          count={dataLiderboard ? dataLiderboard.length : 0}
+                          count={dataLiderboardLoL ? dataLiderboardLoL.length : 0}
                           rowsPerPage={rowsPerPage}
                           page={page}
                           backIconButtonProps={{

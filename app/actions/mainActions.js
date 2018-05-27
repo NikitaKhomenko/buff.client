@@ -2,8 +2,8 @@ import * as actionTypes from './../Store/constant';
 import Api from '../Store/ApiRequests';
 import {push} from 'react-router-redux';
 
-export function addHistory() {
-  return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
+export function addHistory(address) {
+  return (dispatch) => Api.getHistoryAPI(address).then((res) =>  dispatch({
     type: actionTypes.ADD_HISTORY,
     payload: res.data
   })

@@ -21,7 +21,6 @@ class AppBarDashboard extends Component {
       anchorEl: null,
       menuButton: 'dashboard',
     };
-    this.props.addHistory();
     this.props.addLeaderBoardDota();
     this.props.addLeaderBoardLOL();
     this.props.addNews();
@@ -30,7 +29,10 @@ class AppBarDashboard extends Component {
   }
 
   componentDidMount(){
-    setTimeout(() =>     this.props.addUserBalance(this.props.address), 2000)
+    setTimeout(() => {
+      this.props.addHistory(this.props.address);
+      this.props.addUserBalance(this.props.address)
+    }, 2000)
     ;
   }
   handleMenu = event => {
