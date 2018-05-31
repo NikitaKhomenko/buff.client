@@ -27,10 +27,11 @@ class Leaderboard extends Component {
     this.state = {
       value: 0,
       page: 0,
+      pageLoL: 0,
       rowsPerPage: 3,
       data: this.props.allLeaaderBoard
     };
-    setInterval(() => {
+    setTimeout(() => {
       this.updateLeaders(this.props.allLeaaderBoard, 'DOTA');
       this.updateLeaders(this.props.allLeaaderBoardLol, 'LOL');
     }, 1000);
@@ -51,7 +52,13 @@ class Leaderboard extends Component {
   }
 
   handleChangePage = (event, page) => {
+    console.log('PAGE::',page);
     this.setState({page});
+  };
+
+  handleChangePageLoL = (event, pageLoL) => {
+    console.log('PAGELOL::',pageLoL);
+    this.setState({pageLoL});
   };
   handleOpenKey = event => {
     this.setState({anchorEl: event.currentTarget});
@@ -221,7 +228,7 @@ class Leaderboard extends Component {
                           nextIconButtonProps={{
                             'aria-label': 'Next Page',
                           }}
-                          onChangePage={this.handleChangePage}
+                          onChangePage={this.handleChangePageLoL}
                         />
                       </TabContainer>
                     </SwipeableViews>
