@@ -26,6 +26,10 @@ class AppBarDashboard extends Component {
     this.props.addNews();
     this.props.addTournaments();
     this.props.addOnlineUsers();
+    if(this.props.address){
+      this.props.addHistory(this.props.address);
+      this.props.addUserBalance(this.props.address);
+    }
   }
 
   componentDidMount(){
