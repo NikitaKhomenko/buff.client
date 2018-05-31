@@ -29,9 +29,14 @@ class AppBarDashboard extends Component {
   }
 
   componentDidMount(){
-    setTimeout(() => {
+    setInterval(() => {
       this.props.addHistory(this.props.address);
-      this.props.addUserBalance(this.props.address)
+      this.props.addUserBalance(this.props.address);
+      this.props.addLeaderBoardDota();
+      this.props.addLeaderBoardLOL();
+      this.props.addNews();
+      this.props.addTournaments();
+      this.props.addOnlineUsers();
     }, 2000)
     ;
   }
