@@ -12,8 +12,6 @@ export default function configureStore(initialState, routerHistory) {
   const reducers = (state = initialState, action) => {
     switch (action.type) {
       case actionTypes.ADD_HISTORY: {
-        // localStorage.setItem('history', JSON.stringify(action.payload.transactions));
-        console.log('ADD_HISTORYADD::',action.payload);
         return {...state, allHistory: action.payload.games};
       }
       case actionTypes.ADD_LEADERBOARD_DOTA:
@@ -29,7 +27,6 @@ export default function configureStore(initialState, routerHistory) {
       case actionTypes.ADD_ONLINE:
         return {...state, onlineUsers: action.payload.games_online};
       case actionTypes.ADD_BALANCE:
-        console.log('action.ADD_BALANCE',action.payload);
         return {...state, userBalance: action.payload.buff_balance};
       default:
         return state;

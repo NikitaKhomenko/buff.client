@@ -31,7 +31,7 @@ class Leaderboard extends Component {
       rowsPerPage: 3,
       data: this.props.allLeaaderBoard
     };
-    setTimeout(() => {
+    setInterval(() => {
       this.updateLeaders(this.props.allLeaaderBoard, 'DOTA');
       this.updateLeaders(this.props.allLeaaderBoardLol, 'LOL');
     }, 1000);
@@ -221,7 +221,7 @@ class Leaderboard extends Component {
                           component="div"
                           count={dataLiderboardLoL ? dataLiderboardLoL.length : 0}
                           rowsPerPage={rowsPerPage}
-                          page={page}
+                          page={this.state.pageLoL}
                           backIconButtonProps={{
                             'aria-label': 'Previous Page',
                           }}

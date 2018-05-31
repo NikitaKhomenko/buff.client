@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     onRegister: (data) => {
-      console.log('realAuth;;;>', data);
+      // console.log('realAuth;;;>', data);
       if (realAuth.isAuthenticated) {
         dispatch(push('/loggedin'));
         dispatch({
