@@ -90,6 +90,6 @@
     "private:serve": "babel-node scripts/serve.js",
     "private:compile": "babel app/ --copy-files --out-dir build",
     "private:clean": "rimraf build",
-    "release-build-win": "electron-packager . buff --overwrite --asar --platform=win32 --arch=all --electron-version=1.8.2 --icon=.\\build\\icon.ico --out=release-builds --version-string.CompanyName=buff --version-string.ProductName=buff.game --version-string.ProductVersion=0.1"
+    "release-build-win": "electron-packager . buff --overwrite --platform=win32 --arch=all --electron-version=1.8.2 --icon=.\\build\\icon.ico --out=release-builds --version-string.CompanyName=buff --version-string.ProductName=buff.game --version-string.ProductVersion=0.1"
   }
 }

@@ -165,10 +165,10 @@ class History extends Component {
           <TableRow key={k}>
             <TableCell className="tableColumn">{realTime }</TableCell>
             <TableCell className="tableColumn">{gameName}</TableCell>
-            <TableCell className="tableColumn">{n.gamedata.kda?n.gamedata.kda.toFixed(2):0}</TableCell>
+            <TableCell className="tableColumn">{n.gamedata.kda ? n.gamedata.kda.toFixed(2) : '-'}</TableCell>
             <TableCell className="tableColumn">{n.status}</TableCell>
             <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? n.gamedata.reward : '-'}</TableCell>
-            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/2).toFixed(2) + '$' : '-'}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/20).toFixed(2) + '$' : '-'}</TableCell>
           </TableRow>
         );
       }):<TableRow/>}
