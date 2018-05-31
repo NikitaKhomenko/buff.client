@@ -76,13 +76,13 @@ class Leaderboard extends Component {
   };
   render() {
     let onlineUser = this.props.online;
-    const {rowsPerPage, page} = this.state;
+    const {rowsPerPage, page,pageLoL} = this.state;
     let dataLiderboard = this.state.data;
     let dataLiderboardLoL = this.state.dataLoL;
     let emptyRows = 0;
     let emptyRowsLoL = 0;
     if (dataLiderboardLoL) {
-      emptyRowsLoL = rowsPerPage - Math.min(rowsPerPage, dataLiderboardLoL.length - page * rowsPerPage);
+      emptyRowsLoL = rowsPerPage - Math.min(rowsPerPage, dataLiderboardLoL.length - pageLoL * rowsPerPage);
     }
     if (dataLiderboard) {
       emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
@@ -195,7 +195,7 @@ class Leaderboard extends Component {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {dataLiderboardLoL ? dataLiderboardLoL.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                          {dataLiderboardLoL ? dataLiderboardLoL.slice(pageLoL * rowsPerPage, pageLoL * rowsPerPage + rowsPerPage).map((n, k) => {
                             return (
                               <TableRow key={k}>
                                 <TableCell className="tableColumn">League of Legands</TableCell>
@@ -221,7 +221,7 @@ class Leaderboard extends Component {
                           component="div"
                           count={dataLiderboardLoL ? dataLiderboardLoL.length : 0}
                           rowsPerPage={rowsPerPage}
-                          page={this.state.pageLoL}
+                          page={pageLoL}
                           backIconButtonProps={{
                             'aria-label': 'Previous Page',
                           }}
