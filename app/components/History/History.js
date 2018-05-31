@@ -102,6 +102,7 @@ class History extends Component {
                           <TableCell className="tableColumnHead">Date&Time</TableCell>
                           <TableCell className="tableColumnHead">Game\Conversion</TableCell>
                           <TableCell className="tableColumnHead">KDA</TableCell>
+                          <TableCell className="tableColumnHead">Status</TableCell>
                           <TableCell className="tableColumnHead">Buff Coins</TableCell>
                           <TableCell className="tableColumnHead">Conversion</TableCell>
                         </TableRow>
@@ -165,8 +166,9 @@ class History extends Component {
             <TableCell className="tableColumn">{realTime }</TableCell>
             <TableCell className="tableColumn">{gameName}</TableCell>
             <TableCell className="tableColumn">{n.gamedata.kda?n.gamedata.kda.toFixed(2):0}</TableCell>
-            <TableCell className="tableColumn">{n.gamedata.reward?n.gamedata.reward: 0}</TableCell>
-            <TableCell className="tableColumn">{parseInt(n.gamedata.reward?n.gamedata.reward/2: 0)}$</TableCell>
+            <TableCell className="tableColumn">{n.status}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? n.gamedata.reward : '-'}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/2).toFixed(2) + '$' : '-'}</TableCell>
           </TableRow>
         );
       }):<TableRow/>}
