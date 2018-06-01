@@ -78,11 +78,15 @@ class Login extends Component {
         'login': this.state.login,
         'password': this.state.password
       }).then(isAuthenticated => {
+
         self.setState({
           redirectToReferrer: isAuthenticated.status,
           status: isAuthenticated,
-          isLoading: false
+          isLoading: false,
+          login: '',
+          password: ''
         });
+
         self.props.onLogin(isAuthenticated);
       }).catch(error => {
         console.log('error::>', error);
@@ -99,19 +103,18 @@ class Login extends Component {
       login: e.target.value
     });
   };
+
   handleChangePass = (e) => {
     this.setState({
       password: e.target.value
     });
   };
 
-
   handleForgotPassword = () => {
     this.setState({
       open: true
     });
   };
-
 
   handleCloseForgotPassword = () => {
     this.setState({
@@ -295,4 +298,5 @@ class Login extends Component {
     );
   }
 }
+
 export default withStyles(styles)(Login);

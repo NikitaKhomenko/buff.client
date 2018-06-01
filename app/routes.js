@@ -21,7 +21,7 @@ export const realAuth = {
           isAuthenticated({status: this.isAuthenticated, data: user});
         }
       ).catch((error) => {
-        let er = JSON.stringify(error.response.data.error.message);
+        let er = error.response.data.error.message;
         this.isAuthenticated = false;
         isAuthenticated({status: this.isAuthenticated, data: er});
       });
@@ -32,7 +32,7 @@ export const realAuth = {
       Api.postRegister(user).then((res) => {
           let user = res.data.user;
           this.isAuthenticated = true;
-        isAuthenticated({status: this.isAuthenticated, data: user});
+          isAuthenticated({status: this.isAuthenticated, data: user});
         }
       ).catch((error) => {
         let er = JSON.stringify(error.response.data.error);
