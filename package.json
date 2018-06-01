@@ -21,7 +21,6 @@
     "babel-loader": "^7.1.4",
     "babel-runtime": "^6.22.0",
     "history": "^4.6.3",
-    "material-design-icons": "^3.0.1",
     "material-ui": "^1.0.0-beta.47",
     "material-ui-icons": "^1.0.0-beta.36",
     "node-sass": "^4.8.3",

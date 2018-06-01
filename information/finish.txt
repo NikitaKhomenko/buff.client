@@ -1,0 +1,4 @@
+Buff Installer finished installing buff.app on you computer.
+The application may be launched by selecting the installed icons.
+
+Click Finish to exit Installer.
