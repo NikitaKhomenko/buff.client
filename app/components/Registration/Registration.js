@@ -202,7 +202,7 @@ class Registration extends Component {
                             <Grid item xs={12} container>
                                 <Grid item xs={3}>
                                     <p className="Line">Full Name:</p>
-                                    <p className="Line">User Name:</p>
+                                    <p className="Line">Username:</p>
                                 </Grid>
                                 <Grid item xs={3}>
                                     <FormControl className={this.props.classes.formControl}>
@@ -231,7 +231,7 @@ class Registration extends Component {
                                             }}
                                             htmlFor="username"
                                         >
-                                            <font color="#C8E6C9"> User Name </font>
+                                            <font color="#C8E6C9"> Username </font>
                                         </InputLabel>
                                         <Input
                                             classes={{

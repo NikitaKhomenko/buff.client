@@ -62,7 +62,7 @@ class Login extends Component {
       status: null,
       data: null
     },
-    username: '',
+    login: '',
     password: '',
     open: false,
     anchorEl: null,
@@ -75,7 +75,7 @@ class Login extends Component {
     this.setState({isLoading: true});
     if (!realAuth.isAuthenticated) {
       realAuth.authenticate({
-        'username': this.state.username,
+        'login': this.state.login,
         'password': this.state.password
       }).then(isAuthenticated => {
         self.setState({
@@ -94,9 +94,9 @@ class Login extends Component {
     this.props.onRegister();
   };
 
-  handleChangeUser = (e) => {
+  handleChangeLogin = (e) => {
     this.setState({
-      username: e.target.value
+      login: e.target.value
     });
   };
   handleChangePass = (e) => {
@@ -133,7 +133,7 @@ class Login extends Component {
 
   render() {
     const {from} = this.props.location.state || {from: {pathname: '/'}};
-    const {redirectToReferrer, username, open} = this.state;
+    const {redirectToReferrer, login, open} = this.state;
     if (this.state.isLoading) {
       return (
         <div className="LoginMain">
@@ -178,17 +178,17 @@ class Login extends Component {
                 formcontrolclasses={{
                   focused: this.props.classes.inputLabelFocused
                 }}
-                htmlFor="username"
+                htmlFor="login"
               >
-                <font color="#C8E6C9"> Username </font>
+                <font color="#C8E6C9"> Username or Email </font>
               </InputLabel>
               <Input
                 classes={{
                   underline: this.props.classes.inputUnderline,
                   focused: this.props.classes.inputLabelFocused,
                 }}
-                id="username"
-                onChange={this.handleChangeUser}
+                id="login"
+                onChange={this.handleChangeLogin}
                 required={true}
               />
             </FormControl>
