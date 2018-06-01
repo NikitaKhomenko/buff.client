@@ -167,7 +167,7 @@ class History extends Component {
             <TableCell className="tableColumn">{gameName}</TableCell>
             <TableCell className="tableColumn">{n.gamedata.kda ? n.gamedata.kda.toFixed(2) : '-'}</TableCell>
             <TableCell className="tableColumn">{n.status}</TableCell>
-            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? n.gamedata.reward : '-'}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/10).toFixed(2)  : '-'}</TableCell>
             <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/20).toFixed(2) + '$' : '-'}</TableCell>
           </TableRow>
         );
