@@ -80,7 +80,8 @@ class Registration extends Component {
     open: false,
     anchorEl: null,
     selectedIndex: 1,
-    errorMessage:[],
+    errorStatus:true,
+    errorMessage:{field:""},
   };
   handleChangeUsername = (e) => {
     this.setState({
@@ -145,7 +146,8 @@ class Registration extends Component {
             let  errData = JSON.parse(isAuthenticated.data);
             console.log('isAuthenticated.data',errData);
             this.setState({
-              errorMessage:isAuthenticated
+              errorStatus:isAuthenticated.status,
+              errorMessage:errData
             })
           }
         }).catch(div => {
@@ -213,7 +215,7 @@ class Registration extends Component {
                   <p className="Line">Username:</p>
                 </Grid>
                 <Grid item xs={3}>
-                  <FormControl className={this.props.classes.formControl}>
+                  <FormControl className={this.props.classes.formControl} error={!this.state.errorStatus} aria-describedby={this.state.errorMessage.field}>
                     <InputLabel
                       formcontrolclasses={{
                         focused: this.props.classes.inputLabelFocused,
@@ -230,9 +232,9 @@ class Registration extends Component {
                       id="FullName"
                       onChange={this.handleChangeFullName}
                     />
+                    <FormHelperText id="fullname" className={this.props.classes.FormHelperText} >{this.state.errorMessage.field==='fullname'?this.state.errorMessage.message:''}</FormHelperText>
                   </FormControl>
-
-                  <FormControl className={this.props.classes.formControl}>
+                  <FormControl className={this.props.classes.formControl} error={!this.state.errorStatus} aria-describedby={this.state.errorMessage.field}>
                     <InputLabel
                       formcontrolclasses={{
                         focused: this.props.classes.inputLabelFocused,
@@ -249,6 +251,7 @@ class Registration extends Component {
                       id="username"
                       onChange={this.handleChangeUsername}
                     />
+                    <FormHelperText id="username" className={this.props.classes.FormHelperText} >{this.state.errorMessage.field==='username'?this.state.errorMessage.message:''}</FormHelperText>
                   </FormControl>
 
                 </Grid>
@@ -259,7 +262,7 @@ class Registration extends Component {
                   <p className="Line1">Confirm Password:</p>
                 </Grid>
                 <Grid item xs={3}>
-                  <FormControl className={this.props.classes.formControl}>
+                  <FormControl  className={this.props.classes.formControl} error={!this.state.errorStatus} aria-describedby={this.state.errorMessage.field}>
                     <InputLabel
                       formcontrolclasses={{
                         focused: this.props.classes.inputLabelFocused,
@@ -277,6 +280,8 @@ class Registration extends Component {
                       id="EmailAddress"
                       onChange={this.handleChangeEmail}
                     />
+                    <FormHelperText id="email" className={this.props.classes.FormHelperText} >{this.state.errorMessage.field==='email'?this.state.errorMessage.message:''}</FormHelperText>
+
                   </FormControl>
 
                   <FormControl className={this.props.classes.formControl}>
@@ -301,7 +306,7 @@ class Registration extends Component {
                     </FormHelperText>
                   </FormControl>
 
-                  <FormControl className={this.props.classes.formControl}>
+                  <FormControl  className={this.props.classes.formControl} error={!this.state.errorStatus} aria-describedby={this.state.errorMessage.field}>
                     <InputLabel
                       formcontrolclasses={{
                         focused: this.props.classes.inputLabelFocused,
@@ -320,6 +325,8 @@ class Registration extends Component {
                       id="Password"
                       onChange={this.handleChangePassword}
                     />
+                    <FormHelperText id="password" className={this.props.classes.FormHelperText} >{this.state.errorMessage.field==='password'?this.state.errorMessage.message:''}</FormHelperText>
+
                   </FormControl>
 
                   <FormControl className={this.props.classes.formControl}>
