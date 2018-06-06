@@ -28,6 +28,8 @@ export default function configureStore(initialState, routerHistory) {
         return {...state, onlineUsers: action.payload.games_online};
       case actionTypes.ADD_BALANCE:
         return {...state, userBalance: action.payload.buff_balance};
+      case actionTypes.LOGOUT:
+        return {};
       default:
         return state;
     }

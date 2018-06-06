@@ -195,9 +195,7 @@ class Login extends Component {
                 required={true}
               />
             </FormControl>
-            <FormHelperText className={this.props.classes.FormHelperText}>
-              {this.state.status.status === false ? this.state.status.data : ''}
-            </FormHelperText>
+
 
             <FormControl className={this.props.classes.formControl}>
               <InputLabel
@@ -219,6 +217,9 @@ class Login extends Component {
                 onChange={this.handleChangePass}
               />
             </FormControl>
+            <FormHelperText className={this.props.classes.FormHelperText}>
+              {this.state.status.status === false ? this.state.status.data : ''}
+            </FormHelperText>
             <Button
               variant="raised"
               className="buttonMain"

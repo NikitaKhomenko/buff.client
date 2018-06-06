@@ -20,20 +20,20 @@ class AppBarDashboard extends Component {
       match: props.match,
       anchorEl: null,
       menuButton: 'dashboard',
+      refreshData: null
     };
     this.props.addLeaderBoardDota();
     this.props.addLeaderBoardLOL();
     this.props.addNews();
     this.props.addTournaments();
     this.props.addOnlineUsers();
-    if(this.props.address){
+    setTimeout(() => {
       this.props.addHistory(this.props.address);
-      this.props.addUserBalance(this.props.address);
-    }
+      this.props.addUserBalance(this.props.address);}, 1000);
   }
 
-  componentDidMount(){
-    setInterval(() => {
+  componentDidMount() {
+    this.state.refreshData = setInterval(() => {
       this.props.addHistory(this.props.address);
       this.props.addUserBalance(this.props.address);
       this.props.addLeaderBoardDota();
@@ -44,6 +44,7 @@ class AppBarDashboard extends Component {
     }, 5000)
     ;
   }
+
   handleMenu = event => {
     console.log('handleMenu', this.state.anchorEl);
     this.setState({
@@ -56,9 +57,11 @@ class AppBarDashboard extends Component {
       anchorEl: null,
     });
   };
-  handleCloseApp = () => {
+  handleLogOut = () => {
+    clearInterval(this.state.refreshData);
+    this.props.logout();
     this.props.onBackToLogin();
-    realAuth.signout()
+    realAuth.signout();
   };
   handleButtonPress = name => event => {
     this.setState({
@@ -141,7 +144,7 @@ class AppBarDashboard extends Component {
                     size="small"
                     variant="raised"
                     className="exitButton"
-                    onClick={this.handleCloseApp}>
+                    onClick={this.handleLogOut}>
                     SIGN OUT
                   </Button>
                 </div>

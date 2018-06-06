@@ -6,3 +6,4 @@ export const ADD_TOURNAMENTS= 'ADD_TOURNAMENTS';
 export const ADD_LEADERBOARD_LOL= 'ADD_LEADERBOARD_LOL';
 export const ADD_ONLINE= 'ADD_ONLINE';
 export const ADD_BALANCE= 'ADD_BALANCE';
+export const LOGOUT= 'LOGOUT';
