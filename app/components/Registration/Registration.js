@@ -70,7 +70,6 @@ class Registration extends Component {
     state = {
         isLoading: false,
         username: '',
-        nickname: '',
         fullname: '',
         confPassword: '',
         confEmail: '',
@@ -85,11 +84,6 @@ class Registration extends Component {
     handleChangeUsername = (e) => {
         this.setState({
             username: e.target.value
-        });
-    };
-    handleChangeNickName = (e) => {
-        this.setState({
-            nickname: e.target.value
         });
     };
     handleChangeFullName = (e) => {
@@ -134,7 +128,6 @@ class Registration extends Component {
             if (!realAuth.isAuthenticated) {
                 realAuth.registration({
                     'username': self.state.username,
-                    'nickname': self.state.nickname,
                     'fullname': self.state.fullname,
                     'email': self.state.email,
                     'password': self.state.password
@@ -208,49 +201,10 @@ class Registration extends Component {
                         <Grid container spacing={24}>
                             <Grid item xs={12} container>
                                 <Grid item xs={3}>
-                                    <p className="Line">User Name:</p>
-                                    <p className="Line">Nick Name:</p>
                                     <p className="Line">Full Name:</p>
+                                    <p className="Line">Username:</p>
                                 </Grid>
                                 <Grid item xs={3}>
-                                        <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor="username"
-                                        >
-                                            <font color="#C8E6C9"> User Name </font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id="username"
-                                            onChange={this.handleChangeUsername}
-                                        />
-                                    </FormControl>
-
-                                    <FormControl className={this.props.classes.formControl}>
-                                        <InputLabel
-                                            formcontrolclasses={{
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            htmlFor="NickName"
-                                        >
-                                            <font color="#C8E6C9"> *Not necessary </font>
-                                        </InputLabel>
-                                        <Input
-                                            classes={{
-                                                underline: this.props.classes.inputUnderline,
-                                                focused: this.props.classes.inputLabelFocused,
-                                            }}
-                                            id="NickName"
-                                            onChange={this.handleChangeNickName}
-                                        />
-                                    </FormControl>
-
                                     <FormControl className={this.props.classes.formControl}>
                                         <InputLabel
                                             formcontrolclasses={{
@@ -269,6 +223,26 @@ class Registration extends Component {
                                             onChange={this.handleChangeFullName}
                                         />
                                     </FormControl>
+
+                                    <FormControl className={this.props.classes.formControl}>
+                                        <InputLabel
+                                            formcontrolclasses={{
+                                                focused: this.props.classes.inputLabelFocused,
+                                            }}
+                                            htmlFor="username"
+                                        >
+                                            <font color="#C8E6C9"> Username </font>
+                                        </InputLabel>
+                                        <Input
+                                            classes={{
+                                                underline: this.props.classes.inputUnderline,
+                                                focused: this.props.classes.inputLabelFocused,
+                                            }}
+                                            id="username"
+                                            onChange={this.handleChangeUsername}
+                                        />
+                                    </FormControl>
+
                                 </Grid>
                                 <Grid item xs={3}>
                                     <p className="Line1">Email address:</p>

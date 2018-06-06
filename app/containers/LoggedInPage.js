@@ -7,7 +7,8 @@ const mapStateToProps = (state,ownProps) => ({
   allHistory:state.reducerMain.allHistory,
   username:state.reducerMain.username,
   ownProps:ownProps,
-  tournaments:state.reducerMain.allTournaments
+  tournaments:state.reducerMain.allTournaments,
+  address:state.reducerMain.address
 });
 
 function mapDispatchToProps(dispatch) {

@@ -27,22 +27,38 @@ class Leaderboard extends Component {
     this.state = {
       value: 0,
       page: 0,
+      pageLoL: 0,
       rowsPerPage: 3,
       data: this.props.allLeaaderBoard
     };
     setInterval(() => {
-      this.updateLeaders(this.props.allLeaaderBoard);
+      this.updateLeaders(this.props.allLeaaderBoard, 'DOTA');
+      this.updateLeaders(this.props.allLeaaderBoardLol, 'LOL');
     }, 1000);
   }
 
-  updateLeaders(leader) {
-    if (this.state.data !== leader) {
-      this.setState({data: leader});
+  updateLeaders(leader,game) {
+    if(game ==='DOTA'){
+      if (this.state.data !== leader) {
+        this.setState({data: leader});
+      }
     }
+    else {
+      if (this.state.data !== leader) {
+        this.setState({dataLoL: leader});
+      }
+    }
+
   }
 
   handleChangePage = (event, page) => {
+    console.log('PAGE::',page);
     this.setState({page});
+  };
+
+  handleChangePageLoL = (event, pageLoL) => {
+    console.log('PAGELOL::',pageLoL);
+    this.setState({pageLoL});
   };
   handleOpenKey = event => {
     this.setState({anchorEl: event.currentTarget});
@@ -60,9 +76,14 @@ class Leaderboard extends Component {
   };
   render() {
     let onlineUser = this.props.online;
-    const {rowsPerPage, page} = this.state;
+    const {rowsPerPage, page,pageLoL} = this.state;
     let dataLiderboard = this.state.data;
+    let dataLiderboardLoL = this.state.dataLoL;
     let emptyRows = 0;
+    let emptyRowsLoL = 0;
+    if (dataLiderboardLoL) {
+      emptyRowsLoL = rowsPerPage - Math.min(rowsPerPage, dataLiderboardLoL.length - pageLoL * rowsPerPage);
+    }
     if (dataLiderboard) {
       emptyRows = rowsPerPage - Math.min(rowsPerPage, dataLiderboard.length - page * rowsPerPage);
     }
@@ -174,10 +195,10 @@ class Leaderboard extends Component {
                           </TableRow>
                         </TableHead>
                         <TableBody>
-                          {dataLiderboard ? dataLiderboard.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((n, k) => {
+                          {dataLiderboardLoL ? dataLiderboardLoL.slice(pageLoL * rowsPerPage, pageLoL * rowsPerPage + rowsPerPage).map((n, k) => {
                             return (
                               <TableRow key={k}>
-                                <TableCell className="tableColumn">Dota 2</TableCell>
+                                <TableCell className="tableColumn">League of Legands</TableCell>
                                 <TableCell className="tableColumn">past week</TableCell>
                                 <TableCell className="tableColumn" onClick={this.handleOpenKey}>
                                   <div data-tip={n.publicKey} >{n.publicKey.substring(0, 10)}...
@@ -189,8 +210,8 @@ class Leaderboard extends Component {
                               </TableRow >
                             );
                           }) : <TableRow/>}
-                          {emptyRows > 0 && (
-                            <TableRow style={{height: 48 * emptyRows}}>
+                          {emptyRowsLoL > 0 && (
+                            <TableRow style={{height: 48 * emptyRowsLoL}}>
                               <TableCell colSpan={6}/>
                             </TableRow>
                           )}
@@ -198,16 +219,16 @@ class Leaderboard extends Component {
                       </Table>
                         <TablePagination
                           component="div"
-                          count={dataLiderboard ? dataLiderboard.length : 0}
+                          count={dataLiderboardLoL ? dataLiderboardLoL.length : 0}
                           rowsPerPage={rowsPerPage}
-                          page={page}
+                          page={pageLoL}
                           backIconButtonProps={{
                             'aria-label': 'Previous Page',
                           }}
                           nextIconButtonProps={{
                             'aria-label': 'Next Page',
                           }}
-                          onChangePage={this.handleChangePage}
+                          onChangePage={this.handleChangePageLoL}
                         />
                       </TabContainer>
                     </SwipeableViews>
@@ -225,7 +246,7 @@ class Leaderboard extends Component {
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
+                        <iframe src="https://discordapp.com/widget?id=442965268386283521&theme=dark" width="300"
                                 height="350" allowtransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>

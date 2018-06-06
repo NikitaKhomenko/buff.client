@@ -7,14 +7,14 @@ export default class Api {
   static getTournamentsAPI() {
     return axios.get('http://18.219.35.208:8000/api/tournaments?page=1')
   }
-  static getHistoryAPI() {
-    return axios.get('http://18.219.35.208:4000/api/history?page=1')
+  static getHistoryAPI(address) {
+    return axios.get(`http://18.219.35.208:4000/api/history?page=1&senderId=${address}`)
   }
   static getLeaderboardDotaAPI() {
     return axios.get('http://18.219.35.208:4000/api/leaders?gameId=7314')
   }
   static getLeaderboardLoLAPI() {
-    return axios.get('http://18.219.35.208:4000/api/leaders?gameId=7314')
+    return axios.get('http://18.219.35.208:4000/api/leaders?gameId=5426')
   }
   static postLogin(user) {
     return axios.post('http://18.219.35.208:8000/api/login', user)
@@ -25,7 +25,7 @@ export default class Api {
   static getOnlineAPI() {
     return axios.get('http://18.219.35.208:4000/api/game-start/games-online')
   }
-  static getBalanceAPI() {
-    return axios.get('http://18.219.35.208:4000/api/accounts/getBalance?address=aAgSd8PZYjLB64x1cg2WiiJD5QVT1KZkQy')
+  static getBalanceAPI(addres) {
+    return axios.get(`http://18.219.35.208:4000/api/accounts/getBalance?address=${addres}`)
   }
 }

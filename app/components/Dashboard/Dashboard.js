@@ -63,7 +63,7 @@ class Dashboard extends Component {
                         Status:
                       </div>
                       <div style={{padding: '0 10px', color: '#347139'}}>
-                        Silver
+                        Bronze
                       </div>
                     </div>
                   </Paper>
@@ -132,7 +132,7 @@ class Dashboard extends Component {
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
+                        <iframe src="https://discordapp.com/widget?id=442965268386283521&theme=dark" width="300"
                                 height="350" allowtransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>

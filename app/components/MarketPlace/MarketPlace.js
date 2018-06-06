@@ -36,55 +36,56 @@ class MarketPlace extends Component {
           </Grid>
         </Grid>
         <div className="dashboardMain">
-          <Grid container spacing={24}>
-            <Grid item xs={12} container>
-              <Grid item xs={4}>
+          {/*<Grid container spacing={24}>*/}
+            {/*<Grid item xs={12} container>*/}
+              <div className="comingSoon" />
+              {/*<Grid item xs={4}>*/}
 
-                <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 100}}>
-                    <div className="titleMyAcc">
-                      My Account
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Buff Balance
-                      </div>
-                      <div style={{padding: '0 10px', color: '#347139'}}>
-                        {userBalance?userBalance:0}
-                      </div>
-                    </div>
+                {/*<div className="papersMain">*/}
+                  {/*<Paper className="myAcc" elevation={8} style={{width: 370, height: 100}}>*/}
+                    {/*<div className="titleMyAcc">*/}
+                      {/*My Account*/}
+                    {/*</div>*/}
+                    {/*<div className="balanceMyAcc">*/}
+                      {/*<div style={{color: '#919191'}}>*/}
+                        {/*Buff Balance*/}
+                      {/*</div>*/}
+                      {/*<div style={{padding: '0 10px', color: '#347139'}}>*/}
+                        {/*{userBalance?userBalance:0}*/}
+                      {/*</div>*/}
+                    {/*</div>*/}
 
-                    <div style={{borderTop: '1px solid #131416'}}/>
+                    {/*<div style={{borderTop: '1px solid #131416'}}/>*/}
 
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        Status:
-                      </div>
-                      <div style={{padding: '0 10px', color: '#347139'}}>
-                        Silver
-                      </div>
-                    </div>
-                  </Paper>
-                </div>
-              </Grid>
-              <Grid item xs={4}/>
-              <Grid item xs={4}>
-                <div className="papersMain">
-                  <Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>
-                    <div className="titleMyAcc">
-                      Chat Box
-                    </div>
-                    <div className="balanceMyAcc">
-                      <div style={{color: '#919191'}}>
-                        <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
-                                height="350" allowtransparency="true" frameBorder="0"></iframe>
-                      </div>
-                    </div>
-                  </Paper>
-                </div>
-              </Grid>
-            </Grid>
-          </Grid>
+                    {/*<div className="balanceMyAcc">*/}
+                      {/*<div style={{color: '#919191'}}>*/}
+                        {/*Status:*/}
+                      {/*</div>*/}
+                      {/*<div style={{padding: '0 10px', color: '#347139'}}>*/}
+                        {/*Silver*/}
+                      {/*</div>*/}
+                    {/*</div>*/}
+                  {/*</Paper>*/}
+                {/*</div>*/}
+              {/*</Grid>*/}
+              {/*<Grid item xs={4}/>*/}
+              {/*<Grid item xs={4}>*/}
+                {/*<div className="papersMain">*/}
+                  {/*<Paper className="myAcc" elevation={8} style={{width: 370, height: 310}}>*/}
+                    {/*<div className="titleMyAcc">*/}
+                      {/*Chat Box*/}
+                    {/*</div>*/}
+                    {/*<div className="balanceMyAcc">*/}
+                      {/*<div style={{color: '#919191'}}>*/}
+                        {/*<iframe src="https://discordapp.com/widget?id=442965268386283521&theme=dark" width="300"*/}
+                                {/*height="350" allowtransparency="true" frameBorder="0"></iframe>*/}
+                      {/*</div>*/}
+                    {/*</div>*/}
+                  {/*</Paper>*/}
+                {/*</div>*/}
+              {/*</Grid>*/}
+            {/*</Grid>*/}
+          {/*</Grid>*/}
 
         </div>
       </div>

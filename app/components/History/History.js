@@ -102,6 +102,7 @@ class History extends Component {
                           <TableCell className="tableColumnHead">Date&Time</TableCell>
                           <TableCell className="tableColumnHead">Game\Conversion</TableCell>
                           <TableCell className="tableColumnHead">KDA</TableCell>
+                          <TableCell className="tableColumnHead">Status</TableCell>
                           <TableCell className="tableColumnHead">Buff Coins</TableCell>
                           <TableCell className="tableColumnHead">Conversion</TableCell>
                         </TableRow>
@@ -135,7 +136,7 @@ class History extends Component {
                     </div>
                     <div className="balanceMyAcc">
                       <div style={{color: '#919191'}}>
-                        <iframe src="https://discordapp.com/widget?id=445526398027825154&theme=dark" width="300"
+                        <iframe src="https://discordapp.com/widget?id=442965268386283521&theme=dark" width="300"
                                 height="350" allowtransparency="true" frameBorder="0"></iframe>
                       </div>
                     </div>
@@ -164,9 +165,10 @@ class History extends Component {
           <TableRow key={k}>
             <TableCell className="tableColumn">{realTime }</TableCell>
             <TableCell className="tableColumn">{gameName}</TableCell>
-            <TableCell className="tableColumn">{n.gamedata.kda}</TableCell>
-            <TableCell className="tableColumn">{n.gamedata.reward}</TableCell>
-            <TableCell className="tableColumn">{parseInt(n.gamedata.reward/2)}$</TableCell>
+            <TableCell className="tableColumn">{n.gamedata.kda ? n.gamedata.kda.toFixed(2) : '-'}</TableCell>
+            <TableCell className="tableColumn">{n.status}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/10).toFixed(2)  : '-'}</TableCell>
+            <TableCell className="tableColumn">{n.status == 'finished' && n.gamedata.reward ? (n.gamedata.reward/20).toFixed(2) + '$' : '-'}</TableCell>
           </TableRow>
         );
       }):<TableRow/>}

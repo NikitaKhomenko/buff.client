@@ -16,11 +16,11 @@
   "repository": "https://github.com/buffgame/buff-client-electron.git",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^1.1.0",
     "axios": "^0.18.0",
     "babel-loader": "^7.1.4",
     "babel-runtime": "^6.22.0",
     "history": "^4.6.3",
-    "material-design-icons": "^3.0.1",
     "material-ui": "^1.0.0-beta.47",
     "material-ui-icons": "^1.0.0-beta.36",
     "node-sass": "^4.8.3",
@@ -88,6 +88,7 @@
     "private:watch": "npm run private:compile -- --source-maps true --watch --skip-initial-build",
     "private:serve": "babel-node scripts/serve.js",
     "private:compile": "babel app/ --copy-files --out-dir build",
-    "private:clean": "rimraf build"
+    "private:clean": "rimraf build",
+    "release-build-win": "electron-packager . buff --overwrite --platform=win32 --arch=all --electron-version=1.8.2 --icon=.\\build\\icon.ico --out=release-builds --version-string.CompanyName=buff --version-string.ProductName=buff.game --version-string.ProductVersion=0.1"
   }
 }

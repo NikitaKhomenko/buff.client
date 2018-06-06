@@ -1,8 +1,9 @@
 import * as actionTypes from './../Store/constant';
 import Api from '../Store/ApiRequests';
+import {push} from 'react-router-redux';
 
-export function addHistory() {
-  return (dispatch) => Api.getHistoryAPI().then((res) =>  dispatch({
+export function addHistory(address) {
+  return (dispatch) => Api.getHistoryAPI(address).then((res) =>  dispatch({
     type: actionTypes.ADD_HISTORY,
     payload: res.data
   })
@@ -41,11 +42,15 @@ export function addOnlineUsers() {
     })
   )
 }
-export function addUserBalance() {
-  return (dispatch) => Api.getBalanceAPI().then((res) =>   dispatch({
+export function addUserBalance(address) {
+  return (dispatch) => Api.getBalanceAPI(address).then((res) => dispatch({
       type: actionTypes.ADD_BALANCE,
       payload: res.data
     })
   )
 }
+export function  onBackToLogin(){
+  return (dispatch) => dispatch(push('/'));
+}
+
 

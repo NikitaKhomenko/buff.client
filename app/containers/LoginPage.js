@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => {
   const user = bindActionCreators(TodoActionCreators, dispatch);
   return {
     onLogin: (data) => {
-      console.log('realAuth;;;>' ,data.data);
+      // console.log('realAuth;;;>' ,data.data);
       if (realAuth.isAuthenticated) {
         dispatch(push('/loggedin'));
         dispatch({
