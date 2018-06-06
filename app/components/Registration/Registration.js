@@ -9,8 +9,8 @@ import Button from 'material-ui/Button';
 import './Registration.scss';
 import {realAuth} from '../../routes';
 import {Redirect} from 'react-router-dom';
-import {FormHelperText} from "material-ui";
-import red from "material-ui/es/colors/red";
+import {FormHelperText} from 'material-ui'
+import red from 'material-ui/es/colors/red';
 
 
 const styles = theme => {
@@ -126,7 +126,7 @@ class Registration extends Component {
             passwordIsEquel: this.state.password === this.state.confPassword
         });
 
-        if(this.state.emailIsEquel && this.state.passwordIsEquel) {
+        if(this.state.email === this.state.confEmail && this.state.password === this.state.confPassword) {
             console.log(this.state);
             let self = this;
 
